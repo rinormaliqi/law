@@ -1,0 +1,86 @@
+/* Hero Section Styles */
+.hero {
+  background-color: #1a3e6a;
+  color: #fff;
+  padding: 8rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-content h1 .highlight {
+  color: burlywood; /* Orange */
+  display: block; /* Puts it on a new line */
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin: 1rem 0 2rem;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-buttons button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.hero-buttons .btn-white {
+  background: #fff;
+  color: #2d004d;
+}
+
+.hero-buttons .btn-white:hover {
+  background: #f0f0f0;
+}
+
+.hero-buttons .btn-orange {
+  background: burlywood;
+  color: #fff;
+}
+
+.hero-buttons .btn-orange:hover {
+  background: burlywood;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
