@@ -63,28 +63,34 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="bg-white py-12 px-6 lg:px-16">
-      <h2 className="text-3xl md:text-4xl font-bold text-[#1a3e6a] mb-10">
+    <section className="bg-white py-8 md:py-12 px-4 sm:px-6 lg:px-16">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a3e6a] mb-6 md:mb-10 text-center">
         {t.title} {/* ✅ translated section title */}
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
         {services.map((service) => (
           <div
             key={service.id}
             onClick={() => handleCardClick(service)}
-            className="bg-gray-50 rounded-lg shadow hover:shadow-lg transition overflow-hidden cursor-pointer"
+            className="bg-gray-50 rounded-lg shadow hover:shadow-lg transition-all duration-300 overflow-hidden cursor-pointer transform hover:-translate-y-1"
           >
             <img
               src={service.image}
               alt={service.title}
-              className="w-full h-48 object-cover"
+              className="w-full h-40 sm:h-48 object-cover"
             />
-            <div className="p-5">
-              <h3 className="text-xl font-semibold text-[#1a3e6a] mb-2">
+            <div className="p-4 md:p-5">
+              <h3 className="text-lg md:text-xl font-semibold text-[#1a3e6a] mb-2">
                 {service.title}
               </h3>
-              <p className="text-gray-700 text-sm">{service.description}</p>
+              <p className="text-gray-700 text-sm md:text-base">{service.description}</p>
+              <button className="mt-3 text-[#1a3e6a] font-medium text-sm md:text-base hover:underline flex items-center">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
             </div>
           </div>
         ))}
@@ -92,4 +98,3 @@ export default function ServicesSection() {
     </section>
   );
 }
-

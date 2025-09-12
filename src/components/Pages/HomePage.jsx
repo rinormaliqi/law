@@ -18,9 +18,10 @@ const LawFirmLanding = () => {
   return (
     <div className="font-sans text-gray-800">
       {/* Navbar stays full width */}
-              <NewHero />
-      {/* Main content wrapper with 50px left/right margins */}
-      <div className="mx-[150px]">
+      <NewHero />
+      
+      {/* Main content wrapper with responsive margins */}
+      <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-16 xl:mx-24 2xl:mx-[150px]">
         <OurPeopleSection/>
         <PracticeAreas />
         <ServicesSection/>
