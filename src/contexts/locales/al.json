@@ -15,7 +15,7 @@
       "family": {
         "title": "E Drejta Familjare",
         "description": "Mbështetje ligjore e përzemërt në divorc, kujdestari fëmijësh dhe çështje familjare.",
-        "content": "Ne ofrojmë mbështetje ligjore të përzemërt por të vendosur në të gjitha fushat e së drejtës familjare. Firma jonë i ndihmon klientët përmes çështjeve thellësisht personale të divorcit (shpërbërjes martesore), duke përfshirë ndarjen e pronës dhe aseteve martesore, dhe rregullimet për mbështetjen e bashkshortit (pension alimentacion) kur është e aplikueshme. Ne jemi veçanërisht të përqendruar në mbrojtjen e interesave më të mira të fëmijëve në mosmarrëveshjet familjare."
+        "content": "Ne ofrojmë mbështetje ligjore të përzemërt por të vendosur në të gjitha fushat e së drejtës familjare. Firma jonë i ndihmon klientët përmes çështjeve thellësisht personale të divorcit (zgjidhje te marteses), duke përfshirë ndarjen e pronës dhe aseteve martesore, dhe rregullimet për mbështetjen e bashkshortit (pension alimentacion) kur është e aplikueshme. Ne jemi veçanërisht të përqendruar në mbrojtjen e interesave më të mira të fëmijëve në mosmarrëveshjet familjare."
       },
       "property": {
         "title": "E Drejta e Pronës dhe Trashëgimisë",
@@ -23,9 +23,9 @@
         "content": "Avokatët tanë janë me përvojë në zgjidhjen e çështjeve të së drejtës së pronës, nga transaksionet e pasurive të paluajtshme deri te paditë. Ne këshillojmë për çështjet e pronës së paluajtshme si shitjet, blerjet dhe qirat e tokës ose ndërtesave, duke u siguruar që kontratat janë të shëndosha dhe të përputhshme me ligjin. Për më tepër, firma jonë ofron këshilla për rastet e trashëgimisë dhe trajton procedurat e vleftësimit të testamentit."
       },
       "enforcement": {
-        "title": "Ekzekutimi i Vendimeve",
+        "title": "Përmbarimet ligjore",
         "description": "Sigurimi që vendimet e gjykatës dhe titujt ekzekutues të zbatohen në mënyrë efektive.",
-        "content": "Bytyqi & Partners ofron shërbime në fushën e së drejtës së ekzekutimit, duke u siguruar që vendimet e gjykatës dhe titujt e tjerë ekzekutues të zbatohen në mënyrë efektive. Pasi një klient fiton një vendim ose një vendim të ekzekutueshëm, ne ndihmojmë në nisjen dhe menaxhimin e procedurave të ekzekutimit përmes Agjentëve të Kompetentë të Ekzekutimit."
+        "content": "Bytyqi & Partners ofron shërbime në fushën e së drejtës përmbarimore, duke u siguruar që vendimet e gjykatës dhe titujt e tjerë ekzekutues të përmbarohen në mënyrë efektive. Pasi një klient apo shoqeri tregtare ka plotesuar kushtet per permbarimin e akteve juridike te permbarueshme (fatura sherbimesh, kontrata te plotefuqishme apo vendime te plotefuqishme gjyqesore) ne ndihmojmë në nisjen dhe menaxhimin e procedurave të ekzekutimit përmes Permbaruesve Privat dhe Gjykates"
       },
       "administrative": {
         "title": "E Drejta Administrative",
@@ -76,9 +76,9 @@
   "hero": {
     "title1": "Mbrojtje.",
     "title2": "Besim.",
-    "subtitle": "Shërbime ligjore që ju udhëheqin personalisht dhe profesionalisht.",
-    "businessBtn": "Eksploroni Shërbimet e Biznesit",
-    "personalBtn": "Eksploroni Shërbimet Personale",
+    "subtitle": "Sherbime ligjore ju udheheqin me profesionalizem dhe ndershmeri.",
+    "businessBtn": "Shikoni Shërbimet e Biznesit",
+    "personalBtn": "Shikoni Shërbimet Personale",
     "contactBtn": "Kontaktoni Ekipin Tonë Sot"
   },
   "dropdown": {
@@ -245,7 +245,7 @@
   "title": "Rreth Bytyqi & Partners",
   "subtitle": "Avokatët tuaj të Besuar në Kosovë",
   "missionTitle": "Misioni Jonë",
-  "missionText": "Bytyqi & Partners është një firmë e njohur juridike në Kosovë e themeluar mbi parimet e integritetit, ekselencës dhe përkushtimit të patundur për drejtësi. Firma jonë bashkon dekada përvoje të kombinuara juridike për të ofruar zgjidhje gjithëpërfshirëse ligjore për çështje personale dhe biznesore.",
+  "missionText": "Bytyqi & Partners është një firmë e njohur juridike në Kosovë e themeluar mbi parimet e integritetit, ekselencës dhe përkushtimit të patundur për drejtësi.Me një praktikë të larmishme që përfshin mbrojtjen penale, perfaqesimin civil, ceshtjet familjare dhe perfaqesim korporatash, ne kemi ndërtuar një reputacion për avokaci të fuqishme dhe rezultate të suksesshme në sfida komplekse ligjore.",
   "expertiseTitle": "Ekspertiza Jonë",
   "expertiseText": "Me një praktikë të larmishme që përfshin mbrojtjen penale, gjyqërimin civil, ligjin familjar dhe çështjet kushtetuese, ne kemi ndërtuar një reputacion për avokaci të fuqishëm dhe rezultate të suksesshme në sfida komplekse ligjore.",
   "approachTitle": "Qasja Jonë",

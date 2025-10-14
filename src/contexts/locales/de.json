@@ -22,11 +22,12 @@
         "description": "Fachkundige Unterstützung bei Immobilientransaktionen und Erbschaftsfällen.",
         "content": "Unsere Anwälte sind erfahren in der Lösung von Immobilienrechtsfragen, von Immobilientransaktionen bis hin zu Rechtsstreitigkeiten. Wir beraten zu unbeweglichen Vermögensfragen wie Verkäufen, Käufen und Vermietungen von Grundstücken oder Gebäuden und stellen sicher, dass Verträge solide und rechtlich konform sind. Darüber hinaus bietet unsere Kanzlei Beratung zu Erbschaftsfällen und behandelt Nachlassverfahren."
       },
-      "enforcement": {
-        "title": "Vollstreckung von Urteilen",
-        "description": "Sicherstellung, dass Gerichtsurteile und vollstreckbare Titel wirksam umgesetzt werden.",
-        "content": "Bytyqi & Partners bietet Dienstleistungen im Bereich des Vollstreckungsrechts an und stellt sicher, dass Gerichtsurteile und andere vollstreckbare Titel wirksam umgesetzt werden. Nachdem ein Mandant ein Urteil oder einen vollstreckbaren Beschluss erwirkt hat, unterstützen wir bei der Einleitung und Verwaltung von Vollstreckungsverfahren durch die zuständigen Vollstreckungsbeamten."
-      },
+"enforcement": {
+  "title": "Rechtliche Vollstreckung",
+  "description": "Sicherstellung, dass Gerichtsentscheidungen und vollstreckbare Titel wirksam umgesetzt werden.",
+  "content": "Bytyqi & Partners bietet Dienstleistungen im Bereich des Vollstreckungsrechts an und stellt sicher, dass Gerichtsentscheidungen und andere vollstreckbare Titel effektiv durchgesetzt werden. Sobald ein Mandant oder ein Handelsunternehmen die Voraussetzungen für die Vollstreckung rechtswirksamer Akte erfüllt hat (Dienstleistungsrechnungen, voll verbindliche Verträge oder rechtskräftige Gerichtsentscheidungen), unterstützen wir bei der Einleitung und Verwaltung der Vollstreckungsverfahren über private Vollstreckungsbeamte und das Gericht."
+}
+,
       "administrative": {
         "title": "Verwaltungsrecht",
         "description": "Rechtliche Unterstützung im Umgang mit öffentlichen Einrichtungen und Regierungsbehörden.",
@@ -76,7 +77,7 @@
   "hero": {
     "title1": "Schutz.",
     "title2": "Vertrauen.",
-    "subtitle": "Rechtsdienstleistungen, die Sie persönlich und beruflich begleiten.",
+"subtitle": "Rechtsdienstleistungen, die Sie mit Professionalität und Integrität begleiten.",
     "businessBtn": "Geschäftsdienste entdecken",
     "personalBtn": "Private Dienste entdecken",
     "contactBtn": "Kontaktieren Sie unser Team heute"

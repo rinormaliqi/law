@@ -22,11 +22,12 @@
         "description": "Gayrimenkul işlemleri ve miras davalarında uzman yardım.",
         "content": "Avukatlarımız, gayrimenkul işlemlerinden davalara kadar mülk hukuku sorunlarını çözmede deneyimlidir. Arazi veya binaların satışları, alımları ve kiralanmaları gibi taşınmaz mülk konularında danışmanlık yapıyor, sözleşmelerin sağlam ve yasalara uygun olduğundan emin oluyoruz. Ayrıca firmamız miras davalarında danışmanlık sağlar ve veraset işlemlerini yönetir."
       },
-      "enforcement": {
-        "title": "Mahkeme Kararlarının İcrası",
-        "description": "Mahkeme kararlarının ve icra edilebilir belgelerin etkili şekilde uygulanmasını sağlama.",
-        "content": "Bytyqi & Partners, icra hukuku alanında hizmetler sunarak mahkeme kararlarının ve diğer icra edilebilir belgelerin etkili şekilde uygulanmasını sağlar. Bir müvekkil karar veya icra edilebilir bir karar aldıktan sonra, yetkili İcra Memurları aracılığıyla icra işlemlerinin başlatılmasına ve yönetilmesine yardımcı oluyoruz."
-      },
+ "enforcement": {
+  "title": "Yasal İcra",
+  "description": "Mahkeme kararlarının ve icra edilebilir belgelerin etkili bir şekilde uygulanmasını sağlamak.",
+  "content": "Bytyqi & Partners, icra hukuku alanında hizmetler sunarak mahkeme kararlarının ve diğer icra edilebilir belgelerin etkili bir şekilde yerine getirilmesini sağlar. Bir müvekkil veya ticari şirket, icra edilebilir hukuki işlemler (hizmet faturaları, tamamen bağlayıcı sözleşmeler veya kesinleşmiş mahkeme kararları) için koşulları sağladığında, özel icra memurları ve mahkeme aracılığıyla icra prosedürlerinin başlatılması ve yönetilmesinde destek sağlıyoruz."
+}
+,
       "administrative": {
         "title": "İdare Hukuku",
         "description": "Kamu kurumları ve devlet kurumlarıyla ilişkilerde hukuki destek.",
@@ -76,7 +77,7 @@
   "hero": {
     "title1": "Koruma.",
     "title2": "Güven.",
-    "subtitle": "Size kişisel ve profesyonel olarak rehberlik eden hukuk hizmetleri.",
+"subtitle": "Profesyonellik ve dürüstlükle sizi yönlendiren hukuk hizmetleri.",
     "businessBtn": "İş Hizmetlerini Keşfedin",
     "personalBtn": "Kişisel Hizmetleri Keşfedin",
     "contactBtn": "Ekibimizle Hemen İletişime Geçin"

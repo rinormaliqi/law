@@ -217,12 +217,6 @@ export const Footer = () => {
                   {language === 'de' && 'Mo - Fr: 8:00 - 18:00 Uhr'}
                   {language === 'tr' && 'Pzt - Cuma: 8:00 - 18:00'}
                 </p>
-                <p className="text-xs text-gray-400">
-                  {language === 'en' && 'Sat: 9:00 AM - 1:00 PM'}
-                  {language === 'al' && 'E Shtunë: 9:00 - 13:00'}
-                  {language === 'de' && 'Sa: 9:00 - 13:00 Uhr'}
-                  {language === 'tr' && 'Cmt: 9:00 - 13:00'}
-                </p>
               </div>
             </address>
           </div>

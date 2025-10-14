@@ -22,11 +22,12 @@
         "description": "Expert assistance with real estate transactions and inheritance cases.",
         "content": "Our attorneys are experienced in resolving property law issues, from real estate transactions to litigation. We advise on immovable property matters such as sales, purchases, and leases of land or buildings, ensuring that contracts are sound and legally compliant. Additionally, our firm provides counsel on inheritance cases and handles probate procedures."
       },
-      "enforcement": {
-        "title": "Enforcement of Judgments",
-        "description": "Ensuring court judgments and executory titles are effectively implemented.",
-        "content": "Bytyqi & Partners offers services in the area of enforcement law, making sure that court judgments and other executory titles are effectively implemented. After a client obtains a judgment or an enforceable decision, we assist in initiating and managing enforcement proceedings through the competent Enforcement Agents."
-      },
+"enforcement": {
+  "title": "Legal Enforcement",
+  "description": "Ensuring that court decisions and enforceable titles are carried out effectively.",
+  "content": "Bytyqi & Partners provides services in the field of enforcement law, ensuring that court decisions and other enforceable titles are executed effectively. Once a client or a commercial company has met the conditions for the enforcement of legally enforceable acts (service invoices, fully binding contracts, or final court decisions), we assist in initiating and managing execution procedures through Private Enforcement Agents and the Court."
+},
+
       "administrative": {
         "title": "Administrative Law",
         "description": "Legal support in dealings with public institutions and government agencies.",
@@ -76,7 +77,7 @@
   "hero": {
     "title1": "Protection.",
     "title2": "Trust.",
-    "subtitle": "Legal services guiding you personally and professionally.",
+"subtitle": "Legal services that guide you with professionalism and integrity.",
     "businessBtn": "Explore Business Services",
     "personalBtn": "Explore Personal Services",
     "contactBtn": "Contact Our Team Today"
