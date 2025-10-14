@@ -9,27 +9,6 @@ const Disclaimer = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-gray-900 text-white py-6 border-b-4 border-[#FFD700]">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-serif font-bold text-[#FFD700]">
-              Bytyqi & Partners
-            </Link>
-            <nav className="hidden md:flex space-x-6">
-              <Link to="/" className="hover:text-[#FFD700] transition-colors">
-                {t.nav.home}
-              </Link>
-              <Link to="/about" className="hover:text-[#FFD700] transition-colors">
-                {t.nav.about}
-              </Link>
-              <Link to="/contact" className="hover:text-[#FFD700] transition-colors">
-                {t.nav.contact}
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
 
       {/* Main Content */}
       <main className="container mx-auto px-4 md:px-6 py-12">
