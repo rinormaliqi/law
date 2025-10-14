@@ -1,0 +1,264 @@
+{
+  "services": {
+    "title": "Si mund t'ju ndihmojmë juve dhe biznesin tuaj?",
+    "areas": {
+      "criminal": {
+        "title": "E Drejta Penale",
+        "description": "Mbrojtje ligjore e fuqishme në të gjitha llojet e çështjeve penale, nga veprat e vogla deri te krimet e rënda.",
+        "content": "Ekipi ynë ofron mbrojtje ligjore të fuqishme në të gjitha llojet e çështjeve penale. Ne përfaqësojmë individë në hetim ose që përballen me akuzat - nga veprat e vogla deri te krimet e rënda - duke u siguruar që të drejtat e tyre mbrohen në çdo fazë të procesit. Shërbimet përfshijnë këshillë ligjore gjatë interrogimeve policore, përgatitjen e strategjive të mbrojtjes, përfaqësim në gjyqe dhe paraqitjen e ankesave."
+      },
+      "civil": {
+        "title": "Procesi Civil dhe Zgjidhja e Mosmarrëveshjeve",
+        "description": "Përfaqësim në mosmarrëveshje midis palëve private për të mbrojtur të drejtat dhe interesat.",
+        "content": "Në çështjet e së drejtës civile, Bytyqi & Partners përfaqëson klientët në mosmarrëveshjet midis palëve private për të mbrojtur të drejtat dhe interesat e tyre. Ne trajtojmë një spektër të gjerë çështjesh civile, përfshirë mosmarrëveshjet kontraktuale, kërkesat e pronës, dëmet (kërkesat e kompensimit) dhe detyrimet e tjera. Avokatët tanë kryejnë analizë të thellë të çështjes, mbledhin dëshmi dhe avokatojnë në emër të klientëve në procedurat gjyqësore ose përmes metodave alternative të zgjidhjes së mosmarrëveshjeve."
+      },
+      "family": {
+        "title": "E Drejta Familjare",
+        "description": "Mbështetje ligjore e përzemërt në divorc, kujdestari fëmijësh dhe çështje familjare.",
+        "content": "Ne ofrojmë mbështetje ligjore të përzemërt por të vendosur në të gjitha fushat e së drejtës familjare. Firma jonë i ndihmon klientët përmes çështjeve thellësisht personale të divorcit (shpërbërjes martesore), duke përfshirë ndarjen e pronës dhe aseteve martesore, dhe rregullimet për mbështetjen e bashkshortit (pension alimentacion) kur është e aplikueshme. Ne jemi veçanërisht të përqendruar në mbrojtjen e interesave më të mira të fëmijëve në mosmarrëveshjet familjare."
+      },
+      "property": {
+        "title": "E Drejta e Pronës dhe Trashëgimisë",
+        "description": "Asistencë eksperte me transaksionet e pasurive të paluajtshme dhe rastet e trashëgimisë.",
+        "content": "Avokatët tanë janë me përvojë në zgjidhjen e çështjeve të së drejtës së pronës, nga transaksionet e pasurive të paluajtshme deri te paditë. Ne këshillojmë për çështjet e pronës së paluajtshme si shitjet, blerjet dhe qirat e tokës ose ndërtesave, duke u siguruar që kontratat janë të shëndosha dhe të përputhshme me ligjin. Për më tepër, firma jonë ofron këshilla për rastet e trashëgimisë dhe trajton procedurat e vleftësimit të testamentit."
+      },
+      "enforcement": {
+        "title": "Ekzekutimi i Vendimeve",
+        "description": "Sigurimi që vendimet e gjykatës dhe titujt ekzekutues të zbatohen në mënyrë efektive.",
+        "content": "Bytyqi & Partners ofron shërbime në fushën e së drejtës së ekzekutimit, duke u siguruar që vendimet e gjykatës dhe titujt e tjerë ekzekutues të zbatohen në mënyrë efektive. Pasi një klient fiton një vendim ose një vendim të ekzekutueshëm, ne ndihmojmë në nisjen dhe menaxhimin e procedurave të ekzekutimit përmes Agjentëve të Kompetentë të Ekzekutimit."
+      },
+      "administrative": {
+        "title": "E Drejta Administrative",
+        "description": "Mbështetje ligjore në marrëdhëniet me institucionet publike dhe agjencitë qeveritare.",
+        "content": "Firma jonë ofron mbështetje ligjore në marrëdhëniet me institucionet publike dhe organet administrative. Ne ndihmojmë klientët në marrjen e lejeve, licencave ose miratimeve të ndryshme qeveritare duke i udhëhequr ata përmes procedurave administrative dhe duke u siguruar që të gjitha kërkesat rregullatore plotësohen. Ne gjithashtu përfaqësojmë klientët në mosmarrëveshjet administrative."
+      },
+      "commercial": {
+        "title": "Kontratat dhe E Drejta Komerciale",
+        "description": "Draftimi, rishikimi dhe negociimi i kontratave civile dhe komerciale.",
+        "content": "Në sferën e kontratave dhe transaksioneve biznesore, Bytyqi & Partners ofron shërbime të këshillimit dhe përfaqësimit. Ne draftojmë, rishikojmë dhe negociojmë kontrata civile dhe komerciale të përshtatura për nevojat e klientëve tanë - duke përfshirë kontratat e shitjes, marrëveshjet e qirasë, kontratat e shërbimit, marrëveshjet e partneritetit dhe më shumë."
+      },
+      "corporate": {
+        "title": "Këshillimi Korporativ dhe Biznesi",
+        "description": "Suitë e plotë e shërbimeve të së drejtës korporative për bizneset dhe sipërmarrësit.",
+        "content": "Bytyqi & Partners u shërben klientëve korporativ dhe sipërmarrësve me një suitë të plotë shërbimesh të së drejtës korporative. Ne ndihmojmë në proceset e formimit dhe regjistrimit të kompanive, duke dhënë këshilla për formën e duhur të biznesit dhe duke trajtuar të gjithë dokumentacionin me Agjensinë e Regjistrimit të Biznesit të Kosovës."
+      },
+      "labor": {
+        "title": "E Drejta e Punës dhe Punësimit",
+        "description": "Asistencë ligjore në marrëdhëniet e punësimit dhe të drejtat në vendin e punës.",
+        "content": "Firma jonë e avokatëve ofron asistencë ligjore në të gjitha çështjet që kanë të bëjnë me marrëdhëniet e punësimit dhe të drejtat në vendin e punës. Ne këshillojmë punëdhënësit dhe punëmarrësit për të drejtat dhe detyrimet e tyre sipas ligjeve të punës së Kosovës. Për punëdhënësit, ne ofrojmë shërbime si draftimi i kontratave të punës, zhvillimi i politikave të vendit të punës dhe sigurimi i përputhshmërisë me rregulloret."
+      },
+      "personalInjury": {
+        "title": "Dëmtimet Personale dhe Kërkesat e Aksidenteve",
+        "description": "Avokim për klientët që kanë pësuar dëme për shkak të neglizhencës së të tjerëve.",
+        "content": "Bytyqi & Partners avokon për klientët që kanë pësuar dëme për shkak të neglizhencës ose gabimit të të tjerëve. Ne trajtojmë rastet e së drejtës së dëmeve si aksidente trafiku, dëmtime në vendin e punës, gabime mjekësore ose incidente të tjera që rezultojnë në dëmtime truprore ose dëme pronësie."
+      },
+      "sis": {
+        "title": "Kërkesat për Heqjen e Ndalesave SIS",
+        "description": "Ekspertizë në ndalesat ndërkombëtare të udhëtimit dhe njoftimet e Shengenit.",
+        "content": "Firma jonë ka zhvilluar një ekspertizë të specializuar në çështjet që kanë të bëjnë me ndalesat ndërkombëtare të udhëtimit dhe njoftimet, veçanërisht njoftimet e Sistemit të Informacionit të Shengenit (SIS) që mund të pengojnë individët nga hyrja në vendet e zonës së Shengenit. Ne ndihmojmë në përpjekjet për heqjen ose reduktimin e ndalesave të udhëtimit përmes kërkesave dhe ankesave formale."
+      }
+    }
+  },
+  "nav": {
+    "home": "Kryefaqja",
+    "about": "Rreth Nesh",
+    "practice": "Fushat e Praktikës",
+    "attorneys": "Avokatët",
+    "testimonials": "Dëshmitë",
+    "contact": "Kontakt"
+  },
+  "peopleSection": {
+    "title": "Njerëzit Tanë",
+    "para1": "Për ne, gjithçka ka të bëjë me fillimin e një bisede dhe ndërtimin e një marrëdhënieje midis njerëzve që kujdesen për rezultatin.",
+    "para2": "Ne jemi të përkushtuar t'ju ndihmojmë të gjeni rezultatin e duhur të përshtatur për situatën tuaj unike.",
+    "button": "Takoni Ekipin Tonë"
+  },
+  "hero": {
+    "title1": "Mbrojtje.",
+    "title2": "Besim.",
+    "subtitle": "Shërbime ligjore që ju udhëheqin personalisht dhe profesionalisht.",
+    "businessBtn": "Eksploroni Shërbimet e Biznesit",
+    "personalBtn": "Eksploroni Shërbimet Personale",
+    "contactBtn": "Kontaktoni Ekipin Tonë Sot"
+  },
+  "dropdown": {
+    "personal": {
+      "immigration": "Imigracioni",
+      "personalInjury": "Dëmtimet Personale",
+      "property": "Prona"
+    },
+    "people": {
+      "caseStudies": "Studime Rasti",
+      "blogArticles": "Blog & Artikuj",
+      "news": "Lajme"
+    },
+    "careers": {
+      "joinTeam": "Bashkohuni me Ekipin",
+      "openings": "Pozitat Aktuale",
+      "training": "Trajnim & Zhvillim",
+      "culture": "Kultura e Kompanisë",
+      "benefits": "Përfitimet"
+    },
+    "about": {
+      "story": "Historia Jonë",
+      "values": "Vlerat Tona",
+      "offices": "Zyrat",
+      "social": "Përgjegjësia Sociale"
+    }
+  },
+  "badges": {
+    "bar": "Oda e Avokatëve të Kosovës",
+    "eu": "Integrimi i Ligjit të BE-së",
+    "commercial": "Procesi Komercial",
+    "international": "Ligji Ndërkombëtar"
+  },
+  "notableCases": {
+    "title": "Raste të Shquara dhe Komente Ligjore",
+    "cases": [
+      {
+        "title": "Rasti i Rëndësishëm i Femisidit",
+        "description": "Sigurimi i dënimit me burgim të përjetshëm në rastin e femisidit që vendos precedent, duke vendosur standarde të forta ligjore për dhunën bazuar në gjini"
+      },
+      {
+        "title": "Debati Kushtetues për Shtetin Laik",
+        "description": "Avokim publik për laicizmin e vërtetë që nënkupton neutralitet të plotë shtetëror ndaj të gjitha feve dhe liri maksimale të fesë"
+      },
+      {
+        "title": "Përgjegjësia e Sjelljes së Policisë",
+        "description": "Avokim për përgjegjësinë e policisë dhe përdorimin proporcional të forcës në raste me profil të lartë"
+      },
+      {
+        "title": "Drejtësia për Krime Lufte në Dhomën e Specializuar",
+        "description": "Koment ekspert dhe përfaqësim në Dhomën e Specializuar të Kosovës në Hagë"
+      }
+    ]
+  },
+  "why": {
+    "title": "Pse Të Zgjidhni Firmën Tonë",
+    "description": "Me dekada përvoje të kombinuar, avokatët tanë sjellin ekspertizë, përkushtim dhe një historik suksesi në çdo rast që trajtojmë.",
+    "points": [
+      "Avokatë me përvojë me njohuri të specializuara",
+      "Vëmendje e personalizuar për çdo klient",
+      "Historik i provuar i rezultateve të suksesshme",
+      "Komunikim transparent gjatë gjithë çështjes suaj",
+      "Reputacion i respektuar në komunitetin juridik"
+    ],
+    "technicalExpertise": {
+      "title": "Ekspertizë Teknike Juridike",
+      "items": [
+        "Hulumtim & Analizë Juridike",
+        "Zhvillimi i Strategjisë së Çështjes",
+        "Automatizimi i Dokumenteve",
+        "Menaxhimi i Zbulimit Elektronik",
+        "Analitika e Kontratave",
+        "Monitorimi i Pajtueshmërisë"
+      ]
+    },
+    "kosovoExpertise": {
+      "title": "Specializimi në Sistemin Juridik të Kosovës",
+      "points": [
+        "Kushtetuta e Kosovës dhe korniza ligjore",
+        "Integrimi i çështjeve të trashëguara nga EULEX-i",
+        "Ekspertizë e sistemit hibrid juridik",
+        "Implementimi i standardeve ndërkombëtare ligjore"
+      ]
+    }
+  },
+  "stats": {
+    "years": "Vjet Përvojë e Kombinuar",
+    "cases": "Raste të Trajtuara",
+    "success": "Normë Suksesi"
+  },
+  "cta": {
+    "title": "Gati për të Diskutuar Rastin Tuaj?",
+    "description": "Na kontaktoni sot për një konsultim konfidencial me një nga avokatët tanë me përvojë.",
+    "button": "Programoni Një Konsultim"
+  },
+  "footer": {
+    "description": "Ofrimi i përfaqësimit juridik profesional me integritet dhe përkushtim.",
+    "practiceTitle": "Fushat e Praktikës",
+    "linksTitle": "Lidhje të Shpejta",
+    "contactTitle": "Na Kontaktoni",
+    "copyright": "© {year} Bytyqi & Partners. Të gjitha të drejtat e rezervuara."
+  },
+  "practice": {
+    "title": "Fushat e Praktikës",
+    "description": "Ne ofrojmë një gamë të plotë shërbimesh ligjore në fusha kryesore të ligjit.",
+    "learnMore": "Mëso më shumë"
+  },
+  "attorneys": {
+    "asdren": {
+      "name": "Asdren Bytyqi",
+      "title": "Avokat, Partner Drejtues",
+      "bio": "Asdren Bytyqi është një avokat i licensuar në Kosovë dhe partneri drejtues i Bytyqi & Partners. Ai e fitoi diplomën e së drejtës me nderime dhe ka ndërtuar një karrierë të diversifikuar juridike që kombinon praktikën, avokimin publik dhe angazhimin civic. Ekspertiza ligjore e Asdrenit përfshin mbrojtjen penale, ligjin kushtetues dhe administrativ, dhe të drejtat e njeriut. Në vitet e tij të praktikës, ai ka përfaqësuar klientë në raste komplekse penale dhe paditë civile me rreziqe të larta, duke fituar një reputacion për përgatitje të metikulshme dhe avokim bindës në gjykatë.",
+      "expertise": [
+        "Mbrojtje Penale",
+        "Ligji Kushtetues",
+        "Ligji Administrativ",
+        "Të Drejtat e Njeriut",
+        "Avokim Publik",
+        "Komentues Ligjor Mediatik"
+      ],
+      "achievements": [
+        "Zëri ligjor i hapur për çështjet e shtetit laik kushtetues",
+        "Avokim publik për vlerat tradicionale familjare dhe lirinë e shprehjes",
+        "Komentues mediatik për procedurat komplekse ligjore dhe rastet e ekstradimit",
+        "Anëtar aktiv i Organizatës së Avokatëve të Kosovës"
+      ]
+    },
+    "fehmije": {
+      "name": "Fehmije Gashi-Bytyqi",
+      "title": "Avokate, Partnere Senior",
+      "bio": "Fehmije Gashi-Bytyqi është një avokate e shquar me më shumë se dy dekada përvojë profesionale dhe një sfond të pasur në zbatimin e ligjit dhe avokim. Ajo bëri historinë në Kosovën e pasluftës si oficerja e parë femër në Policinë e Kosovës. Gjatë mandatit të saj si oficere police, ajo fitoi përvojë të çmuar në ruajtjen e sigurisë publike dhe sundimin e ligjit. Duke kaluar nga shërbimi policor, Fehmije ndoqi një karrierë në ligj dhe ka qenë delegat e zgjedhur në Kuvendin e Organizatës së Avokatëve të Kosovës që nga viti 2006.",
+      "expertise": [
+        "Ligji Penal",
+        "Ligji Familjar",
+        "Të Drejtat e Njeriut",
+        "Dhuna Bazuar në Gini",
+        "Përgjegjësia e Policisë",
+        "Drejtësia për Krime Lufte"
+      ],
+      "achievements": [
+        "Oficerja e parë femër në historinë e Policisë së Kosovës",
+        "Rast i rëndësishëm i femisidit që rezultoi në burgim të përjetshëm",
+        "Avokate e akredituar e mbrojtjes në Dhomën e Specializuar të Kosovës në Hagë",
+        "Avokate zëdhënëse kundër brutalitetit policor dhe përdorimit të tepërt të forcës",
+        "Delegat e zgjedhur në Kuvendin e Organizatës së Avokatëve të Kosovës që nga viti 2006"
+      ]
+    }
+  },
+  "media": {
+    "asdrenHighlights": [
+      "Debati për Shtetin Laik dhe Liritë Fetare në Klan Kosova",
+      "Vlerat Familjare dhe Liria e Shprehjes në zgjedhjet parlamentare 2025",
+      "Koment për procedurat e ekstradimit dhe ligjore",
+      "Analizë e reformave në sektorin e drejtësisë"
+    ],
+    "fehmijeHighlights": [
+      "Rast i rëndësishëm i femisidit me precedent të dënimit me burgim të përjetshëm",
+      "Avokim për sjelljen e policisë dhe të drejtat e njeriut",
+      "Drejtësia për krime lufte në Dhomën e Specializuar",
+      "Mbrojtja e sundimit të ligjit në raste të ndjeshme"
+    ]
+  },
+  "about": {
+  "title": "Rreth Bytyqi & Partners",
+  "subtitle": "Avokatët tuaj të Besuar në Kosovë",
+  "missionTitle": "Misioni Jonë",
+  "missionText": "Bytyqi & Partners është një firmë e njohur juridike në Kosovë e themeluar mbi parimet e integritetit, ekselencës dhe përkushtimit të patundur për drejtësi. Firma jonë bashkon dekada përvoje të kombinuara juridike për të ofruar zgjidhje gjithëpërfshirëse ligjore për çështje personale dhe biznesore.",
+  "expertiseTitle": "Ekspertiza Jonë",
+  "expertiseText": "Me një praktikë të larmishme që përfshin mbrojtjen penale, gjyqërimin civil, ligjin familjar dhe çështjet kushtetuese, ne kemi ndërtuar një reputacion për avokaci të fuqishëm dhe rezultate të suksesshme në sfida komplekse ligjore.",
+  "approachTitle": "Qasja Jonë",
+  "approachText": "Ne besojmë në vëmendje të personalizuar dhe këshillim strategjik juridik të përshtatur për rrethanat unike të secilit klient. Avokatët tanë kombinojnë njohuri të thella juridike me mençuri praktike të fituar nga vite përvoje në pallatin e gjyqit.",
+  "valuesTitle": "Vlerat Tona",
+  "values": [
+    "Integritet dhe praktikë etike",
+    "Përfaqësim i përqendruar tek klienti",
+    "Ekselencë në avokaci juridike",
+    "Përkushtim ndaj drejtësisë dhe të drejtave të njeriut",
+    "Respekt për sundimin e ligjit"
+  ],
+  "recognitionTitle": "Njohja & Ndikimi",
+  "recognitionText": "Avokatët tanë njihen jo vetëm për ekspertizën e tyre juridike, por edhe për kontributet e tyre në diskursin publik dhe drejtësinë sociale në Kosovë."
+}
+}

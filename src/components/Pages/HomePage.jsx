@@ -12,7 +12,8 @@ import { NewHero } from '../Hero/NewHero';
 import LatestNewsSection from '../LatestNewsSection/LatestNewsSection';
 import OurPeopleSection from '../OurPeopleSection/OurPeopleSection';
 import ServicesSection from '../ServicesSection/ServicesSection';
-import AboutPage from '../AboutUs';
+import AboutPage, { AboutUsSection } from '../AboutUs';
+import { AttorneysSection } from '../AttorneysSection/AttorneysSection';
 
 const LawFirmLanding = () => {
   return (
@@ -22,11 +23,12 @@ const LawFirmLanding = () => {
       
       {/* Main content wrapper with responsive margins */}
       <div className="mx-4 sm:mx-6 md:mx-8 lg:mx-16 xl:mx-24 2xl:mx-[150px]">
-        <OurPeopleSection/>
+        <AboutUsSection/>
+        <AttorneysSection/>
         <PracticeAreas />
-        <ServicesSection/>
+        
+        {/* <ServicesSection/> */}
         <LatestNewsSection />
-        <AboutPage />
         {/* <PracticeAreaCard /> */}
         <ContactForm />
       </div>

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import { translations, useLanguage } from '../../contexts/language';
 import './App.css';
 import hero from "../../assets/hero2.png";
@@ -9,6 +10,7 @@ import logo from "../../assets/logo.png";
 const FlagEnIcon = () => <span className="flag-icon">🇺🇸</span>;
 const FlagAlIcon = () => <span className="flag-icon">🇦🇱</span>;
 const FlagDeIcon = () => <span className="flag-icon">🇩🇪</span>;
+const FlagTrIcon = () => <span className="flag-icon">🇹🇷</span>;
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -18,11 +20,13 @@ const Header = () => {
   const dropdownTimeout = useRef(null);
   const languageDropdownRef = useRef(null);
   const { language, setLanguage } = useLanguage();
+  const navigate = useNavigate();
 
   const languages = [
     { code: 'en', name: 'English', icon: <FlagEnIcon /> },
-    { code: 'al', name: 'Albanian', icon: <FlagAlIcon /> },
-    { code: 'de', name: 'German', icon: <FlagDeIcon /> },
+    { code: 'al', name: 'Shqip', icon: <FlagAlIcon /> },
+    { code: 'de', name: 'Deutsch', icon: <FlagDeIcon /> },
+    { code: 'tr', name: 'Türkçe', icon: <FlagTrIcon /> },
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -72,6 +76,45 @@ const Header = () => {
     setIsLanguageDropdownOpen(false);
   };
 
+  // Navigation handlers
+  const handleAboutNavigation = () => {
+    navigate('/about');
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+    const handleNewsNavigation = () => {
+    navigate('/news');
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const handleContactNavigation = () => {
+    navigate('/contact');
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const handleAttorneyNavigation = (attorneySlug) => {
+    navigate(`/attorneys/${attorneySlug}`);
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
+  const handlePracticeAreaNavigation = () => {
+    // If we're on the home page, scroll to services
+    if (window.location.pathname === '/') {
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with hash
+      navigate('/#services');
+    }
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -93,72 +136,124 @@ const Header = () => {
     };
   }, [isMobileMenuOpen, isLanguageDropdownOpen]);
 
-  // Navigation items with translations
+  // Updated Navigation items to match your actual content
   const navItems = [
-    { key: 'personal', label: translations[language].nav.practice },
-    { key: 'people', label: translations[language].nav.attorneys },
-    { key: 'careers', label: translations[language].nav.testimonials },
-    { key: 'about', label: translations[language].nav.about }
+    { 
+      key: 'practice', 
+      label: translations[language].nav.practice,
+      dropdown: 'practice',
+      action: handlePracticeAreaNavigation
+    },
+    { 
+      key: 'attorneys', 
+      label: translations[language].nav.attorneys,
+      dropdown: 'attorneys'
+    },
+    { 
+      key: 'about', 
+      label: translations[language].nav.about,
+      dropdown: 'about',
+      action: handleAboutNavigation
+    },
+    { 
+      key: 'contact', 
+      label: translations[language].nav.contact,
+      dropdown: null,
+      action: handleContactNavigation
+    }
   ];
 
-  // Dropdown content
-const dropdownContent = {
-  business: [
-    translations[language].practice.areas.corporate,
-    translations[language].practice.areas.litigation,
-    translations[language].practice.areas.realestate,
-    translations[language].practice.areas.family,
-    translations[language].practice.areas.intellectual
-  ],
-  personal: [
-    translations[language].dropdown.personal.family || translations[language].practice.areas.family,
-    translations[language].practice.areas.estate,
-    translations[language].dropdown.personal.immigration,
-    translations[language].dropdown.personal.personalInjury,
-    translations[language].dropdown.personal.property
-  ],
-  people: [
-    translations[language].nav.attorneys,
-    translations[language].dropdown.people.caseStudies,
-    translations[language].nav.testimonials,
-    translations[language].dropdown.people.blogArticles,
-    translations[language].dropdown.people.news
-  ],
-  careers: [
-    translations[language].dropdown.careers.joinTeam,
-    translations[language].dropdown.careers.openings,
-    translations[language].dropdown.careers.training,
-    translations[language].dropdown.careers.culture,
-    translations[language].dropdown.careers.benefits
-  ],
-  about: [
-    translations[language].dropdown.about.story,
-    translations[language].dropdown.about.values,
-    translations[language].dropdown.about.offices,
-    translations[language].dropdown.about.social,
-    translations[language].nav.contact
-  ]
-};
-
+  // Updated Dropdown content to include navigation handlers
+  const dropdownContent = {
+    practice: [
+      {
+        title: translations[language].services.areas.criminal.title,
+        description: translations[language].services.areas.criminal.description,
+        action: handlePracticeAreaNavigation
+      },
+      {
+        title: translations[language].services.areas.civil.title,
+        description: translations[language].services.areas.civil.description,
+        action: handlePracticeAreaNavigation
+      },
+      {
+        title: translations[language].services.areas.family.title,
+        description: translations[language].services.areas.family.description,
+        action: handlePracticeAreaNavigation
+      },
+      {
+        title: translations[language].services.areas.property.title,
+        description: translations[language].services.areas.property.description,
+        action: handlePracticeAreaNavigation
+      },
+      {
+        title: translations[language].services.areas.enforcement.title,
+        description: translations[language].services.areas.enforcement.description,
+        action: handlePracticeAreaNavigation
+      },
+      {
+        title: translations[language].services.areas.administrative.title,
+        description: translations[language].services.areas.administrative.description,
+        action: handlePracticeAreaNavigation
+      },
+       {
+        title: translations[language].services.areas.corporate.title,
+        description: translations[language].services.areas.corporate.description,
+        action: handlePracticeAreaNavigation
+      },
+       {
+        title: translations[language].services.areas.commercial.title,
+        description: translations[language].services.areas.commercial.description,
+        action: handlePracticeAreaNavigation
+      },
+    ],
+    attorneys: [
+      {
+        name: translations[language].attorneys.asdren.name,
+        title: translations[language].attorneys.asdren.title,
+        expertise: translations[language].attorneys.asdren.expertise.slice(0, 3),
+        slug: 'asdren-bytyqi',
+        action: () => handleAttorneyNavigation('asdren-bytyqi')
+      },
+      {
+        name: translations[language].attorneys.fehmije.name,
+        title: translations[language].attorneys.fehmije.title,
+        expertise: translations[language].attorneys.fehmije.expertise.slice(0, 3),
+        slug: 'asdren-gashi-bytyqi',
+        action: () => handleAttorneyNavigation('asdren-gashi-bytyqi')
+      }
+    ],
+    about: [
+      {
+        text: translations[language].dropdown.about.story,
+        action: handleAboutNavigation
+      },
+      {
+        text: translations[language].dropdown.about.values,
+        action: handleAboutNavigation
+      },
+      {
+        text: translations[language].dropdown.careers.joinTeam,
+        action: handleAboutNavigation
+      },
+      {
+        text: translations[language].dropdown.people.news,
+        action: handleNewsNavigation
+      }
+    ]
+  };
 
   return (
     <div className="app">
-      {/* Top Contact Bar - Made thinner */}
-      <div className="top-contact-bar">
-        <div className="contact-header-container">
-          <div className="contact-info">
-            <span className="contact-text">Need legal advice? Call us now:</span>
-            <a href="tel:+1234567890" className="contact-phone">+383 (44) 123-123</a>
-          </div>
-        </div>
-      </div>
-
+      {/* Top Contact Bar */}
       {/* Sticky Header */}
       <header className="header">
         <div className="header-container">
-          {/* Logo as image */}
+          {/* Logo */}
           <div className="logo">
-            <img src={logo} alt="Moore Barlow" className="logo-image" />
+            <Link to="/">
+              <img src={logo} alt="Bytyqi & Partners" className="logo-image" />
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
@@ -167,17 +262,20 @@ const dropdownContent = {
               <div 
                 key={item.key}
                 className="nav-item" 
-                onMouseEnter={() => handleDropdownHover(item.key)}
-                onMouseLeave={handleDropdownLeave}
+                onMouseEnter={() => item.dropdown && handleDropdownHover(item.key)}
+                onMouseLeave={item.dropdown ? handleDropdownLeave : undefined}
               >
-                <button className={`nav-link ${activeDropdown === item.key ? 'active' : ''}`}>
+                <button 
+                  className={`nav-link ${activeDropdown === item.key ? 'active' : ''} ${!item.dropdown ? 'no-dropdown' : ''}`}
+                  onClick={item.action || (() => {})}
+                >
                   {item.label}
                 </button>
               </div>
             ))}
           </nav>
 
-          {/* Language Switcher as Dropdown for Desktop */}
+          {/* Language Switcher */}
           <div className="language-dropdown-container" ref={languageDropdownRef}>
             <button 
               className="language-dropdown-toggle"
@@ -222,7 +320,7 @@ const dropdownContent = {
         </div>
 
         {/* Desktop Dropdowns */}
-        {activeDropdown && (
+        {activeDropdown && dropdownContent[activeDropdown] && (
           <div 
             className="dropdown"
             onMouseEnter={cancelDropdownLeave}
@@ -230,9 +328,33 @@ const dropdownContent = {
           >
             <div className="dropdown-content">
               <h3>{navItems.find(item => item.key === activeDropdown)?.label}</h3>
-              <div className="dropdown-grid">
+              <div className={`dropdown-grid ${activeDropdown === 'attorneys' ? 'attorneys-grid' : ''}`}>
                 {dropdownContent[activeDropdown].map((item, index) => (
-                  <div key={index} className="dropdown-item">{item}</div>
+                  <div 
+                    key={index} 
+                    className={`dropdown-item ${activeDropdown === 'attorneys' ? 'attorney-item' : ''} ${item.action ? 'clickable' : ''}`}
+                    onClick={item.action}
+                    style={{ cursor: item.action ? 'pointer' : 'default' }}
+                  >
+                    {activeDropdown === 'attorneys' ? (
+                      <div className="attorney-dropdown">
+                        <h4>{item.name}</h4>
+                        <p className="attorney-title">{item.title}</p>
+                        <div className="expertise-tags">
+                          {item.expertise.map((exp, idx) => (
+                            <span key={idx} className="expertise-tag">{exp}</span>
+                          ))}
+                        </div>
+                      </div>
+                    ) : activeDropdown === 'practice' ? (
+                      <div className="practice-dropdown">
+                        <h4>{item.title}</h4>
+                        <p>{item.description}</p>
+                      </div>
+                    ) : (
+                      <span>{item.text}</span>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
@@ -252,35 +374,67 @@ const dropdownContent = {
           >
             <div className="mobile-menu-header">
               <div className="logo">
-                <img src={logo} alt="Moore Barlow" className="logo-image" />
+                <Link to="/" onClick={toggleMobileMenu}>
+                  <img src={logo} alt="Bytyqi & Partners" className="logo-image" />
+                </Link>
               </div>
               <button className="close-menu" onClick={toggleMobileMenu}>×</button>
             </div>
             
             {/* Mobile Contact Info */}
             <div className="mobile-contact-info">
-              <div className="contact-text">Need legal advice?</div>
-              <a href="tel:+1234567890" className="contact-phone">+1 (234) 567-890</a>
+              <div className="contact-text">
+                {language === 'en' && 'Need legal advice?'}
+                {language === 'al' && 'Keni nevojë për këshilla ligjore?'}
+                {language === 'de' && 'Rechtliche Beratung benötigt?'}
+                {language === 'tr' && 'Hukuki danışmanlığa mı ihtiyacınız var?'}
+              </div>
+              <a href="tel:+38344123123" className="contact-phone">+383 (44) 123-123</a>
             </div>
             
             <nav className="mobile-navigation">
               {navItems.map((item) => (
                 <div key={item.key} className="mobile-nav-item">
                   <button 
-                    className={`mobile-nav-link ${mobileDropdown === item.key ? 'active' : ''}`}
-                    onClick={() => toggleMobileDropdown(item.key)}
+                    className={`mobile-nav-link ${mobileDropdown === item.key ? 'active' : ''} ${!item.dropdown ? 'no-dropdown' : ''}`}
+                    onClick={() => {
+                      if (item.dropdown) {
+                        toggleMobileDropdown(item.key);
+                      } else if (item.action) {
+                        item.action();
+                      }
+                    }}
                   >
                     {item.label}
-                    <span className="dropdown-arrow">
-                      {mobileDropdown === item.key ? '▲' : '▼'}
-                    </span>
+                    {item.dropdown && (
+                      <span className="dropdown-arrow">
+                        {mobileDropdown === item.key ? '▲' : '▼'}
+                      </span>
+                    )}
                   </button>
                   
-                  {mobileDropdown === item.key && (
+                  {mobileDropdown === item.key && item.dropdown && (
                     <div className="mobile-dropdown">
                       {dropdownContent[item.key].map((content, index) => (
-                        <div key={index} className="mobile-dropdown-item">
-                          {content}
+                        <div 
+                          key={index} 
+                          className="mobile-dropdown-item"
+                          onClick={content.action}
+                          style={{ cursor: content.action ? 'pointer' : 'default' }}
+                        >
+                          {item.key === 'attorneys' ? (
+                            <div className="mobile-attorney-item">
+                              <strong>{content.name}</strong>
+                              <small>{content.title}</small>
+                            </div>
+                          ) : item.key === 'practice' ? (
+                            <div className="mobile-practice-item">
+                              <strong>{content.title}</strong>
+                              <p>{content.description}</p>
+                            </div>
+                          ) : (
+                            <span>{content.text}</span>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -291,7 +445,12 @@ const dropdownContent = {
             
             {/* Language Switcher for Mobile */}
             <div className="language-switcher-mobile">
-              <div className="language-label">{translations[language].nav.language}:</div>
+              <div className="language-label">
+                {language === 'en' && 'Language:'}
+                {language === 'al' && 'Gjuha:'}
+                {language === 'de' && 'Sprache:'}
+                {language === 'tr' && 'Dil:'}
+              </div>
               <div className="language-buttons">
                 {languages.map((lang) => (
                   <button
@@ -307,34 +466,6 @@ const dropdownContent = {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Hero Section */}
-      {/* <section className="hero">
-        <div className="hero-container">
-          <div className="hero-content">
-            <h1>{translations[language].hero.title}</h1>
-            <p>{translations[language].hero.description}</p>
-            <button className="cta-button">{translations[language].hero.cta1}</button>
-          </div>
-          
-          <motion.div 
-            className="hero-image"
-            initial={{ opacity: 0, scale: 0.8, x: 100 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ 
-              type: "spring",
-              stiffness: 100,
-              damping: 15,
-              duration: 0.5
-            }}
-          >
-            <img 
-              src={hero}
-              alt="Legal Services Illustration" 
-            />
-          </motion.div>
-        </div>
-      </section> */}
     </div>
   );
 };

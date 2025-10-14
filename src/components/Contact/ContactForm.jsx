@@ -35,7 +35,7 @@ const ContactForm = () => {
       submit: "Send Message",
       office: "Our Office",
       address: "5, 5 Garibaldi, Prishtina 10000",
-      hours: "Mon-Fri: 9am-5pm",
+      hours: "Mon-Fri: 08:00-18:00",
       phoneLabel: "Phone:",
       emailLabel: "Email:"
     },
@@ -50,7 +50,7 @@ const ContactForm = () => {
       submit: "Dërgo Mesazhin",
       office: "Zyra Jonë",
       address: "5, 5 Garibaldi, Prishtina 10000",
-      hours: "E Hënë-E Premte: 9:00-17:00",
+      hours: "E Hënë-E Premte: 08:00-18:00",
       phoneLabel: "Telefoni:",
       emailLabel: "Email:"
     },
@@ -65,24 +65,85 @@ const ContactForm = () => {
       submit: "Nachricht Senden",
       office: "Unser Büro",
       address: "5, 5 Garibaldi, Prishtina 10000",
-      hours: "Mo-Fr: 9:00-17:00",
+      hours: "Mo-Fr: 08:00-18:00",
       phoneLabel: "Telefon:",
       emailLabel: "E-Mail:"
+    },
+    tr: {
+      title: "Bize Ulaşın",
+      description: "Danışma için hukuk ekibimizle iletişime geçin",
+      name: "Tam Adı",
+      email: "E-posta Adresi",
+      phone: "Telefon Numarası",
+      subject: "Konu",
+      message: "Mesajınız",
+      submit: "Mesaj Gönder",
+      office: "Ofisimiz",
+      address: "5, 5 Garibaldi, Priştine 10000",
+      hours: "Pzt-Cuma: 08:00-18:00",
+      phoneLabel: "Telefon:",
+      emailLabel: "E-posta:"
     }
   };
 
   const t = translations[language];
 
+  // Function to get subject options based on language
+  const getSubjectOptions = () => {
+    const options = {
+      en: {
+        default: "Select a subject",
+        consultation: "Consultation",
+        corporate: "Corporate Law",
+        litigation: "Litigation",
+        realestate: "Real Estate",
+        family: "Family Law",
+        other: "Other"
+      },
+      al: {
+        default: "Zgjidhni një subjekt",
+        consultation: "Konsultim",
+        corporate: "Ligji i Shoqërive",
+        litigation: "Procesi Gjyqësor",
+        realestate: "Pasuri e Paluajtshme",
+        family: "Ligji i Familjes",
+        other: "Tjetër"
+      },
+      de: {
+        default: "Wählen Sie ein Thema",
+        consultation: "Beratung",
+        corporate: "Unternehmensrecht",
+        litigation: "Prozessrecht",
+        realestate: "Immobilienrecht",
+        family: "Familienrecht",
+        other: "Andere"
+      },
+      tr: {
+        default: "Bir konu seçin",
+        consultation: "Danışma",
+        corporate: "Kurumsal Hukuk",
+        litigation: "Dava Hukuku",
+        realestate: "Gayrimenkul",
+        family: "Aile Hukuku",
+        other: "Diğer"
+      }
+    };
+
+    return options[language] || options.en;
+  };
+
+  const subjectOptions = getSubjectOptions();
+
   return (
     <section id="contact" className="py-10 md:py-16 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-center mb-3 md:mb-4 text-[#1a3e6a]">{t.title}</h2>
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 pt-20">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-center mb-3 md:mb-4 text-[#FFD700]">{t.title}</h2>
         <p className="text-gray-700 text-center max-w-2xl mx-auto mb-8 md:mb-12 text-sm md:text-base px-2">{t.description}</p>
 
         <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
           {/* Contact Form */}
           <div className="lg:w-1/2">
-            <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow border border-[#1a3e6a]/20">
+            <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow border border-[#FFD700]/20">
               {['name', 'email', 'phone'].map((field) => (
                 <div className="mb-3 md:mb-4" key={field}>
                   <label htmlFor={field} className="block text-[#1a3e6a] font-medium mb-1 md:mb-2 text-sm md:text-base">{t[field]}</label>
@@ -108,15 +169,13 @@ const ContactForm = () => {
                   required
                   className="w-full px-3 py-2 md:px-4 md:py-2 border border-[#1a3e6a]/40 rounded focus:outline-none focus:ring-2 focus:ring-[#1a3e6a] text-sm md:text-base"
                 >
-                  <option value="">
-                    {language === 'en' ? 'Select a subject' : language === 'al' ? 'Zgjidhni një subjekt' : 'Wählen Sie ein Thema'}
-                  </option>
-                  <option value="consultation">{language === 'en' ? 'Consultation' : language === 'al' ? 'Konsultim' : 'Beratung'}</option>
-                  <option value="corporate">{language === 'en' ? 'Corporate Law' : language === 'al' ? 'Ligji i Shoqërive' : 'Unternehmensrecht'}</option>
-                  <option value="litigation">{language === 'en' ? 'Litigation' : language === 'al' ? 'Procesi Gjyqësor' : 'Prozessrecht'}</option>
-                  <option value="realestate">{language === 'en' ? 'Real Estate' : language === 'al' ? 'Pasuri e Paluajtshme' : 'Immobilienrecht'}</option>
-                  <option value="family">{language === 'en' ? 'Family Law' : language === 'al' ? 'Ligji i Familjes' : 'Familienrecht'}</option>
-                  <option value="other">{language === 'en' ? 'Other' : language === 'al' ? 'Tjetër' : 'Andere'}</option>
+                  <option value="">{subjectOptions.default}</option>
+                  <option value="consultation">{subjectOptions.consultation}</option>
+                  <option value="corporate">{subjectOptions.corporate}</option>
+                  <option value="litigation">{subjectOptions.litigation}</option>
+                  <option value="realestate">{subjectOptions.realestate}</option>
+                  <option value="family">{subjectOptions.family}</option>
+                  <option value="other">{subjectOptions.other}</option>
                 </select>
               </div>
 
@@ -135,7 +194,7 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#1a3e6a] text-white py-2 md:py-3 px-4 rounded font-medium hover:bg-[#16325b] transition-colors text-sm md:text-base"
+                className="w-full bg-[#FFD700] text-white py-2 md:py-3 px-4 rounded font-medium hover:bg-black transition-colors text-sm md:text-base"
               >
                 {t.submit}
               </button>
@@ -144,12 +203,12 @@ const ContactForm = () => {
 
           {/* Contact Info */}
           <div className="lg:w-1/2 space-y-4 md:space-y-6 mt-6 lg:mt-0">
-            <div className="bg-white p-4 md:p-6 rounded-lg shadow border border-[#1a3e6a]/20">
-              <h3 className="text-lg md:text-xl font-serif font-bold mb-3 md:mb-4 text-[#1a3e6a]">{t.office}</h3>
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow border border-[#FFD700]/20">
+              <h3 className="text-lg md:text-xl font-serif font-bold mb-3 md:mb-4 text-[#FFD700]">{t.office}</h3>
               <p className="text-gray-700 mb-2 text-sm md:text-base">{t.address}</p>
               <p className="text-gray-700 mb-3 md:mb-4 text-sm md:text-base">{t.hours}</p>
-              <p className="text-gray-700 mb-1 text-sm md:text-base"><span className="font-medium">{t.phoneLabel}</span> (+383) 45 123-456</p>
-              <p className="text-gray-700 text-sm md:text-base"><span className="font-medium">{t.emailLabel}</span> info@justicelegal.com</p>
+              <p className="text-gray-700 mb-1 text-sm md:text-base"><span className="font-medium">{t.phoneLabel}</span> (+383) 44 728-118</p>
+              <p className="text-gray-700 text-sm md:text-base"><span className="font-medium">{t.emailLabel}</span> info@bytyqipartners.com</p>
             </div>
 
             <div className="rounded-lg overflow-hidden shadow border border-[#1a3e6a]/20">

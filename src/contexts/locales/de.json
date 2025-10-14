@@ -1,0 +1,264 @@
+{
+  "services": {
+    "title": "Wie können wir Ihnen und Ihrem Unternehmen helfen?",
+    "areas": {
+      "criminal": {
+        "title": "Strafrecht",
+        "description": "Kräftige strafrechtliche Verteidigung in allen Arten von Strafsachen, von geringfügigen Vergehen bis hin zu schweren Verbrechen.",
+        "content": "Unser Team bietet eine kraftvolle strafrechtliche Verteidigung in allen Arten von Strafsachen. Wir vertreten Personen, die sich in Untersuchung befinden oder mit Anklagen konfrontiert sind – von geringfügigen Vergehen bis hin zu schweren Verbrechen – und stellen sicher, dass ihre Rechte in jeder Phase des Verfahrens geschützt werden. Zu den Dienstleistungen gehören Rechtsberatung während polizeilicher Befragungen, Vorbereitung von Verteidigungsstrategien, Vertretung in Gerichtsverfahren und Einlegung von Berufungen."
+      },
+      "civil": {
+        "title": "Zivilrecht und Streitbeilegung",
+        "description": "Vertretung in Streitigkeiten zwischen Privatparteien zum Schutz von Rechten und Interessen.",
+        "content": "In zivilrechtlichen Angelegenheiten vertritt Bytyqi & Partners Mandanten in Streitigkeiten zwischen Privatparteien, um ihre Rechte und Interessen zu schützen. Wir behandeln ein breites Spektrum zivilrechtlicher Fälle, einschließlich Vertragsstreitigkeiten, Eigentumsansprüchen, unerlaubten Handlungen (Schadensersatzansprüchen) und anderen Verpflichtungen. Unsere Anwälte führen gründliche Fallanalysen durch, sammeln Beweise und vertreten Mandanten in Gerichtsverfahren oder durch alternative Streitbeilegungsmethoden."
+      },
+      "family": {
+        "title": "Familienrecht",
+        "description": "Mitfühlende rechtliche Unterstützung bei Scheidung, Sorgerecht und Familienangelegenheiten.",
+        "content": "Wir bieten mitfühlende doch bestimmte rechtliche Unterstützung in allen Bereichen des Familienrechts. Unsere Kanzlei unterstützt Mandanten durch die sehr persönlichen Angelegenheiten der Scheidung (Eheauflösung), einschließlich der Aufteilung von ehelichem Vermögen und Vermögenswerten, und Regelungen für Ehegattenunterhalt, falls zutreffend. Wir konzentrieren uns besonders auf den Schutz des Kindeswohls in familienrechtlichen Streitigkeiten."
+      },
+      "property": {
+        "title": "Immobilien- und Erbrecht",
+        "description": "Fachkundige Unterstützung bei Immobilientransaktionen und Erbschaftsfällen.",
+        "content": "Unsere Anwälte sind erfahren in der Lösung von Immobilienrechtsfragen, von Immobilientransaktionen bis hin zu Rechtsstreitigkeiten. Wir beraten zu unbeweglichen Vermögensfragen wie Verkäufen, Käufen und Vermietungen von Grundstücken oder Gebäuden und stellen sicher, dass Verträge solide und rechtlich konform sind. Darüber hinaus bietet unsere Kanzlei Beratung zu Erbschaftsfällen und behandelt Nachlassverfahren."
+      },
+      "enforcement": {
+        "title": "Vollstreckung von Urteilen",
+        "description": "Sicherstellung, dass Gerichtsurteile und vollstreckbare Titel wirksam umgesetzt werden.",
+        "content": "Bytyqi & Partners bietet Dienstleistungen im Bereich des Vollstreckungsrechts an und stellt sicher, dass Gerichtsurteile und andere vollstreckbare Titel wirksam umgesetzt werden. Nachdem ein Mandant ein Urteil oder einen vollstreckbaren Beschluss erwirkt hat, unterstützen wir bei der Einleitung und Verwaltung von Vollstreckungsverfahren durch die zuständigen Vollstreckungsbeamten."
+      },
+      "administrative": {
+        "title": "Verwaltungsrecht",
+        "description": "Rechtliche Unterstützung im Umgang mit öffentlichen Einrichtungen und Regierungsbehörden.",
+        "content": "Unsere Kanzlei bietet rechtliche Unterstützung im Umgang mit öffentlichen Einrichtungen und Verwaltungsbehörden. Wir unterstützen Mandanten bei der Beschaffung verschiedener Genehmigungen, Lizenzen oder behördlicher Zulassungen, indem wir sie durch Verwaltungsverfahren führen und sicherstellen, dass alle regulatorischen Anforderungen erfüllt werden. Wir vertreten Mandanten auch in Verwaltungsstreitigkeiten."
+      },
+      "commercial": {
+        "title": "Vertrags- und Handelsrecht",
+        "description": "Erstellung, Überprüfung und Verhandlung von zivil- und handelsrechtlichen Verträgen.",
+        "content": "Im Bereich der Verträge und Geschäftstransaktionen bietet Bytyqi & Partners sowohl beratende als auch vertretende Dienstleistungen an. Wir erstellen, überprüfen und verhandeln zivil- und handelsrechtliche Verträge, die auf die Bedürfnisse unserer Mandanten zugeschnitten sind – einschließlich Kaufverträgen, Mietvereinbarungen, Dienstleistungsverträgen, Partnerschaftsvereinbarungen und mehr."
+      },
+      "corporate": {
+        "title": "Unternehmens- und Wirtschaftsberatung",
+        "description": "Vollständiges Angebot an unternehmensrechtlichen Dienstleistungen für Unternehmen und Unternehmer.",
+        "content": "Bytyqi & Partners bedient Unternehmenskunden und Unternehmer mit einem vollständigen Angebot an unternehmensrechtlichen Dienstleistungen. Wir unterstützen bei Unternehmensgründungs- und Registrierungsprozessen, beraten zu geeigneten Geschäftsformen und bearbeiten die gesamte Dokumentation bei der kosovarischen Handelsregisterbehörde."
+      },
+      "labor": {
+        "title": "Arbeits- und Beschäftigungsrecht",
+        "description": "Rechtliche Unterstützung in Beschäftigungsverhältnissen und Arbeitnehmerrechten.",
+        "content": "Unsere Anwaltskanzlei bietet rechtliche Unterstützung in allen Angelegenheiten im Zusammenhang mit Beschäftigungsverhältnissen und Arbeitnehmerrechten. Wir beraten Arbeitgeber und Arbeitnehmer zu ihren Rechten und Pflichten nach den Arbeitsgesetzen des Kosovo. Für Arbeitgeber bieten wir Dienstleistungen wie die Erstellung von Arbeitsverträgen, die Entwicklung von Arbeitsplatzrichtlinien und die Sicherstellung der Compliance mit Vorschriften."
+      },
+      "personalInjury": {
+        "title": "Personenschäden und Unfallansprüche",
+        "description": "Vertretung von Mandanten, die aufgrund von Fahrlässigkeit anderer Schaden erlitten haben.",
+        "content": "Bytyqi & Partners vertritt Mandanten, die aufgrund von Fahrlässigkeit oder Fehlverhalten anderer Schaden erlitten haben. Wir behandeln Fälle des Deliktsrechts wie Verkehrsunfälle, Arbeitsunfälle, medizinische Kunstfehler oder andere Vorfälle, die zu Körperverletzungen oder Sachschäden führen."
+      },
+      "sis": {
+        "title": "Anträge auf Aufhebung von SIS-Sperren",
+        "description": "Expertise bei internationalen Einreisesperren und Schengen-Meldungen.",
+        "content": "Unsere Kanzlei hat eine Nischenexpertise in Angelegenheiten im Zusammenhang mit internationalen Einreisesperren und Meldungen entwickelt, insbesondere den Meldungen des Schengener Informationssystems (SIS), die Personen an der Einreise in Schengen-Länder hindern können. Wir unterstützen bei Versuchen, Reisesperren durch formelle Anträge und Beschwerden aufheben oder reduzieren zu lassen."
+      }
+    }
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "practice": "Rechtsgebiete",
+    "attorneys": "Rechtsanwälte",
+    "testimonials": "Erfahrungsberichte",
+    "contact": "Kontakt"
+  },
+  "peopleSection": {
+    "title": "Unsere Mitarbeiter",
+    "para1": "Für uns geht es darum, ein Gespräch zu beginnen und eine Beziehung zwischen Menschen aufzubauen, denen das Ergebnis am Herzen liegt.",
+    "para2": "Wir sind engagiert, Ihnen zu helfen, das richtige Ergebnis zu finden, das auf Ihre einzigartige Situation zugeschnitten ist.",
+    "button": "Unser Team kennenlernen"
+  },
+  "hero": {
+    "title1": "Schutz.",
+    "title2": "Vertrauen.",
+    "subtitle": "Rechtsdienstleistungen, die Sie persönlich und beruflich begleiten.",
+    "businessBtn": "Geschäftsdienste entdecken",
+    "personalBtn": "Private Dienste entdecken",
+    "contactBtn": "Kontaktieren Sie unser Team heute"
+  },
+  "dropdown": {
+    "personal": {
+      "immigration": "Einwanderung",
+      "personalInjury": "Personenschäden",
+      "property": "Eigentum"
+    },
+    "people": {
+      "caseStudies": "Fallstudien",
+      "blogArticles": "Blog & Artikel",
+      "news": "Nachrichten"
+    },
+    "careers": {
+      "joinTeam": "Unserem Team beitreten",
+      "openings": "Aktuelle Stellenangebote",
+      "training": "Schulung & Entwicklung",
+      "culture": "Unternehmenskultur",
+      "benefits": "Leistungen"
+    },
+    "about": {
+      "story": "Unsere Geschichte",
+      "values": "Unsere Werte",
+      "offices": "Büros",
+      "social": "Soziale Verantwortung"
+    }
+  },
+  "badges": {
+    "bar": "Anwaltskammer des Kosovo",
+    "eu": "EU-Rechtsintegration",
+    "commercial": "Handelsrechtliche Streitigkeiten",
+    "international": "Internationales Recht"
+  },
+  "notableCases": {
+    "title": "Bemerkenswerte Fälle und Rechtskommentare",
+    "cases": [
+      {
+        "title": "Bahnbrechender Femizid-Fall",
+        "description": "Erwirkung lebenslanger Haftstrafe in präzedenzbildendem Femizid-Fall, der starke rechtliche Standards für geschlechtsspezifische Gewalt setzt"
+      },
+      {
+        "title": "Verfassungsdebatte über Laizismus",
+        "description": "Öffentliches Eintreten für echte Laizität, die vollständige staatliche Neutralität gegenüber allen Religionen und maximale Religionsfreiheit bedeutet"
+      },
+      {
+        "title": "Polizeiliches Verhalten und Verantwortung",
+        "description": "Eintreten für polizeiliche Verantwortung und verhältnismäßigen Gewalteinsatz in hochkarätigen Fällen"
+      },
+      {
+        "title": "Kriegsverbrechenjustiz an Fachkammern",
+        "description": "Expertenkommentare und Vertretung bei den Kosovo-Fachkammern in Den Haag"
+      }
+    ]
+  },
+  "why": {
+    "title": "Warum Unsere Kanzlei Wählen",
+    "description": "Mit Jahrzehnten kombinierter Erfahrung bringen unsere Anwälte Expertise, Engagement und eine Erfolgsbilanz in jeden Fall, den wir bearbeiten.",
+    "points": [
+      "Erfahrene Anwälte mit spezialisiertem Wissen",
+      "Persönliche Betreuung für jeden Mandanten",
+      "Bewährte Erfolgsbilanz",
+      "Transparente Kommunikation während Ihres Falls",
+      "Respektierter Ruf in der Rechtsgemeinschaft"
+    ],
+    "technicalExpertise": {
+      "title": "Technische Rechtliche Expertise",
+      "items": [
+        "Rechtsrecherche & -analyse",
+        "Fallstrategieentwicklung",
+        "Dokumentenautomatisierung",
+        "E-Discovery-Management",
+        "Vertragsanalytik",
+        "Compliance-Überwachung"
+      ]
+    },
+    "kosovoExpertise": {
+      "title": "Spezialisierung auf das kosovarische Rechtssystem",
+      "points": [
+        "Verfassung und Rechtsrahmen des Kosovo",
+        "Integration von EULEX-Altfällen",
+        "Expertise im hybriden Rechtssystem",
+        "Umsetzung internationaler Rechtsstandards"
+      ]
+    }
+  },
+  "stats": {
+    "years": "Jahre kombinierte Erfahrung",
+    "cases": "Behandelte Fälle",
+    "success": "Erfolgsquote"
+  },
+  "cta": {
+    "title": "Bereit, Ihren Fall zu Besprechen?",
+    "description": "Kontaktieren Sie uns noch heute für eine vertrauliche Beratung mit einem unserer erfahrenen Anwälte.",
+    "button": "Beratungstermin Vereinbaren"
+  },
+  "footer": {
+    "description": "Wir bieten expertische Rechtsvertretung mit Integrität und Engagement.",
+    "practiceTitle": "Rechtsgebiete",
+    "linksTitle": "Schnelllinks",
+    "contactTitle": "Kontaktieren Sie Uns",
+    "copyright": "© {year} Bytyqi & Partners. Alle Rechte vorbehalten."
+  },
+  "practice": {
+    "title": "Rechtsgebiete",
+    "description": "Wir bieten ein vollständiges Spektrum an Rechtsdienstleistungen in wichtigen Rechtsgebieten.",
+    "learnMore": "Mehr erfahren"
+  },
+  "attorneys": {
+    "asdren": {
+      "name": "Asdren Bytyqi",
+      "title": "Rechtsanwalt, Geschäftsführender Partner",
+      "bio": "Asdren Bytyqi ist ein lizenzierter Anwalt im Kosovo und der geschäftsführende Partner von Bytyqi & Partners. Er erwarb sein Jurastudium mit Auszeichnung und hat eine vielfältige juristische Karriere aufgebaut, die Praxis, öffentliche Advocacy und bürgerschaftliches Engagement kombiniert. Asdrens rechtliche Expertise umfasst Strafverteidigung, Verfassungs- und Verwaltungsrecht sowie Menschenrechte. In seinen Praxisjahren hat er Mandanten in komplexen Strafsachen und zivilrechtlichen Streitigkeiten mit hohem Einsatz vertreten und sich einen Ruf für akribische Vorbereitung und überzeugende gerichtliche Advocacy erworben.",
+      "expertise": [
+        "Strafverteidigung",
+        "Verfassungsrecht",
+        "Verwaltungsrecht",
+        "Menschenrechte",
+        "Öffentliche Advocacy",
+        "Medienrechtlicher Kommentator"
+      ],
+      "achievements": [
+        "Offene rechtliche Stimme zu verfassungsrechtlichen Laizismusfragen",
+        "Öffentliches Eintreten für traditionelle Familienwerte und freie Meinungsäußerung",
+        "Medienkommentator zu komplexen Rechtsverfahren und Auslieferungsfällen",
+        "Aktives Mitglied der Anwaltskammer des Kosovo"
+      ]
+    },
+    "fehmije": {
+      "name": "Fehmije Gashi-Bytyqi",
+      "title": "Rechtsanwältin, Senior Partnerin",
+      "bio": "Fehmije Gashi-Bytyqi ist eine angesehene Anwältin mit über zwei Jahrzehnten Berufserfahrung und einem reichen Hintergrund in Strafverfolgung und Advocacy. Sie schrieb Geschichte im Nachkriegs-Kosovo als erste weibliche Beamtin der Kosovo-Polizei. Während ihrer Tätigkeit als Polizeibeamtin sammelte sie wertvolle Erfahrungen in der Aufrechterhaltung der öffentlichen Sicherheit und der Rechtsstaatlichkeit. Nach ihrem Polizeidienst verfolgte Fehmije eine Karriere im Rechtswesen und ist seit 2006 gewählte Delegierte in der Versammlung der Anwaltskammer des Kosovo.",
+      "expertise": [
+        "Strafrecht",
+        "Familienrecht",
+        "Menschenrechte",
+        "Geschlechtsspezifische Gewalt",
+        "Polizeiliche Verantwortung",
+        "Kriegsverbrechenjustiz"
+      ],
+      "achievements": [
+        "Erste weibliche Beamtin in der Geschichte der Kosovo-Polizei",
+        "Bahnbrechender Femizid-Fall mit lebenslanger Haftstrafe",
+        "Akreditierte Verteidigerin bei den Kosovo-Fachkammern in Den Haag",
+        "Vokale Verfechterin gegen Polizeibrutalität und übermäßige Gewaltanwendung",
+        "Gewählte Delegierte in der Versammlung der Anwaltskammer des Kosovo seit 2006"
+      ]
+    }
+  },
+  "media": {
+    "asdrenHighlights": [
+      "Laizismus- und Religionsfreiheitsdebatte auf Klan Kosova",
+      "Familienwerte und Meinungsfreiheit bei den Parlamentswahlen 2025",
+      "Kommentare zu Auslieferungs- und Rechtsverfahren",
+      "Analyse von Justizsektorreformen"
+    ],
+    "fehmijeHighlights": [
+      "Bahnbrechender Femizid-Fall mit Präzedenzfall lebenslanger Haftstrafe",
+      "Advocacy für polizeiliches Verhalten und Menschenrechte",
+      "Kriegsverbrechenjustiz an Fachkammern",
+      "Verteidigung der Rechtsstaatlichkeit in sensiblen Fällen"
+    ]
+  },
+  "about": {
+  "title": "Über Bytyqi & Partners",
+  "subtitle": "Ihre vertrauenswürdigen Rechtsanwälte im Kosovo",
+  "missionTitle": "Unsere Mission",
+  "missionText": "Bytyqi & Partners ist eine führende Anwaltskanzlei im Kosovo, gegründet auf den Prinzipien Integrität, Exzellenz und unerschütterlichem Engagement für Gerechtigkeit. Unsere Kanzlei vereint jahrzehntelange kombinierte Rechtserfahrung, um umfassende rechtliche Lösungen für persönliche und geschäftliche Angelegenheiten zu bieten.",
+  "expertiseTitle": "Unsere Expertise",
+  "expertiseText": "Mit einer vielfältigen Praxis, die Strafverteidigung, Zivilprozesse, Familienrecht und verfassungsrechtliche Angelegenheiten umfasst, haben wir uns einen Ruf für engagierte Vertretung und erfolgreiche Ergebnisse in komplexen rechtlichen Herausforderungen aufgebaut.",
+  "approachTitle": "Unser Ansatz",
+  "approachText": "Wir glauben an persönliche Aufmerksamkeit und strategische Rechtsberatung, die auf die einzigartigen Umstände jedes Mandanten zugeschnitten ist. Unsere Anwälte kombinieren tiefes Rechtswissen mit praktischer Weisheit, die aus Jahren Gerichtserfahrung gewonnen wurde.",
+  "valuesTitle": "Unsere Werte",
+  "values": [
+    "Integrität und ethische Praxis",
+    "Kundenorientierte Vertretung",
+    "Exzellenz in der Rechtsvertretung",
+    "Engagement für Gerechtigkeit und Menschenrechte",
+    "Respekt für die Rechtsstaatlichkeit"
+  ],
+  "recognitionTitle": "Anerkennung & Wirkung",
+  "recognitionText": "Unsere Anwälte sind nicht nur für ihre juristische Expertise bekannt, sondern auch für ihre Beiträge zum öffentlichen Diskurs und zur sozialen Gerechtigkeit im Kosovo."
+}
+}

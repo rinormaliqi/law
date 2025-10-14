@@ -1,0 +1,264 @@
+{
+  "services": {
+    "title": "Size ve işinize nasıl yardımcı olabiliriz?",
+    "areas": {
+      "criminal": {
+        "title": "Ceza Hukuku",
+        "description": "Küçük suçlardan ciddi suçlara kadar her türlü ceza davasında güçlü hukuki savunma.",
+        "content": "Ekibimiz, her türlü ceza davasında güçlü hukuki savunma sağlar. Küçük suçlardan ciddi suçlara kadar soruşturma altındaki veya suçlamalarla karşı karşıya kalan bireyleri temsil ediyor, haklarının sürecin her aşamasında korunmasını sağlıyoruz. Hizmetler arasında polis sorgulamaları sırasında hukuki danışmanlık, savunma stratejilerinin hazırlanması, mahkeme duruşmalarında temsil ve temyiz başvurularının yapılması yer alır."
+      },
+      "civil": {
+        "title": "Medeni Dava ve Uyuşmazlık Çözümü",
+        "description": "Hakları ve çıkarları korumak için özel taraflar arasındaki anlaşmazlıklarda temsil.",
+        "content": "Medeni hukuk konularında, Bytyqi & Partners müvekkillerinin haklarını ve çıkarlarını korumak için özel taraflar arasındaki anlaşmazlıklarda temsil eder. Sözleşme anlaşmazlıkları, mülk talepleri, haksız fiiller (tazminat talepleri) ve diğer yükümlülükler dahil olmak üzere geniş bir medeni dava yelpazesini ele alıyoruz. Avukatlarımız kapsamlı dava analizleri yapar, kanıt toplar ve müvekkilleri mahkeme süreçlerinde veya alternatif uyuşmazlık çözüm yöntemleri aracılığıyla temsil eder."
+      },
+      "family": {
+        "title": "Aile Hukuku",
+        "description": "Boşanma, çocuk velayeti ve aile meselelerinde şefkatli hukuki destek.",
+        "content": "Aile hukukunun tüm alanlarında şefkatli ama kararlı hukuki destek sunuyoruz. Firmamız, müvekkillerine mal paylaşımı, nafaka, çocuk velayeti ve görüş haklarını içeren boşanmanın kişisel meselelerinde yardımcı olur. Aile anlaşmazlıklarında çocukların en iyi çıkarlarını korumaya özellikle odaklanıyoruz."
+      },
+      "property": {
+        "title": "Mülk ve Miras Hukuku",
+        "description": "Gayrimenkul işlemleri ve miras davalarında uzman yardım.",
+        "content": "Avukatlarımız, gayrimenkul işlemlerinden davalara kadar mülk hukuku sorunlarını çözmede deneyimlidir. Arazi veya binaların satışları, alımları ve kiralanmaları gibi taşınmaz mülk konularında danışmanlık yapıyor, sözleşmelerin sağlam ve yasalara uygun olduğundan emin oluyoruz. Ayrıca firmamız miras davalarında danışmanlık sağlar ve veraset işlemlerini yönetir."
+      },
+      "enforcement": {
+        "title": "Mahkeme Kararlarının İcrası",
+        "description": "Mahkeme kararlarının ve icra edilebilir belgelerin etkili şekilde uygulanmasını sağlama.",
+        "content": "Bytyqi & Partners, icra hukuku alanında hizmetler sunarak mahkeme kararlarının ve diğer icra edilebilir belgelerin etkili şekilde uygulanmasını sağlar. Bir müvekkil karar veya icra edilebilir bir karar aldıktan sonra, yetkili İcra Memurları aracılığıyla icra işlemlerinin başlatılmasına ve yönetilmesine yardımcı oluyoruz."
+      },
+      "administrative": {
+        "title": "İdare Hukuku",
+        "description": "Kamu kurumları ve devlet kurumlarıyla ilişkilerde hukuki destek.",
+        "content": "Firmamız, kamu kurumları ve idari kuruluşlarla ilişkilerde hukuki destek sağlar. Müvekkillerin çeşitli izinler, lisanslar veya devlet onayları almalarına, idari prosedürlerde onlara rehberlik ederek ve tüm düzenleyici gereksinimlerin karşılandığından emin olarak yardımcı oluyoruz. Ayrıca müvekkilleri idari anlaşmazlıklarda temsil ediyoruz."
+      },
+      "commercial": {
+        "title": "Sözleşmeler ve Ticaret Hukuku",
+        "description": "Medeni ve ticari sözleşmelerin hazırlanması, incelenmesi ve müzakere edilmesi.",
+        "content": "Sözleşmeler ve işlemler alanında, Bytyqi & Partners hem danışmanlık hem de temsil hizmetleri sunar. Müvekkillerimizin ihtiyaçlarına göre uyarlanmış - satış sözleşmeleri, kira sözleşmeleri, hizmet sözleşmeleri, ortaklık anlaşmaları ve daha fazlasını içeren - medeni ve ticari sözleşmeler hazırlıyor, inceliyor ve müzakere ediyoruz."
+      },
+      "corporate": {
+        "title": "Kurumsal ve İş Danışmanlığı",
+        "description": "İşletmeler ve girişimciler için tam kapsamlı kurumsal hukuk hizmetleri.",
+        "content": "Bytyqi & Partners, kurumsal müşterilere ve girişimcilere tam kapsamlı kurumsal hukuk hizmetleri sunar. Şirket kuruluşu ve kayıt süreçlerinde yardımcı oluyor, uygun iş formu konusunda danışmanlık yapıyor ve Kosova İş Kayıt Ajansı ile tüm belgelerin işlenmesini sağlıyoruz."
+      },
+      "labor": {
+        "title": "İş ve Çalışma Hukuku",
+        "description": "İstihdam ilişkileri ve işyeri haklarında hukuki yardım.",
+        "content": "Avukatlık firmamız, istihdam ilişkileri ve işyeri haklarıyla ilgili tüm konularda hukuki yardım sağlar. İşverenlere ve çalışanlara Kosova'nın iş kanunlarına göre hakları ve yükümlülükleri konusunda danışmanlık yapıyoruz. İşverenler için iş sözleşmelerinin hazırlanması, işyeri politikalarının geliştirilmesi ve düzenlemelere uyumun sağlanması gibi hizmetler sunuyoruz."
+      },
+      "personalInjury": {
+        "title": "Kişisel Yaralanma ve Kaza Talepleri",
+        "description": "Başkalarının ihmali nedeniyle zarar gören müvekkiller için avukatlık.",
+        "content": "Bytyqi & Partners, başkalarının ihmali veya hatalı davranışları nedeniyle zarar gören müvekkiller için avukatlık yapar. Trafik kazaları, işyeri yaralanmaları, tıbbi malpraktis veya bedensel yaralanma veya maddi hasarla sonuçlanan diğer olaylar gibi haksız fiil hukuku davalarını ele alıyoruz."
+      },
+      "sis": {
+        "title": "SIS Yasağı Kaldırma Talepleri",
+        "description": "Uluslararası seyahat yasakları ve Schengen uyarılarında uzmanlık.",
+        "content": "Firmamız, özellikle bireylerin Schengen bölgesi ülkelerine girmesini engelleyebilen Schengen Bilgi Sistemi (SIS) uyarıları olmak üzere, uluslararası seyahat yasakları ve uyarılarıyla ilgili konularda niş uzmanlık geliştirmiştir. Resmi talepler ve itirazlar yoluyla seyahat yasaklarını kaldırmaya veya azaltmaya yönelik girişimlerde yardımcı oluyoruz."
+      }
+    }
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "practice": "Hukuk Alanları",
+    "attorneys": "Avukatlar",
+    "testimonials": "Müşteri Yorumları",
+    "contact": "İletişim"
+  },
+  "peopleSection": {
+    "title": "Ekibimiz",
+    "para1": "Bizim için her şey, bir konuşma başlatmak ve sonuçla ilgilenen insanlar arasında bir ilişki kurmakla ilgilidir.",
+    "para2": "Benzersiz durumunuza uygun doğru çözümü bulmanıza yardımcı olmaya kendimizi adadık.",
+    "button": "Ekibimizle Tanışın"
+  },
+  "hero": {
+    "title1": "Koruma.",
+    "title2": "Güven.",
+    "subtitle": "Size kişisel ve profesyonel olarak rehberlik eden hukuk hizmetleri.",
+    "businessBtn": "İş Hizmetlerini Keşfedin",
+    "personalBtn": "Kişisel Hizmetleri Keşfedin",
+    "contactBtn": "Ekibimizle Hemen İletişime Geçin"
+  },
+  "dropdown": {
+    "personal": {
+      "immigration": "Göç",
+      "personalInjury": "Kişisel Yaralanma",
+      "property": "Mülk"
+    },
+    "people": {
+      "caseStudies": "Vaka Çalışmaları",
+      "blogArticles": "Blog & Makaleler",
+      "news": "Haberler"
+    },
+    "careers": {
+      "joinTeam": "Ekibimize Katılın",
+      "openings": "Açık Pozisyonlar",
+      "training": "Eğitim & Gelişim",
+      "culture": "Şirket Kültürü",
+      "benefits": "Yan Haklar"
+    },
+    "about": {
+      "story": "Hikayemiz",
+      "values": "Değerlerimiz",
+      "offices": "Ofisler",
+      "social": "Sosyal Sorumluluk"
+    }
+  },
+  "badges": {
+    "bar": "Kosova Barolar Birliği",
+    "eu": "AB Hukuku Entegrasyonu",
+    "commercial": "Ticari Dava",
+    "international": "Uluslararası Hukuk"
+  },
+  "notableCases": {
+    "title": "Önemli Davalar ve Hukuki Yorumlar",
+    "cases": [
+      {
+        "title": "Önemli Kadın Cinayeti Davası",
+        "description": "Cinsiyete dayalı şiddet için güçlü yasal standartlar belirleyen emsal teşkil eden kadın cinayeti davasında müebbet hapis cezası sağlandı"
+      },
+      {
+        "title": "Anayasal Laik Devlet Tartışması",
+        "description": "Tüm inançlara karşı tam devlet tarafsızlığı ve maksimum din özgürlüğü anlamına gelen gerçek laiklik için kamu savunuculuğu"
+      },
+      {
+        "title": "Polis Davranışı Sorumluluğu",
+        "description": "Yüksek profilli davalarda polis sorumluluğu ve orantılı güç kullanımı savunuldu"
+      },
+      {
+        "title": "Uzman Dairelerde Savaş Suçları Adaleti",
+        "description": "Lahey'deki Kosova Uzman Daireleri'nde uzman yorumu ve temsil"
+      }
+    ]
+  },
+  "why": {
+    "title": "Neden Firmamızı Seçmelisiniz?",
+    "description": "Onlarca yıllık birleşik deneyimle, avukatlarımız ele aldığımız her davaya uzmanlık, bağlılık ve bir başarı geçmişi getiriyor.",
+    "points": [
+      "Uzmanlık bilgisine sahip deneyimli avukatlar",
+      "Her müşteriye kişiselleştirilmiş ilgi",
+      "Kanıtlanmış başarılı sonuç geçmişi",
+      "Davanız boyunca şeffaf iletişim",
+      "Hukuk topluluğunda saygın itibar"
+    ],
+    "technicalExpertise": {
+      "title": "Teknik Hukuki Uzmanlık",
+      "items": [
+        "Hukuki Araştırma & Analiz",
+        "Dava Stratejisi Geliştirme",
+        "Belge Otomasyonu",
+        "E-Keşif Yönetimi",
+        "Sözleşme Analitiği",
+        "Uyum İzleme"
+      ]
+    },
+    "kosovoExpertise": {
+      "title": "Kosova Hukuk Sistemi Uzmanlığı",
+      "points": [
+        "Kosova Anayasası ve yasal çerçeve",
+        "EULEX mirası dava entegrasyonu",
+        "Hibrit hukuk sistemi uzmanlığı",
+        "Uluslararası yasal standartların uygulanması"
+      ]
+    }
+  },
+  "stats": {
+    "years": "Yıllık Birleşik Deneyim",
+    "cases": "Ele Alınan Davalar",
+    "success": "Başarı Oranı"
+  },
+  "cta": {
+    "title": "Davanızı Görüşmeye Hazır mısınız?",
+    "description": "Deneyimli avukatlarımızdan biriyle gizli bir danışma için bugün bizimle iletişime geçin.",
+    "button": "Danışma Randevusu Alın"
+  },
+  "footer": {
+    "description": "Dürüstlük ve bağlılıkla uzman hukuki temsil sağlıyoruz.",
+    "practiceTitle": "Hukuk Alanları",
+    "linksTitle": "Hızlı Bağlantılar",
+    "contactTitle": "Bize Ulaşın",
+    "copyright": "© {year} Bytyqi & Partners. Tüm hakları saklıdır."
+  },
+  "practice": {
+    "title": "Hukuk Alanları",
+    "description": "Hukukun temel alanlarında tam kapsamlı hukuk hizmetleri sunuyoruz.",
+    "learnMore": "Daha fazla bilgi"
+  },
+  "attorneys": {
+    "asdren": {
+      "name": "Asdren Bytyqi",
+      "title": "Avukat, Yönetici Ortak",
+      "bio": "Asdren Bytyqi, Kosova'da lisanslı bir avukat ve Bytyqi & Partners'ın yönetici ortağıdır. Hukuk derecesini üstün başarıyla aldı ve uygulama, kamu savunuculuğu ve sivil katılımı birleştiren çeşitli bir hukuk kariyeri oluşturdu. Asdren'in hukuki uzmanlığı ceza savunması, anayasa ve idare hukuku ve insan haklarını kapsar. Pratik yıllarında, karmaşık ceza davalarında ve yüksek riskli medeni davalarda müvekkilleri temsil etmiş, titiz hazırlık ve ikna edici mahkeme savunuculuğu için bir itibar kazanmıştır.",
+      "expertise": [
+        "Ceza Savunması",
+        "Anayasa Hukuku",
+        "İdare Hukuku",
+        "İnsan Hakları",
+        "Kamu Savunuculuğu",
+        "Medya Hukuki Yorumcusu"
+      ],
+      "achievements": [
+        "Anayasal laik devlet konularında açık sözlü hukuki ses",
+        "Geleneksel aile değerleri ve ifade özgürlüğü için kamu savunuculuğu",
+        "Karmaşık hukuki prosedürler ve iade davaları hakkında medya yorumcusu",
+        "Kosova Barolar Birliği aktif üyesi"
+      ]
+    },
+    "fehmije": {
+      "name": "Fehmije Gashi-Bytyqi",
+      "title": "Avukat, Kıdemli Ortak",
+      "bio": "Fehmije Gashi-Bytyqi, iki yıldan fazla profesyonel deneyime ve kolluk kuvvetleri ve savunuculuk alanında zengin bir geçmişe sahip seçkin bir avukattır. Savaş sonrası Kosova'da Kosova Polisi'nin ilk kadın memuru olarak tarih yazdı. Polis memuru olarak görev yaparken, kamu güvenliğini ve hukukun üstünlüğünü korumada paha biçilmez deneyim kazandı. Polis hizmetinden sonra Fehmije hukuk alanında kariyer yaptı ve 2006'dan beri Kosova Barolar Birliği Meclisi'ne seçilmiş delege olarak görev yapmaktadır.",
+      "expertise": [
+        "Ceza Hukuku",
+        "Aile Hukuku",
+        "İnsan Hakları",
+        "Cinsiyete Dayalı Şiddet",
+        "Polis Sorumluluğu",
+        "Savaş Suçları Adaleti"
+      ],
+      "achievements": [
+        "Kosova Polisi tarihindeki ilk kadın memur",
+        "Müebbet hapis cezasıyla sonuçlanan önemli kadın cinayeti davası",
+        "Lahey'deki Kosova Uzman Daireleri'nde akredite savunma avukatı",
+        "Polis şiddeti ve aşırı güç kullanımına karşı sesli savunucu",
+        "2006'dan beri Kosova Barolar Birliği Meclisi'ne seçilmiş delege"
+      ]
+    }
+  },
+  "media": {
+    "asdrenHighlights": [
+      "Klan Kosova'da Laik Devlet ve Din Özgürlükleri tartışması",
+      "2025 parlamento seçimlerinde Aile Değerleri ve İfade Özgürlüğü",
+      "İade ve hukuki prosedürler hakkında yorum",
+      "Adalet sektörü reformları analizi"
+    ],
+    "fehmijeHighlights": [
+      "Müebbet hapis cezası emsali ile önemli kadın cinayeti davası",
+      "Polis davranışı ve insan hakları savunuculuğu",
+      "Uzman Dairelerde savaş suçları adaleti",
+      "Hassas davalarda hukukun üstünlüğünün savunulması"
+    ]
+  },
+  "about": {
+  "title": "Bytyqi & Partners Hakkında",
+  "subtitle": "Kosova'daki Güvenilir Avukatlarınız",
+  "missionTitle": "Misyonumuz",
+  "missionText": "Bytyqi & Partners, dürüstlük, mükemmeliyet ve adalete sarsılmaz bağlılık ilkeleri üzerine kurulmuş, Kosova'nın önde gelen bir hukuk firmasıdır. Firmamız, hem kişisel hem de işle ilgili konular için kapsamlı hukuki çözümler sunmak üzere on yılları aşan birleşik hukuk deneyimini bir araya getirmektedir.",
+  "expertiseTitle": "Uzmanlığımız",
+  "expertiseText": "Ceza savunması, medeni dava, aile hukuku ve anayasal meseleleri kapsayan çeşitli bir uygulama alanıyla, karmaşık hukuki zorluklarda güçlü savunuculuk ve başarılı sonuçlar için bir itibar oluşturduk.",
+  "approachTitle": "Yaklaşımımız",
+  "approachText": "Her müvekkilin benzersiz koşullarına uyarlanmış kişiselleştirilmiş ilgi ve stratejik hukuk danışmanlığına inanıyoruz. Avukatlarımız, derin hukuk bilgisini yılların mahkeme deneyiminden kazanılan pratik bilgelikle birleştirir.",
+  "valuesTitle": "Değerlerimiz",
+  "values": [
+    "Dürüstlük ve etik uygulama",
+    "Müvekkil odaklı temsil",
+    "Hukuk savunuculuğunda mükemmeliyet",
+    "Adalet ve insan haklarına bağlılık",
+    "Hukukun üstünlüğüne saygı"
+  ],
+  "recognitionTitle": "Tanınma & Etki",
+  "recognitionText": "Avukatlarımız sadece hukuki uzmanlıkları için değil, aynı zamanda Kosova'daki kamusal söyleme ve sosyal adalete katkıları için de tanınmaktadır."
+}
+}

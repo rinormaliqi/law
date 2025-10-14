@@ -1,0 +1,262 @@
+{
+  "services": {
+    "title": "How can we help you and your business?",
+    "areas": {
+      "criminal": {
+        "title": "Criminal Law",
+        "description": "Vigorous legal defense in all types of criminal cases, from minor offenses to serious felonies.",
+        "content": "Our team provides vigorous legal defense in all types of criminal cases. We represent individuals under investigation or facing charges – from minor offenses to serious felonies – ensuring that their rights are protected at every stage of the process. Services include legal counsel during police questioning, preparation of defense strategies, representation in court trials, and filing appeals."
+      },
+      "civil": {
+        "title": "Civil Litigation and Dispute Resolution",
+        "description": "Representation in disputes between private parties to protect rights and interests.",
+        "content": "In civil law matters, Bytyqi & Partners represents clients in disputes between private parties to protect their rights and interests. We handle a wide spectrum of civil cases, including contract disputes, property claims, torts (damage compensation claims), and other obligations. Our attorneys conduct thorough case analysis, gather evidence, and advocate on behalf of clients in court proceedings or through alternative dispute resolution methods."
+      },
+      "family": {
+        "title": "Family Law",
+        "description": "Compassionate legal support in divorce, child custody, and family matters.",
+        "content": "We offer compassionate yet assertive legal support in all areas of family law. Our firm assists clients through the deeply personal matters of divorce (marital dissolution), including the division of marital property and assets, and arrangements for spousal support (alimony) when applicable. We are particularly focused on protecting the best interests of children in family disputes."
+      },
+      "property": {
+        "title": "Property and Inheritance Law",
+        "description": "Expert assistance with real estate transactions and inheritance cases.",
+        "content": "Our attorneys are experienced in resolving property law issues, from real estate transactions to litigation. We advise on immovable property matters such as sales, purchases, and leases of land or buildings, ensuring that contracts are sound and legally compliant. Additionally, our firm provides counsel on inheritance cases and handles probate procedures."
+      },
+      "enforcement": {
+        "title": "Enforcement of Judgments",
+        "description": "Ensuring court judgments and executory titles are effectively implemented.",
+        "content": "Bytyqi & Partners offers services in the area of enforcement law, making sure that court judgments and other executory titles are effectively implemented. After a client obtains a judgment or an enforceable decision, we assist in initiating and managing enforcement proceedings through the competent Enforcement Agents."
+      },
+      "administrative": {
+        "title": "Administrative Law",
+        "description": "Legal support in dealings with public institutions and government agencies.",
+        "content": "Our firm provides legal support in dealings with public institutions and administrative bodies. We assist clients in obtaining various permits, licenses, or government approvals by guiding them through administrative procedures and ensuring all regulatory requirements are met. We also represent clients in administrative disputes."
+      },
+      "commercial": {
+        "title": "Contracts and Commercial Law",
+        "description": "Drafting, reviewing, and negotiating civil and commercial contracts.",
+        "content": "In the sphere of contracts and business transactions, Bytyqi & Partners offers both advisory and representational services. We draft, review, and negotiate civil and commercial contracts tailored to our clients' needs – including sales contracts, lease agreements, service contracts, partnership agreements, and more."
+      },
+      "corporate": {
+        "title": "Corporate and Business Advisory",
+        "description": "Full suite of corporate law services for businesses and entrepreneurs.",
+        "content": "Bytyqi & Partners serves corporate clients and entrepreneurs with a full suite of corporate law services. We assist in company formation and registration processes, advising on the appropriate business form and handling all documentation with the Kosovo Business Registration Agency."
+      },
+      "labor": {
+        "title": "Labor and Employment Law",
+        "description": "Legal assistance in employment relationships and workplace rights.",
+        "content": "Our law firm provides legal assistance in all matters related to employment relationships and workplace rights. We advise employers and employees on their rights and obligations under Kosovo's labor laws. For employers, we offer services such as drafting employment contracts, developing workplace policies, and ensuring compliance with regulations."
+      },
+      "personalInjury": {
+        "title": "Personal Injury and Accident Claims",
+        "description": "Advocacy for clients who suffered harm due to negligence of others.",
+        "content": "Bytyqi & Partners advocates for clients who have suffered harm due to the negligence or wrongdoing of others. We handle tort law cases such as traffic accidents, workplace injuries, medical malpractice, or other incidents resulting in bodily injury or property damage."
+      },
+      "sis": {
+        "title": "SIS Ban Removal Requests",
+        "description": "Expertise in international travel bans and Schengen alerts.",
+        "content": "Our firm has developed a niche expertise in matters related to international travel bans and alerts, particularly the Schengen Information System (SIS) alerts that can prevent individuals from entering Schengen zone countries. We assist in attempting to remove or reduce travel bans through formal requests and appeals."
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "practice": "Practice Areas",
+    "attorneys": "Attorneys",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "peopleSection": {
+    "title": "Our People",
+    "para1": "For us, it's all about starting a conversation and building a relationship between people who care about the outcome.",
+    "para2": "We're dedicated in helping you to find the right outcome tailored to your unique situation.",
+    "button": "Meet our team"
+  },
+  "hero": {
+    "title1": "Protection.",
+    "title2": "Trust.",
+    "subtitle": "Legal services guiding you personally and professionally.",
+    "businessBtn": "Explore Business Services",
+    "personalBtn": "Explore Personal Services",
+    "contactBtn": "Contact Our Team Today"
+  },
+  "dropdown": {
+    "personal": {
+      "immigration": "Immigration",
+      "personalInjury": "Personal Injury",
+      "property": "Property"
+    },
+    "people": {
+      "caseStudies": "Case Studies",
+      "blogArticles": "Blog & Articles",
+      "news": "News"
+    },
+    "careers": {
+      "joinTeam": "Join Our Team",
+      "openings": "Current Openings",
+      "training": "Training & Development",
+      "culture": "Company Culture",
+      "benefits": "Benefits"
+    },
+    "about": {
+      "story": "Our Story",
+      "values": "Our Values",
+      "offices": "Offices",
+      "social": "Social Responsibility"
+    }
+  },
+  "badges": {
+    "bar": "Kosovo Bar Association",
+    "eu": "EU Law Integration",
+    "commercial": "Commercial Litigation",
+    "international": "International Law"
+  },
+  "notableCases": {
+    "title": "Notable Cases and Legal Commentary",
+    "cases": [
+      {
+        "title": "Landmark Femicide Case",
+        "description": "Secured life imprisonment in precedent-setting femicide case, establishing strong legal standards for gender-based violence"
+      },
+      {
+        "title": "Constitutional Secular State Debate",
+        "description": "Public advocacy for true secularism meaning complete state neutrality toward all faiths and maximum freedom of religion"
+      },
+      {
+        "title": "Police Conduct Accountability",
+        "description": "Advocated for police accountability and proportional use of force in high-profile cases"
+      },
+      {
+        "title": "War Crimes Justice at Specialist Chambers",
+        "description": "Expert commentary and representation at Kosovo Specialist Chambers in The Hague"
+      }
+    ]
+  },
+  "why": {
+    "title": "Why Choose Our Firm",
+    "description": "With decades of combined experience, our attorneys bring expertise, dedication, and a track record of success to every case we handle.",
+    "points": [
+      "Experienced attorneys with specialized knowledge",
+      "Personalized attention to every client",
+      "Proven track record of successful outcomes",
+      "Transparent communication throughout your case",
+      "Respected reputation in the legal community"
+    ],
+    "technicalExpertise": {
+      "title": "Technical Legal Expertise",
+      "items": [
+        "Legal Research & Analysis",
+        "Case Strategy Development",
+        "Document Automation",
+        "E-Discovery Management",
+        "Contract Analytics",
+        "Compliance Monitoring"
+      ]
+    },
+    "kosovoExpertise": {
+      "title": "Kosovo Legal System Specialization",
+      "points": [
+        "Kosovo Constitution and legal framework",
+        "EULEX legacy case integration",
+        "Hybrid legal system expertise",
+        "International legal standards implementation"
+      ]
+    }
+  },
+  "stats": {
+    "years": "Years of Combined Experience",
+    "cases": "Cases Handled",
+    "success": "Success Rate"
+  },
+  "cta": {
+    "title": "Ready to Discuss Your Case?",
+    "description": "Contact us today for a confidential consultation with one of our experienced attorneys.",
+    "button": "Schedule a Consultation"
+  },
+  "footer": {
+    "description": "Providing expert legal representation with integrity and dedication.",
+    "practiceTitle": "Practice Areas",
+    "linksTitle": "Quick Links",
+    "contactTitle": "Contact Us",
+    "copyright": "© {year} Bytyqi & Partners. All rights reserved."
+  },
+  "practice": {
+    "title": "Practice Areas",
+    "description": "We provide a full range of legal services across key areas of law.",
+    "learnMore": "Learn more"
+  },
+  "attorneys": {
+    "asdren": {
+      "name": "Asdren Bytyqi",
+      "title": "Attorney at Law, Managing Partner",
+      "bio": "Asdren Bytyqi is a licensed attorney in Kosovo and the managing partner of Bytyqi & Partners. He obtained his law degree with honors and has built a diverse legal career combining practice, public advocacy, and civic engagement. Asdren's legal expertise spans criminal defense, constitutional and administrative law, and human rights. In his years of practice, he has represented clients in complex criminal cases and high-stakes civil litigations, earning a reputation for meticulous preparation and persuasive courtroom advocacy.",      "expertise": [
+        "Criminal Defense",
+        "Constitutional Law",
+        "Administrative Law",
+        "Human Rights",
+        "Public Advocacy",
+        "Media Legal Commentary"
+      ],
+      "achievements": [
+        "Outspoken legal voice on constitutional secular state issues",
+        "Public advocacy for traditional family values and free speech",
+        "Media commentator on complex legal procedures and extradition cases",
+        "Active member of Kosovo Bar Association"
+      ]
+    },
+    "fehmije": {
+      "name": "Fehmije Gashi-Bytyqi",
+      "title": "Attorney at Law, Senior Partner",
+      "bio": "Fehmije Gashi-Bytyqi is a distinguished lawyer with over two decades of professional experience and a rich background in law enforcement and advocacy. She made history in post-war Kosovo as the first female officer in the Kosovo Police. At Bytyqi & Partners, Fehmije serves as a senior partner, specializing in criminal law, family law, and human rights. Her dual experience in law enforcement and courtroom litigation gives her a unique and holistic perspective in handling cases.",      "expertise": [
+        "Criminal Law",
+        "Family Law",
+        "Human Rights",
+        "Gender-Based Violence",
+        "Police Accountability",
+        "War Crimes Justice"
+      ],
+      "achievements": [
+        "First female officer in Kosovo Police history",
+        "Landmark femicide case resulting in life imprisonment",
+        "Accredited defense counsel at Kosovo Specialist Chambers in The Hague",
+        "Vocal advocate against police brutality and excessive force",
+        "Elected delegate to Kosovo Bar Association Assembly since 2006"
+      ]
+    }
+  },
+  "media": {
+    "asdrenHighlights": [
+      "Secular State & Religious Freedoms debate on Klan Kosova",
+      "Family Values & Free Speech in 2025 parliamentary elections",
+      "Extradition and legal procedures commentary",
+      "Justice sector reforms analysis"
+    ],
+    "fehmijeHighlights": [
+      "Landmark femicide case with life sentence precedent",
+      "Police conduct and human rights advocacy",
+      "War crimes justice at Specialist Chambers",
+      "Defense of rule of law in sensitive cases"
+    ]
+  },
+  "about": {
+  "title": "About Bytyqi & Partners",
+  "subtitle": "Your Trusted Legal Advocates in Kosovo",
+  "missionTitle": "Our Mission",
+  "missionText": "Bytyqi & Partners is a premier law firm in Kosovo founded on the principles of integrity, excellence, and unwavering commitment to justice. Our firm brings together decades of combined legal experience to provide comprehensive legal solutions for both personal and business matters.",
+  "expertiseTitle": "Our Expertise",
+  "expertiseText": "With a diverse practice spanning criminal defense, civil litigation, family law, and constitutional matters, we have built a reputation for vigorous advocacy and successful outcomes in complex legal challenges.",
+  "approachTitle": "Our Approach",
+  "approachText": "We believe in personalized attention and strategic legal counsel tailored to each client's unique circumstances. Our attorneys combine deep legal knowledge with practical wisdom gained from years of courtroom experience.",
+  "valuesTitle": "Our Values",
+  "values": [
+    "Integrity and ethical practice",
+    "Client-centered representation",
+    "Excellence in legal advocacy",
+    "Commitment to justice and human rights",
+    "Respect for the rule of law"
+  ],
+  "recognitionTitle": "Recognition & Impact",
+  "recognitionText": "Our attorneys are recognized not only for their legal expertise but also for their contributions to public discourse and social justice in Kosovo."
+}
+}

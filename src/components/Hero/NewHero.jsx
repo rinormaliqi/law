@@ -3,10 +3,34 @@ import { motion } from 'framer-motion';
 import './hero.css';
 import hero from "../../assets/hero2.png";
 import { translations, useLanguage } from '../../contexts/language';
+import { useNavigate } from 'react-router-dom';
 
 export const NewHero = () => {
   const { language } = useLanguage();
   const t = translations[language].hero;
+  const navigate = useNavigate();
+
+  const handlePracticeAreaNavigation = () => {
+    if (window.location.pathname === '/') {
+      const servicesSection = document.getElementById('services');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/#services');
+    }
+  };
+
+  const handleContactAreaNavigation = () => {
+    if (window.location.pathname === '/') {
+      const servicesSection = document.getElementById('contact');
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/#contact');
+    }
+  };
 
   return (
     <section className="hero">
@@ -19,9 +43,9 @@ export const NewHero = () => {
           <p>{t.subtitle}</p>
 
           <div className="hero-buttons">
-            <button className="btn-white">{t.businessBtn}</button>
-            <button className="btn-white">{t.personalBtn}</button>
-            <button className="btn-orange">{t.contactBtn}</button>
+            <button onClick={handlePracticeAreaNavigation} className="btn-white">{t.businessBtn}</button>
+            <button onClick={handlePracticeAreaNavigation} className="btn-white">{t.personalBtn}</button>
+            <button onClick={handleContactAreaNavigation} className="btn-orange">{t.contactBtn}</button>
           </div>
         </div>
 
