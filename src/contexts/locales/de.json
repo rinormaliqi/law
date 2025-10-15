@@ -261,5 +261,54 @@
   ],
   "recognitionTitle": "Anerkennung & Wirkung",
   "recognitionText": "Unsere Anwälte sind nicht nur für ihre juristische Expertise bekannt, sondern auch für ihre Beiträge zum öffentlichen Diskurs und zur sozialen Gerechtigkeit im Kosovo."
-}
+},
+"careers": {
+    "title": "Werden Sie Teil unseres Rechtsteams",
+    "subtitle": "Gestalten Sie Ihre Karriere bei einer der führenden Kanzleien",
+    "whyJoin": {
+      "title": "Warum unserer Kanzlei beitreten?",
+      "benefits": [
+        {
+          "title": "Berufliches Wachstum",
+          "description": "Kontinuierliche Lernmöglichkeiten und Karriereentwicklung"
+        },
+        {
+          "title": "Wettbewerbsfähige Vergütung",
+          "description": "Attraktive Gehaltspakete und Zusatzleistungen"
+        },
+        {
+          "title": "Work-Life-Balance",
+          "description": "Flexible Arbeitszeiten und unterstützendes Arbeitsumfeld"
+        },
+        {
+          "title": "Prestigeträchtige Fälle",
+          "description": "Mitarbeit an hochkarätigen und anspruchsvollen Rechtsfällen"
+        }
+      ]
+    },
+    "formTitle": "Bewerbungsformular",
+    "form": {
+      "fullName": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "position": "Gewünschte Position",
+      "experience": "Jahre der Erfahrung",
+      "coverLetter": "Anschreiben",
+      "cv": "Lebenslauf hochladen",
+      "selectPosition": "Position auswählen",
+      "selectExperience": "Erfahrungsniveau auswählen",
+      "years": "Jahre",
+      "coverLetterPlaceholder": "Erzählen Sie uns, warum Sie unserem Unternehmen beitreten möchten...",
+      "fileTypes": "Akzeptierte Formate: PDF, DOC, DOCX (Max. 5MB)",
+      "submit": "Bewerbung absenden"
+    },
+    "positions": {
+      "lawyer": "Anwalt",
+      "paralegal": "Rechtsanwaltsfachangestellter",
+      "legalAssistant": "Juristischer Assistent",
+      "intern": "Juristischer Praktikant",
+      "administrative": "Verwaltungspersonal"
+    },
+    "submissionSuccess": "Danke! Ihre Bewerbung wurde erfolgreich eingereicht."
+  }
 }

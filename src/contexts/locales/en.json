@@ -259,5 +259,54 @@
   ],
   "recognitionTitle": "Recognition & Impact",
   "recognitionText": "Our attorneys are recognized not only for their legal expertise but also for their contributions to public discourse and social justice in Kosovo."
-}
+},
+  "careers": {
+    "title": "Join Our Legal Team",
+    "subtitle": "Build your career with us",
+    "whyJoin": {
+      "title": "Why Join Our Firm?",
+      "benefits": [
+        {
+          "title": "Professional Growth",
+          "description": "Continuous learning opportunities and career advancement"
+        },
+        {
+          "title": "Competitive Compensation",
+          "description": "Attractive salary packages and benefits"
+        },
+        {
+          "title": "Work-Life Balance",
+          "description": "Flexible working hours and supportive environment"
+        },
+        {
+          "title": "Prestigious Cases",
+          "description": "Work on high-profile and challenging legal cases"
+        }
+      ]
+    },
+    "formTitle": "Application Form",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "position": "Desired Position",
+      "experience": "Years of Experience",
+      "coverLetter": "Cover Letter",
+      "cv": "Upload CV",
+      "selectPosition": "Select a position",
+      "selectExperience": "Select experience level",
+      "years": "years",
+      "coverLetterPlaceholder": "Tell us why you're interested in joining our firm...",
+      "fileTypes": "Accepted formats: PDF, DOC, DOCX (Max 5MB)",
+      "submit": "Submit Application"
+    },
+    "positions": {
+      "lawyer": "Lawyer",
+      "paralegal": "Paralegal",
+      "legalAssistant": "Legal Assistant",
+      "intern": "Legal Intern",
+      "administrative": "Administrative Staff"
+    },
+    "submissionSuccess": "Thank you! Your application has been submitted successfully."
+  }
 }

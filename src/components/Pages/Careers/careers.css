@@ -1,0 +1,236 @@
+/* Careers Page Styles */
+.careers {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+}
+
+.careers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Careers Hero */
+.careers-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 3rem 0;
+}
+
+.careers-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.careers-hero p {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Careers Content */
+.careers-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Why Join Us Section */
+.why-join-us h2 {
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.benefits-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-left: 4px solid #FFD700;
+}
+
+.benefit-icon {
+  background: #FFD700;
+  color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.benefit-card h3 {
+  color: black;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.benefit-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Application Form */
+.application-form-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 2rem;
+}
+
+.application-form h2 {
+  color: black;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: black;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #FFD700;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group small {
+  color: #666;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%;
+  background: #FFD700;
+  color: black;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background: #e6c200;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .careers-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .application-form-container {
+    position: static;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .careers {
+    padding: 2rem 1rem;
+  }
+  
+  .application-form-container {
+    padding: 1.5rem;
+  }
+  
+  .benefit-card {
+    padding: 1rem;
+  }
+}
+
+/* Large monitor styles */
+@media (min-width: 2000px) {
+  .careers-container {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 2500px) {
+  .careers-container {
+    max-width: 2000px;
+  }
+  
+  .careers-content {
+    gap: 6rem;
+  }
+}
+
+@media (min-width: 3000px) {
+  .careers-container {
+    max-width: 2400px;
+  }
+  
+  .careers-hero {
+    margin-bottom: 6rem;
+  }
+  
+  .benefits-grid {
+    gap: 2rem;
+  }
+  
+  .benefit-card {
+    padding: 2rem;
+  }
+}

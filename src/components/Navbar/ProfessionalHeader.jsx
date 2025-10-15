@@ -87,7 +87,11 @@ const Header = () => {
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
   };
-
+   const handleCareersNavigation = () => {
+    navigate('/careers');
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
   const handleContactNavigation = () => {
     navigate('/contact');
     setIsMobileMenuOpen(false);
@@ -234,7 +238,7 @@ const Header = () => {
       },
       {
         text: translations[language].dropdown.careers.joinTeam,
-        action: handleAboutNavigation
+        action: handleCareersNavigation
       },
       {
         text: translations[language].dropdown.people.news,

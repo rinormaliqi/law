@@ -260,5 +260,54 @@
   ],
   "recognitionTitle": "Njohja & Ndikimi",
   "recognitionText": "Avokatët tanë njihen jo vetëm për ekspertizën e tyre juridike, por edhe për kontributet e tyre në diskursin publik dhe drejtësinë sociale në Kosovë."
-}
+},
+  "careers": {
+    "title": "Bashkohu me Ekipin Tonë Ligjor",
+    "subtitle": "Ndërto karrierën tënde me ne",
+    "whyJoin": {
+      "title": "Pse t’i bashkoheni firmës sonë?",
+      "benefits": [
+        {
+          "title": "Zhvillim Profesional",
+          "description": "Mundësi të vazhdueshme trajnimi dhe avancim në karrierë"
+        },
+        {
+          "title": "Kompensim Konkurrues",
+          "description": "Paketë pagese dhe përfitime atraktive"
+        },
+        {
+          "title": "Balancë Punë-Jetë",
+          "description": "Orar fleksibël pune dhe ambient mbështetës"
+        },
+        {
+          "title": "Raste Prestigjioze",
+          "description": "Punë në çështje ligjore me profil të lartë dhe sfiduese"
+        }
+      ]
+    },
+    "formTitle": "Formulari i Aplikimit",
+    "form": {
+      "fullName": "Emri dhe Mbiemri",
+      "email": "Adresa Email",
+      "phone": "Numri i Telefonit",
+      "position": "Pozicioni i dëshiruar",
+      "experience": "Vitet e përvojës",
+      "coverLetter": "Letër Motivimi",
+      "cv": "Ngarko CV",
+      "selectPosition": "Zgjidh një pozicion",
+      "selectExperience": "Zgjidh nivelin e përvojës",
+      "years": "vite",
+      "coverLetterPlaceholder": "Tregoni pse jeni të interesuar të bashkoheni me firmën tonë...",
+      "fileTypes": "Formatet e pranuara: PDF, DOC, DOCX (Maksimumi 5MB)",
+      "submit": "Dërgo Aplikimin"
+    },
+    "positions": {
+      "lawyer": "Avokat",
+      "paralegal": "Paraligjor",
+      "legalAssistant": "Asistent Ligjor",
+      "intern": "Praktikant Ligjor",
+      "administrative": "Staf Administrativ"
+    },
+    "submissionSuccess": "Faleminderit! Aplikimi juaj u dërgua me sukses."
+  }
 }

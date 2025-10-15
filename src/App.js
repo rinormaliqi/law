@@ -15,6 +15,7 @@ import NotableCasesSection from "./components/LatestNewsSection/LatestNewsSectio
 import TermsOfService from "./components/Pages/TermsOfService";
 import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
 import Disclaimer from "./components/Pages/Disclaimer";
+import { Careers } from "./components/Pages/Careers/CareersPage";
 function App() {
   return (
     <LanguageProvider>
@@ -34,6 +35,7 @@ function App() {
   <Route path="/terms" element={< TermsOfService/>} />
     <Route path="/privacy" element={< PrivacyPolicy/>} />
   <Route path="/disclaimer" element={< Disclaimer/>} />
+    <Route path="/careers" element={< Careers/>} />
 
             </Routes>
           </main>

@@ -261,5 +261,54 @@
   ],
   "recognitionTitle": "Tanınma & Etki",
   "recognitionText": "Avukatlarımız sadece hukuki uzmanlıkları için değil, aynı zamanda Kosova'daki kamusal söyleme ve sosyal adalete katkıları için de tanınmaktadır."
-}
+},
+  "careers": {
+    "title": "Hukuk Ekibimize Katılın",
+    "subtitle": "Önde gelen hukuk firmalarından birinde kariyerinizi inşa edin",
+    "whyJoin": {
+      "title": "Neden Firmamıza Katılmalısınız?",
+      "benefits": [
+        {
+          "title": "Profesyonel Gelişim",
+          "description": "Sürekli öğrenme fırsatları ve kariyer ilerlemesi"
+        },
+        {
+          "title": "Rekabetçi Ücret",
+          "description": "Cazip maaş paketleri ve yan haklar"
+        },
+        {
+          "title": "İş-Yaşam Dengesi",
+          "description": "Esnek çalışma saatleri ve destekleyici ortam"
+        },
+        {
+          "title": "Prestijli Davalar",
+          "description": "Yüksek profilli ve zorlu hukuki davalarda çalışma fırsatı"
+        }
+      ]
+    },
+    "formTitle": "Başvuru Formu",
+    "form": {
+      "fullName": "Ad Soyad",
+      "email": "E-posta Adresi",
+      "phone": "Telefon Numarası",
+      "position": "İstenen Pozisyon",
+      "experience": "Deneyim Yılı",
+      "coverLetter": "Niyet Mektubu",
+      "cv": "CV Yükle",
+      "selectPosition": "Pozisyon seçin",
+      "selectExperience": "Deneyim seviyesini seçin",
+      "years": "yıl",
+      "coverLetterPlaceholder": "Firmamıza neden katılmak istediğinizi anlatın...",
+      "fileTypes": "Kabul edilen formatlar: PDF, DOC, DOCX (Maksimum 5MB)",
+      "submit": "Başvuruyu Gönder"
+    },
+    "positions": {
+      "lawyer": "Avukat",
+      "paralegal": "Hukuk Asistanı",
+      "legalAssistant": "Hukuk Asistanı",
+      "intern": "Hukuk Stajyeri",
+      "administrative": "İdari Personel"
+    },
+    "submissionSuccess": "Teşekkürler! Başvurunuz başarıyla gönderildi."
+  }
 }

@@ -1,14 +1,18 @@
 import React from "react";
 import { useTranslation } from "../contexts/language";
 import { Scale, Users, Target, Award, Shield, BookOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const AboutUsSection = () => {
   const { t, language } = useTranslation();
-  
+    const navigate = useNavigate();
+
   const aboutTexts = t('about') || {};
   const stats = t('stats') || {};
 
-  // Stats data with fallbacks
+    const handleNewsNavigation = () => {
+    navigate('/news');
+  };
   const statsData = [
     {
       icon: <Scale className="w-8 h-8" />,
@@ -138,7 +142,7 @@ export const AboutUsSection = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {t('notableCases.cases') && t('notableCases.cases').slice(0, 2).map((caseItem, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-sm">
+              <div onClick={handleNewsNavigation} key={index} className="bg-white rounded-lg p-6 shadow-sm cursor-pointer">
                 <h4 className="font-semibold text-gray-900 mb-2">{caseItem.title}</h4>
                 <p className="text-gray-700 text-sm">{caseItem.description}</p>
               </div>
