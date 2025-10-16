@@ -102,12 +102,17 @@ export const AttorneyBiography = () => {
 </h3>
                 <div className="flex items-center space-x-2 text-gray-700">
                   <Mail className="w-5 h-5 text-[#FFD700]" />
-                  <span>{attorney.contact.email}</span>
+                  <span>info@bytyqipartners.com</span>
                 </div>
-                <div className="flex items-center space-x-2 text-gray-700">
-                  <Phone className="w-5 h-5 text-[#FFD700]" />
-                  <span>{attorney.contact.phone}</span>
-                </div>
+          <div className="flex items-center space-x-2 text-gray-700">
+  <Phone className="w-5 h-5 text-[#FFD700]" />
+  <span>
+    {attorneyId === "asdren-bytyqi" 
+      ? " +383 44 728 118 " // phone for Asdren
+      : " +383 44 345 777 " // phone for Fehmije
+    }
+  </span>
+</div>
               </div>
 
               {/* Specialties */}
