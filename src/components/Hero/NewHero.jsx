@@ -37,14 +37,14 @@ export const NewHero = () => {
       <div className="hero-container">
         <div className="hero-content">
           <h1>
-            <span>{t.title1}</span>
+            <span className="highlight">{t.title1}</span>
             <span className="highlight">{t.title2}</span>
           </h1>
           <p>{t.subtitle}</p>
 
           <div className="hero-buttons">
-            <button onClick={handlePracticeAreaNavigation} className="btn-white">{t.businessBtn}</button>
-            <button onClick={handlePracticeAreaNavigation} className="btn-white">{t.personalBtn}</button>
+            <button onClick={handlePracticeAreaNavigation} className="btn-orange">{t.businessBtn}</button>
+            <button onClick={handlePracticeAreaNavigation} className="btn-orange">{t.personalBtn}</button>
             <button onClick={handleContactAreaNavigation} className="btn-orange">{t.contactBtn}</button>
           </div>
         </div>
