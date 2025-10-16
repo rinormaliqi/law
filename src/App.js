@@ -11,11 +11,12 @@ import { AttorneyBiography } from "./components/AttorneysSection/AttorneyBiograp
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { AttorneysSection } from "./components/AttorneysSection/AttorneysSection";
 import ContactForm from "./components/Contact/ContactForm";
-import NotableCasesSection from "./components/LatestNewsSection/LatestNewsSection";
 import TermsOfService from "./components/Pages/TermsOfService";
 import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
 import Disclaimer from "./components/Pages/Disclaimer";
 import { Careers } from "./components/Pages/Careers/CareersPage";
+import CaseDetailPage from "./components/LatestNewsSection/NewsDetail";
+import NotableCasesSection from "./components/LatestNewsSection/LatestNewsSection";
 function App() {
   return (
     <LanguageProvider>
@@ -32,6 +33,8 @@ function App() {
               <Route path="/practice-areas/:areaKey" element={<PracticeAreaDetail />} />
               <Route path="/attorneys/:attorneyId" element={<AttorneyBiography />} />
                             <Route path="/news" element={< NotableCasesSection/>} />
+              <Route path="/news/:caseSlug" element={<CaseDetailPage />} />
+
   <Route path="/terms" element={< TermsOfService/>} />
     <Route path="/privacy" element={< PrivacyPolicy/>} />
   <Route path="/disclaimer" element={< Disclaimer/>} />
