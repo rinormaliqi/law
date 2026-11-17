@@ -1,32 +1,191 @@
-/* src/index.css or src/App.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.squares-canvas {
-  width: 100%;
-  height: 100%;
-  border: none;
-  display: block;
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --header-height: 84px;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --header-height: 68px;
+    }
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Prevent entrance animations from causing horizontal scroll on mobile.
+     `clip` (unlike `hidden`) keeps position: sticky working. */
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    @apply bg-white font-sans text-ink antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight text-ink;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    @apply bg-brand text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 2px;
+  }
+
+  /* Keep anchored sections clear of the fixed header */
+  [id] {
+    scroll-margin-top: calc(var(--header-height) + 16px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
+
+/* ------------------------------------------------------------------ */
+/* Shared building blocks (used across sections and pages)            */
+/* ------------------------------------------------------------------ */
+@layer components {
+  /* Layout */
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  /* First section of an inner page: clears the fixed header */
+  .page-top {
+    padding-top: calc(var(--header-height) + 3rem);
+  }
+
+  @media (min-width: 768px) {
+    .page-top {
+      padding-top: calc(var(--header-height) + 4.5rem);
+    }
+  }
+
+  /* Section headings */
+  .section-header {
+    @apply mx-auto mb-12 max-w-3xl text-center md:mb-16;
+  }
+
+  .section-eyebrow {
+    @apply mb-3 inline-block text-xs font-semibold uppercase tracking-[0.18em] text-brand-dark;
+  }
+
+  .section-title {
+    @apply text-3xl font-extrabold leading-tight sm:text-4xl md:text-[2.75rem];
+  }
+
+  .section-divider {
+    @apply mx-auto mt-5 h-1 w-16 rounded-full bg-brand;
+  }
+
+  .section-subtitle {
+    @apply mt-5 text-base leading-relaxed text-gray-600 md:text-lg;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-all duration-200 ease-out md:text-[0.95rem];
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink;
+    @apply disabled:cursor-wait disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply bg-brand text-ink shadow-sm hover:bg-brand-hover hover:shadow-md active:translate-y-px;
+  }
+
+  .btn-dark {
+    @apply bg-ink text-white shadow-sm hover:bg-ink-soft hover:shadow-md active:translate-y-px;
+  }
+
+  .btn-outline {
+    @apply border-2 border-ink/15 bg-white text-ink hover:border-ink hover:bg-white;
+  }
+
+  .btn-outline-dark {
+    @apply border-2 border-ink text-ink hover:bg-ink hover:text-white;
+  }
+
+  /* Text link with arrow, readable on white */
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-ink underline decoration-brand decoration-2 underline-offset-4 transition-colors hover:decoration-ink;
+  }
+
+  /* Cards */
+  .card {
+    @apply rounded-2xl border border-gray-100 bg-white shadow-card;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-card-hover;
+  }
+
+  /* Badges / pills */
+  .pill {
+    @apply inline-flex items-center rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold text-ink;
+  }
+
+  /* Forms */
+  .form-label {
+    @apply mb-1.5 block text-sm font-semibold text-ink;
+  }
+
+  .form-input {
+    @apply block w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-[0.95rem] text-ink placeholder:text-gray-400;
+    @apply transition-colors duration-150 focus:border-ink focus:outline-none focus:ring-2 focus:ring-brand/60;
+  }
+
+  .form-status {
+    @apply mt-4 rounded-lg border px-4 py-3 text-sm leading-relaxed;
+  }
+
+  .form-status-success {
+    @apply border-green-200 bg-green-50 text-green-800;
+  }
+
+  .form-status-error {
+    @apply border-red-200 bg-red-50 text-red-800;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* App shell                                                           */
+/* ------------------------------------------------------------------ */
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 main {
   flex: 1;
-}
-/* Prevent entrance animations from causing horizontal scroll on mobile.
-   `clip` (unlike `hidden`) keeps position: sticky working. */
-html,
-body {
-  overflow-x: clip;
-}
-
-/* Keep anchored sections clear of the fixed header */
-#contact,
-#services,
-#attorneys {
-  scroll-margin-top: 80px;
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/language';
+import { MapPin, Clock, Phone, Mail, Send } from 'lucide-react';
+import { Reveal } from '../Reveal';
 
 const EMPTY_FORM = {
   name: '',
@@ -10,7 +12,7 @@ const EMPTY_FORM = {
   company: '' // honeypot, hidden from real visitors
 };
 
-const ContactForm = () => {
+const ContactForm = ({ standalone = false }) => {
   const { language } = useLanguage();
   const [formData, setFormData] = useState(EMPTY_FORM);
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
@@ -165,113 +167,146 @@ const ContactForm = () => {
 
   const subjectOptions = getSubjectOptions();
 
-  return (
-    <section id="contact" className="py-10 md:py-16 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 pt-20">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-center mb-3 md:mb-4 text-[#FFD700]">{t.title}</h2>
-        <p className="text-gray-700 text-center max-w-2xl mx-auto mb-8 md:mb-12 text-sm md:text-base px-2">{t.description}</p>
+  const Heading = standalone ? 'h1' : 'h2';
+  const fieldTypes = { name: 'text', email: 'email', phone: 'tel' };
+  const autoCompletes = { name: 'name', email: 'email', phone: 'tel' };
 
-        <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
-          {/* Contact Form */}
-          <div className="lg:w-1/2">
-            <form onSubmit={handleSubmit} className="relative bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow border border-[#FFD700]/20">
+  const infoRows = [
+    { icon: MapPin, content: t.address },
+    { icon: Clock, content: t.hours },
+    {
+      icon: Phone,
+      content: <a href="tel:+38344728118" className="transition-colors hover:text-brand-dark">+383 (44) 728-118</a>,
+    },
+    {
+      icon: Mail,
+      content: (
+        <a href="mailto:Asdren.bytyqi91@gmail.com" className="break-all transition-colors hover:text-brand-dark">
+          Asdren.bytyqi91@gmail.com
+        </a>
+      ),
+    },
+  ];
+
+  return (
+    <section id="contact" className={`section bg-white ${standalone ? 'page-top' : ''}`}>
+      <div className="container-page">
+        <Reveal className="section-header">
+          <Heading className="section-title">{t.title}</Heading>
+          <div className="section-divider" />
+          <p className="section-subtitle">{t.description}</p>
+        </Reveal>
+
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
+          {/* Contact form */}
+          <Reveal className="lg:col-span-7">
+            <form onSubmit={handleSubmit} className="card relative p-6 sm:p-8">
               {/* Honeypot field for bots – hidden from people and screen readers */}
               <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}>
                 <label htmlFor="company">Company</label>
                 <input type="text" id="company" name="company" tabIndex={-1} autoComplete="off" value={formData.company} onChange={handleChange} />
               </div>
 
-              {['name', 'email', 'phone'].map((field) => (
-                <div className="mb-3 md:mb-4" key={field}>
-                  <label htmlFor={field} className="block text-[#1a3e6a] font-medium mb-1 md:mb-2 text-sm md:text-base">{t[field]}</label>
-                  <input
-                    type={field === 'email' ? 'email' : field === 'phone' ? 'tel' : 'text'}
-                    id={field}
-                    name={field}
-                    value={formData[field]}
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                {['name', 'email', 'phone'].map((field) => (
+                  <div key={field} className={field === 'name' ? 'sm:col-span-2' : ''}>
+                    <label htmlFor={field} className="form-label">
+                      {t[field]}
+                      {field !== 'phone' && <span className="text-brand-dark"> *</span>}
+                    </label>
+                    <input
+                      type={fieldTypes[field]}
+                      id={field}
+                      name={field}
+                      value={formData[field]}
+                      onChange={handleChange}
+                      required={field !== 'phone'}
+                      autoComplete={autoCompletes[field]}
+                      className="form-input"
+                    />
+                  </div>
+                ))}
+
+                <div className="sm:col-span-2">
+                  <label htmlFor="subject" className="form-label">
+                    {t.subject}<span className="text-brand-dark"> *</span>
+                  </label>
+                  <select
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
-                    required={field !== 'phone'}
-                    className="w-full px-3 py-2 md:px-4 md:py-2 border border-[#1a3e6a]/40 rounded focus:outline-none focus:ring-2 focus:ring-[#1a3e6a] text-sm md:text-base"
-                  />
+                    required
+                    className="form-input"
+                  >
+                    <option value="">{subjectOptions.default}</option>
+                    <option value="consultation">{subjectOptions.consultation}</option>
+                    <option value="corporate">{subjectOptions.corporate}</option>
+                    <option value="litigation">{subjectOptions.litigation}</option>
+                    <option value="realestate">{subjectOptions.realestate}</option>
+                    <option value="family">{subjectOptions.family}</option>
+                    <option value="other">{subjectOptions.other}</option>
+                  </select>
                 </div>
-              ))}
 
-              <div className="mb-3 md:mb-4">
-                <label htmlFor="subject" className="block text-[#1a3e6a] font-medium mb-1 md:mb-2 text-sm md:text-base">{t.subject}</label>
-                <select
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 md:px-4 md:py-2 border border-[#1a3e6a]/40 rounded focus:outline-none focus:ring-2 focus:ring-[#1a3e6a] text-sm md:text-base"
-                >
-                  <option value="">{subjectOptions.default}</option>
-                  <option value="consultation">{subjectOptions.consultation}</option>
-                  <option value="corporate">{subjectOptions.corporate}</option>
-                  <option value="litigation">{subjectOptions.litigation}</option>
-                  <option value="realestate">{subjectOptions.realestate}</option>
-                  <option value="family">{subjectOptions.family}</option>
-                  <option value="other">{subjectOptions.other}</option>
-                </select>
+                <div className="sm:col-span-2">
+                  <label htmlFor="message" className="form-label">
+                    {t.message}<span className="text-brand-dark"> *</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="5"
+                    className="form-input resize-y"
+                  ></textarea>
+                </div>
               </div>
 
-              <div className="mb-4 md:mb-6">
-                <label htmlFor="message" className="block text-[#1a3e6a] font-medium mb-1 md:mb-2 text-sm md:text-base">{t.message}</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="4"
-                  className="w-full px-3 py-2 md:px-4 md:py-2 border border-[#1a3e6a]/40 rounded focus:outline-none focus:ring-2 focus:ring-[#1a3e6a] text-sm md:text-base"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === 'sending'}
-                className="w-full bg-[#FFD700] text-gray-900 py-2 md:py-3 px-4 rounded font-semibold hover:bg-black hover:text-white transition-colors text-sm md:text-base disabled:opacity-60 disabled:cursor-wait"
-              >
+              <button type="submit" disabled={status === 'sending'} className="btn btn-primary mt-6 w-full py-3.5">
                 {status === 'sending' ? t.sending : t.submit}
+                {status !== 'sending' && <Send className="h-4 w-4" aria-hidden="true" />}
               </button>
 
               <div aria-live="polite">
-                {status === 'success' && (
-                  <p className="mt-4 rounded border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">{t.success}</p>
-                )}
-                {status === 'error' && (
-                  <p className="mt-4 rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{t.error}</p>
-                )}
+                {status === 'success' && <p className="form-status form-status-success">{t.success}</p>}
+                {status === 'error' && <p className="form-status form-status-error">{t.error}</p>}
               </div>
             </form>
-          </div>
+          </Reveal>
 
-          {/* Contact Info */}
-          <div className="lg:w-1/2 space-y-4 md:space-y-6 mt-6 lg:mt-0">
-            <div className="bg-white p-4 md:p-6 rounded-lg shadow border border-[#FFD700]/20">
-              <h3 className="text-lg md:text-xl font-serif font-bold mb-3 md:mb-4 text-[#FFD700]">{t.office}</h3>
-              <p className="text-gray-700 mb-2 text-sm md:text-base">{t.address}</p>
-              <p className="text-gray-700 mb-3 md:mb-4 text-sm md:text-base">{t.hours}</p>
-              <p className="text-gray-700 mb-1 text-sm md:text-base"><span className="font-medium">{t.phoneLabel}</span> <a href="tel:+38344728118" className="hover:underline">(+383) 44 728-118</a></p>
-              <p className="text-gray-700 text-sm md:text-base"><span className="font-medium">{t.emailLabel}</span> <a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:text-[#1a3e6a] underline-offset-2 hover:underline break-all">Asdren.bytyqi91@gmail.com</a></p>
+          {/* Office info + map */}
+          <Reveal delay={0.08} className="flex flex-col gap-6 lg:col-span-5">
+            <div className="rounded-2xl bg-ink p-6 text-white sm:p-8">
+              <h3 className="mb-6 text-xl font-bold text-white">{t.office}</h3>
+              <ul className="space-y-4">
+                {infoRows.map(({ icon: Icon, content }, index) => (
+                  <li key={index} className="flex items-start gap-3.5 text-gray-300">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-white/10">
+                      <Icon className="h-4 w-4 text-brand" aria-hidden="true" />
+                    </span>
+                    <span className="pt-1.5 text-[0.95rem] leading-snug">{content}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <div className="rounded-lg overflow-hidden shadow border border-[#1a3e6a]/20">
+            <div className="min-h-[260px] flex-1 overflow-hidden rounded-2xl border border-gray-100 shadow-card">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.355919712866!2d21.1557257!3d42.6595155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549fe0946c8ad3%3A0x2f2a1da0ef4c7ea4!2sLawyer%20Asdren%20Bytyqi!5e0!3m2!1sen!2s!4v1726750000000!5m2!1sen!2s"
                 width="100%"
-                height="250"
-                style={{ border: 0 }}
+                height="100%"
+                style={{ border: 0, minHeight: 260 }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Lawyer Asdren Bytyqi Location"
-                className="w-full"
+                className="h-full w-full"
               ></iframe>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
