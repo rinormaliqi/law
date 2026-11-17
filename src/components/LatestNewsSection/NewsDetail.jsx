@@ -2,7 +2,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useLanguage } from "../../contexts/language";
 import { notableCasesData } from "./notableCases";
-import { Calendar, User, ExternalLink, Share2, Clock, Tag, ArrowLeft } from "lucide-react";
+import { Calendar, User, ExternalLink, Clock, Tag, ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function CaseDetailPage() {

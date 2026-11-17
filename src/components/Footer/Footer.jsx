@@ -1,6 +1,6 @@
 // components/Footer.js
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { translations, useLanguage } from '../../contexts/language';
 
 export const Footer = () => {
@@ -34,10 +34,6 @@ export const Footer = () => {
     } else {
       navigate('/#services');
     }
-  };
-
-  const handleHomeNavigation = () => {
-    navigate('/');
   };
 
   const handleNewsNavigation = () => {
@@ -184,21 +180,14 @@ export const Footer = () => {
               <div className="space-y-2 text-sm">
                 <p className="flex items-center">
                   <span className="mr-2">📞</span>
-                  <a href="tel:+38344123123" className="hover:text-[#FFD700] transition-colors">
-                  +383 (44) 728-118
-
+                  <a href="tel:+38344728118" className="hover:text-[#FFD700] transition-colors">
+                    +383 (44) 728-118
                   </a>
                 </p>
                 <p className="flex items-center">
                   <span className="mr-2">✉️</span>
-                  <a href="mailto:info@bytyqipartners.com" className="hover:text-[#FFD700] transition-colors">
-                    info@bytyqipartners.com
-                  </a>
-                </p>
-                <p className="flex items-center">
-                  <span className="mr-2">✉️</span>
-                  <a href="mailto:asdren@bytyqipartners.com" className="hover:text-[#FFD700] transition-colors">
-                    contact@bytyqipartners.com
+                  <a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:text-[#FFD700] transition-colors break-all">
+                    Asdren.bytyqi91@gmail.com
                   </a>
                 </p>
               </div>

@@ -207,7 +207,7 @@
         "Kosova Barolar Birliği aktif üyesi"
       ],
             "phone":"+383 44 728 118",
-      "email":"info@bytyqipartners.com"
+      "email":"Asdren.bytyqi91@gmail.com"
     },
     "fehmije": {
       "name": "Fehmije Gashi-Bytyqi",
@@ -229,7 +229,7 @@
         "2006'dan beri Kosova Barolar Birliği Meclisi'ne seçilmiş delege"
       ],
             "phone":"+383 44 345 777",
-      "email":"info@bytyqipartners.com"
+      "email":"Asdren.bytyqi91@gmail.com"
     }
   },
   "media": {
@@ -303,7 +303,7 @@
       "selectExperience": "Deneyim seviyesini seçin",
       "years": "yıl",
       "coverLetterPlaceholder": "Firmamıza neden katılmak istediğinizi anlatın...",
-      "fileTypes": "Kabul edilen formatlar: PDF, DOC, DOCX (Maksimum 5MB)",
+      "fileTypes": "Kabul edilen formatlar: PDF, DOC, DOCX (Maksimum 3MB)",
       "submit": "Başvuruyu Gönder"
     },
     "positions": {
@@ -313,6 +313,10 @@
       "intern": "Hukuk Stajyeri",
       "administrative": "İdari Personel"
     },
-    "submissionSuccess": "Teşekkürler! Başvurunuz başarıyla gönderildi."
+    "submissionSuccess": "Teşekkürler! Başvurunuz başarıyla gönderildi.",
+    "sending": "Gönderiliyor...",
+    "submissionError": "Üzgünüz, başvurunuz gönderilemedi. Lütfen tekrar deneyin veya Asdren.bytyqi91@gmail.com adresine yazın.",
+    "fileTooLarge": "CV dosyası çok büyük. Maksimum boyut 3MB.",
+    "fileType": "Lütfen CV'nizi PDF, DOC veya DOCX olarak yükleyin."
   }
 }

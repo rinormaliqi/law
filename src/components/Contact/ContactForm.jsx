@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/language';
 
+const EMPTY_FORM = {
+  name: '',
+  email: '',
+  phone: '',
+  subject: '',
+  message: '',
+  company: '' // honeypot, hidden from real visitors
+};
+
 const ContactForm = () => {
   const { language } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState(EMPTY_FORM);
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   const handleChange = (e) => {
     setFormData({
@@ -18,9 +22,24 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    if (status === 'sending') return;
+    setStatus('sending');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, language })
+      });
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+      setFormData(EMPTY_FORM);
+      setStatus('success');
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+    }
   };
 
   const translations = {
@@ -37,7 +56,10 @@ const ContactForm = () => {
       address: "5, 5 Garibaldi, Prishtina 10000",
       hours: "Mon-Fri: 08:00-18:00",
       phoneLabel: "Phone:",
-      emailLabel: "Email:"
+      emailLabel: "Email:",
+      sending: "Sending...",
+      success: "Thank you! Your message has been sent. We will get back to you shortly.",
+      error: "Sorry, your message could not be sent. Please try again or call us at +383 44 728 118."
     },
     al: {
       title: "Na Kontaktoni",
@@ -52,7 +74,10 @@ const ContactForm = () => {
       address: "5, 5 Garibaldi, Prishtina 10000",
       hours: "E Hënë-E Premte: 08:00-18:00",
       phoneLabel: "Telefoni:",
-      emailLabel: "Email:"
+      emailLabel: "Email:",
+      sending: "Duke dërguar...",
+      success: "Faleminderit! Mesazhi juaj u dërgua. Do t'ju kontaktojmë së shpejti.",
+      error: "Na vjen keq, mesazhi nuk u dërgua. Provoni përsëri ose na telefononi në +383 44 728 118."
     },
     de: {
       title: "Kontaktieren Sie Uns",
@@ -67,7 +92,10 @@ const ContactForm = () => {
       address: "5, 5 Garibaldi, Prishtina 10000",
       hours: "Mo-Fr: 08:00-18:00",
       phoneLabel: "Telefon:",
-      emailLabel: "E-Mail:"
+      emailLabel: "E-Mail:",
+      sending: "Wird gesendet...",
+      success: "Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze bei Ihnen.",
+      error: "Leider konnte Ihre Nachricht nicht gesendet werden. Bitte versuchen Sie es erneut oder rufen Sie uns an: +383 44 728 118."
     },
     tr: {
       title: "Bize Ulaşın",
@@ -82,7 +110,10 @@ const ContactForm = () => {
       address: "5, 5 Garibaldi, Priştine 10000",
       hours: "Pzt-Cuma: 08:00-18:00",
       phoneLabel: "Telefon:",
-      emailLabel: "E-posta:"
+      emailLabel: "E-posta:",
+      sending: "Gönderiliyor...",
+      success: "Teşekkürler! Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.",
+      error: "Üzgünüz, mesajınız gönderilemedi. Lütfen tekrar deneyin veya bizi arayın: +383 44 728 118."
     }
   };
 
@@ -143,7 +174,13 @@ const ContactForm = () => {
         <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12">
           {/* Contact Form */}
           <div className="lg:w-1/2">
-            <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow border border-[#FFD700]/20">
+            <form onSubmit={handleSubmit} className="relative bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow border border-[#FFD700]/20">
+              {/* Honeypot field for bots – hidden from people and screen readers */}
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}>
+                <label htmlFor="company">Company</label>
+                <input type="text" id="company" name="company" tabIndex={-1} autoComplete="off" value={formData.company} onChange={handleChange} />
+              </div>
+
               {['name', 'email', 'phone'].map((field) => (
                 <div className="mb-3 md:mb-4" key={field}>
                   <label htmlFor={field} className="block text-[#1a3e6a] font-medium mb-1 md:mb-2 text-sm md:text-base">{t[field]}</label>
@@ -194,10 +231,20 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-[#FFD700] text-white py-2 md:py-3 px-4 rounded font-medium hover:bg-black transition-colors text-sm md:text-base"
+                disabled={status === 'sending'}
+                className="w-full bg-[#FFD700] text-gray-900 py-2 md:py-3 px-4 rounded font-semibold hover:bg-black hover:text-white transition-colors text-sm md:text-base disabled:opacity-60 disabled:cursor-wait"
               >
-                {t.submit}
+                {status === 'sending' ? t.sending : t.submit}
               </button>
+
+              <div aria-live="polite">
+                {status === 'success' && (
+                  <p className="mt-4 rounded border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800">{t.success}</p>
+                )}
+                {status === 'error' && (
+                  <p className="mt-4 rounded border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800">{t.error}</p>
+                )}
+              </div>
             </form>
           </div>
 
@@ -207,8 +254,8 @@ const ContactForm = () => {
               <h3 className="text-lg md:text-xl font-serif font-bold mb-3 md:mb-4 text-[#FFD700]">{t.office}</h3>
               <p className="text-gray-700 mb-2 text-sm md:text-base">{t.address}</p>
               <p className="text-gray-700 mb-3 md:mb-4 text-sm md:text-base">{t.hours}</p>
-              <p className="text-gray-700 mb-1 text-sm md:text-base"><span className="font-medium">{t.phoneLabel}</span> (+383) 44 728-118</p>
-              <p className="text-gray-700 text-sm md:text-base"><span className="font-medium">{t.emailLabel}</span> info@bytyqipartners.com</p>
+              <p className="text-gray-700 mb-1 text-sm md:text-base"><span className="font-medium">{t.phoneLabel}</span> <a href="tel:+38344728118" className="hover:underline">(+383) 44 728-118</a></p>
+              <p className="text-gray-700 text-sm md:text-base"><span className="font-medium">{t.emailLabel}</span> <a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:text-[#1a3e6a] underline-offset-2 hover:underline break-all">Asdren.bytyqi91@gmail.com</a></p>
             </div>
 
             <div className="rounded-lg overflow-hidden shadow border border-[#1a3e6a]/20">
