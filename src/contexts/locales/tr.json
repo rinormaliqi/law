@@ -303,7 +303,7 @@
       "selectExperience": "Deneyim seviyesini seçin",
       "years": "yıl",
       "coverLetterPlaceholder": "Firmamıza neden katılmak istediğinizi anlatın...",
-      "fileTypes": "Kabul edilen formatlar: PDF, DOC, DOCX (Maksimum 5MB)",
+      "fileTypes": "Kabul edilen formatlar: PDF, DOC, DOCX (Maksimum 3MB)",
       "submit": "Başvuruyu Gönder"
     },
     "positions": {
@@ -313,6 +313,10 @@
       "intern": "Hukuk Stajyeri",
       "administrative": "İdari Personel"
     },
-    "submissionSuccess": "Teşekkürler! Başvurunuz başarıyla gönderildi."
+    "submissionSuccess": "Teşekkürler! Başvurunuz başarıyla gönderildi.",
+    "sending": "Gönderiliyor...",
+    "submissionError": "Üzgünüz, başvurunuz gönderilemedi. Lütfen tekrar deneyin veya Asdren.bytyqi91@gmail.com adresine yazın.",
+    "fileTooLarge": "CV dosyası çok büyük. Maksimum boyut 3MB.",
+    "fileType": "Lütfen CV'nizi PDF, DOC veya DOCX olarak yükleyin."
   }
 }

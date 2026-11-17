@@ -1,21 +1,38 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import './careers.css';
 import { translations, useLanguage } from '../../../contexts/language';
+
+const MAX_CV_BYTES = 3 * 1024 * 1024; // keep in sync with api/careers.js
+const ALLOWED_CV_EXTENSIONS = ['pdf', 'doc', 'docx'];
+
+const EMPTY_FORM = {
+  fullName: '',
+  email: '',
+  phone: '',
+  position: '',
+  experience: '',
+  coverLetter: '',
+  cv: null,
+  company: '' // honeypot, hidden from real visitors
+};
+
+const readFileAsBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result).split(',')[1] || '');
+    reader.onerror = () => reject(reader.error);
+    reader.readAsDataURL(file);
+  });
 
 export const Careers = () => {
   const { language } = useLanguage();
   const t = translations[language].careers;
 
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    position: '',
-    experience: '',
-    coverLetter: '',
-    cv: null
-  });
+  const [formData, setFormData] = useState(EMPTY_FORM);
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [errorMessage, setErrorMessage] = useState('');
+  const fileInputRef = useRef(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -25,18 +42,68 @@ export const Careers = () => {
     }));
   };
 
-  const handleFileChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      cv: e.target.files[0]
-    }));
+  const validateCv = (file) => {
+    if (!file) return t.fileType;
+    const extension = file.name.split('.').pop().toLowerCase();
+    if (!ALLOWED_CV_EXTENSIONS.includes(extension)) return t.fileType;
+    if (file.size > MAX_CV_BYTES) return t.fileTooLarge;
+    return '';
   };
 
-  const handleSubmit = (e) => {
+  const handleFileChange = (e) => {
+    const file = e.target.files[0] || null;
+    const problem = file ? validateCv(file) : '';
+    if (problem) {
+      e.target.value = '';
+      setFormData(prev => ({ ...prev, cv: null }));
+      setErrorMessage(problem);
+      setStatus('error');
+      return;
+    }
+    setFormData(prev => ({ ...prev, cv: file }));
+    if (status === 'error') setStatus('idle');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form data:', formData);
-    alert(t.submissionSuccess);
+    if (status === 'sending') return;
+
+    const problem = validateCv(formData.cv);
+    if (problem) {
+      setErrorMessage(problem);
+      setStatus('error');
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      const { cv, ...fields } = formData;
+      const content = await readFileAsBase64(cv);
+      const response = await fetch('/api/careers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...fields, language, cv: { name: cv.name, content } })
+      });
+
+      if (!response.ok) {
+        const { error } = await response.json().catch(() => ({}));
+        setErrorMessage(
+          error === 'file_too_large' ? t.fileTooLarge :
+          error === 'invalid_file' ? t.fileType :
+          t.submissionError
+        );
+        setStatus('error');
+        return;
+      }
+
+      setFormData(EMPTY_FORM);
+      if (fileInputRef.current) fileInputRef.current.value = '';
+      setStatus('success');
+    } catch (err) {
+      console.error(err);
+      setErrorMessage(t.submissionError);
+      setStatus('error');
+    }
   };
 
   const availablePositions = [
@@ -88,8 +155,14 @@ export const Careers = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="application-form">
+            <form onSubmit={handleSubmit} className="application-form" style={{ position: 'relative' }}>
               <h2>{t.formTitle}</h2>
+
+              {/* Honeypot field for bots – hidden from people and screen readers */}
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}>
+                <label htmlFor="careers-company">Company</label>
+                <input type="text" id="careers-company" name="company" tabIndex={-1} autoComplete="off" value={formData.company} onChange={handleInputChange} />
+              </div>
               
               <div className="form-group">
                 <label htmlFor="fullName">{t.form.fullName} *</label>
@@ -186,15 +259,25 @@ export const Careers = () => {
                   id="cv"
                   name="cv"
                   onChange={handleFileChange}
-                  accept=".pdf,.doc,.docx"
+                  ref={fileInputRef}
+                  accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                   required
                 />
                 <small>{t.form.fileTypes}</small>
               </div>
 
-              <button type="submit" className="btn-submit">
-                {t.form.submit}
+              <button type="submit" className="btn-submit" disabled={status === 'sending'}>
+                {status === 'sending' ? t.sending : t.form.submit}
               </button>
+
+              <div aria-live="polite">
+                {status === 'success' && (
+                  <p className="form-status form-status--success">{t.submissionSuccess}</p>
+                )}
+                {status === 'error' && (
+                  <p className="form-status form-status--error">{errorMessage}</p>
+                )}
+              </div>
             </form>
           </motion.div>
         </div>

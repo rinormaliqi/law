@@ -9,14 +9,9 @@
 //                                 email address that owns the Resend account.
 
 const { buildContactEmail, SUBJECT_LABELS } = require('./_lib/contactEmail');
+const { parseBody, clean, recipients, sendEmail } = require('./_lib/resend');
 
-const DEFAULT_FROM = 'Bytyqi & Partners <onboarding@resend.dev>';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const LIMITS = { name: 120, email: 200, phone: 40, message: 5000 };
-
-function clean(value, max) {
-  return typeof value === 'string' ? value.trim().slice(0, max) : '';
-}
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -24,27 +19,18 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'method_not_allowed' });
   }
 
-  let body = req.body;
-  if (typeof body === 'string') {
-    try {
-      body = JSON.parse(body);
-    } catch {
-      return res.status(400).json({ error: 'invalid_json' });
-    }
-  }
-  body = body || {};
+  const body = parseBody(req);
+  if (!body) return res.status(400).json({ error: 'invalid_json' });
 
   // Honeypot: real visitors never fill this hidden field. Pretend success for bots.
-  if (body.company) {
-    return res.status(200).json({ ok: true });
-  }
+  if (body.company) return res.status(200).json({ ok: true });
 
   const data = {
-    name: clean(body.name, LIMITS.name),
-    email: clean(body.email, LIMITS.email),
-    phone: clean(body.phone, LIMITS.phone),
+    name: clean(body.name, 120),
+    email: clean(body.email, 200),
+    phone: clean(body.phone, 40),
     subject: clean(body.subject, 40),
-    message: clean(body.message, LIMITS.message),
+    message: clean(body.message, 5000),
     language: clean(body.language, 5),
   };
 
@@ -52,45 +38,13 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'invalid_input' });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = (process.env.CONTACT_TO_EMAIL || '')
-    .split(',')
-    .map((s) => s.trim())
-    .filter(Boolean);
+  const result = await sendEmail({
+    to: recipients('CONTACT_TO_EMAIL'),
+    replyTo: data.email,
+    ...buildContactEmail(data),
+  });
 
-  if (!apiKey || to.length === 0) {
-    console.error('Contact form is not configured: RESEND_API_KEY or CONTACT_TO_EMAIL missing');
-    return res.status(500).json({ error: 'not_configured' });
-  }
-
-  const { subject, html, text } = buildContactEmail(data);
-
-  try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL || DEFAULT_FROM,
-        to,
-        reply_to: data.email,
-        subject,
-        html,
-        text,
-      }),
-    });
-
-    if (!response.ok) {
-      const detail = await response.text();
-      console.error('Resend error', response.status, detail);
-      return res.status(502).json({ error: 'send_failed' });
-    }
-
-    return res.status(200).json({ ok: true });
-  } catch (err) {
-    console.error('Resend request failed', err);
-    return res.status(502).json({ error: 'send_failed' });
-  }
+  return result.ok
+    ? res.status(200).json({ ok: true })
+    : res.status(result.status).json({ error: result.error });
 };

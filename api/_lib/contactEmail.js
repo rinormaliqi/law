@@ -182,4 +182,4 @@ function buildContactEmail({ name, email, phone, subject, message, language }, r
   return { subject: emailSubject, html, text };
 }
 
-module.exports = { buildContactEmail, SUBJECT_LABELS };
+module.exports = { buildContactEmail, SUBJECT_LABELS, escapeHtml, formatDate, row, GOLD, DARK, MUTED, BORDER };

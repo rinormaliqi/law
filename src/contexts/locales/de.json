@@ -303,7 +303,7 @@
       "selectExperience": "Erfahrungsniveau auswählen",
       "years": "Jahre",
       "coverLetterPlaceholder": "Erzählen Sie uns, warum Sie unserem Unternehmen beitreten möchten...",
-      "fileTypes": "Akzeptierte Formate: PDF, DOC, DOCX (Max. 5MB)",
+      "fileTypes": "Akzeptierte Formate: PDF, DOC, DOCX (Max. 3MB)",
       "submit": "Bewerbung absenden"
     },
     "positions": {
@@ -313,6 +313,10 @@
       "intern": "Juristischer Praktikant",
       "administrative": "Verwaltungspersonal"
     },
-    "submissionSuccess": "Danke! Ihre Bewerbung wurde erfolgreich eingereicht."
+    "submissionSuccess": "Danke! Ihre Bewerbung wurde erfolgreich eingereicht.",
+    "sending": "Wird gesendet...",
+    "submissionError": "Leider konnte Ihre Bewerbung nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns an Asdren.bytyqi91@gmail.com.",
+    "fileTooLarge": "Die Lebenslauf-Datei ist zu groß. Maximal 3MB.",
+    "fileType": "Bitte laden Sie Ihren Lebenslauf als PDF, DOC oder DOCX hoch."
   }
 }

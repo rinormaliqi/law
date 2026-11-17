@@ -302,7 +302,7 @@
       "selectExperience": "Zgjidh nivelin e përvojës",
       "years": "vite",
       "coverLetterPlaceholder": "Tregoni pse jeni të interesuar të bashkoheni me firmën tonë...",
-      "fileTypes": "Formatet e pranuara: PDF, DOC, DOCX (Maksimumi 5MB)",
+      "fileTypes": "Formatet e pranuara: PDF, DOC, DOCX (Maksimumi 3MB)",
       "submit": "Dërgo Aplikimin"
     },
     "positions": {
@@ -312,6 +312,10 @@
       "intern": "Praktikant Ligjor",
       "administrative": "Staf Administrativ"
     },
-    "submissionSuccess": "Faleminderit! Aplikimi juaj u dërgua me sukses."
+    "submissionSuccess": "Faleminderit! Aplikimi juaj u dërgua me sukses.",
+    "sending": "Duke dërguar...",
+    "submissionError": "Na vjen keq, aplikimi nuk u dërgua. Provoni përsëri ose na shkruani në Asdren.bytyqi91@gmail.com.",
+    "fileTooLarge": "Skedari i CV-së është shumë i madh. Madhësia maksimale është 3MB.",
+    "fileType": "Ju lutemi ngarkoni CV-në në format PDF, DOC ose DOCX."
   }
 }

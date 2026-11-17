@@ -301,7 +301,7 @@
       "selectExperience": "Select experience level",
       "years": "years",
       "coverLetterPlaceholder": "Tell us why you're interested in joining our firm...",
-      "fileTypes": "Accepted formats: PDF, DOC, DOCX (Max 5MB)",
+      "fileTypes": "Accepted formats: PDF, DOC, DOCX (Max 3MB)",
       "submit": "Submit Application"
     },
     "positions": {
@@ -311,6 +311,10 @@
       "intern": "Legal Intern",
       "administrative": "Administrative Staff"
     },
-    "submissionSuccess": "Thank you! Your application has been submitted successfully."
+    "submissionSuccess": "Thank you! Your application has been submitted successfully.",
+    "sending": "Sending...",
+    "submissionError": "Sorry, your application could not be sent. Please try again or email us at Asdren.bytyqi91@gmail.com.",
+    "fileTooLarge": "The CV file is too large. Maximum size is 3MB.",
+    "fileType": "Please upload your CV as a PDF, DOC or DOCX file."
   }
 }
