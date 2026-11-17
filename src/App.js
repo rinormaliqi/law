@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LawFirmLanding from "./components/Pages/HomePage";
-import AboutUs, { AboutUsSection } from "./components/AboutUs";
+import { AboutUsSection } from "./components/AboutUs";
 import { LanguageProvider } from "./contexts/language";
 import { Footer } from "./components/Footer/Footer";
 import ProfessionalHeader from "./components/Navbar/ProfessionalHeader";
@@ -9,7 +9,6 @@ import { PracticeAreas } from "./components/PracticeArea/PracticeAreas";
 import { PracticeAreaDetail } from "./components/Pages/PracticeAreaDetail";
 import { AttorneyBiography } from "./components/AttorneysSection/AttorneyBiography";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
-import { AttorneysSection } from "./components/AttorneysSection/AttorneysSection";
 import ContactForm from "./components/Contact/ContactForm";
 import TermsOfService from "./components/Pages/TermsOfService";
 import PrivacyPolicy from "./components/Pages/PrivacyPolicy";
@@ -39,6 +38,7 @@ function App() {
     <Route path="/privacy" element={< PrivacyPolicy/>} />
   <Route path="/disclaimer" element={< Disclaimer/>} />
     <Route path="/careers" element={< Careers/>} />
+              <Route path="*" element={<Navigate to="/" replace />} />
 
             </Routes>
           </main>

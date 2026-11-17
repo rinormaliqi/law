@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "../../contexts/language";
-import { Scale, Shield, Mail, Phone } from "lucide-react";
+import { Scale, Shield, Mail } from "lucide-react";
 
 import asdrenImage from "../../assets/profile.jpg";
 import fehmijeImage from "../../assets/femije.jpg";
@@ -52,9 +52,9 @@ export const AttorneysSection = () => {
     navigate(`/attorneys/${attorneyId}`);
   };
 
-  const handleContactClick = (email, phone, e) => {
+  const handleContactClick = (e) => {
     e.stopPropagation();
-    console.log(`Contact: ${email}, ${phone}`);
+    handleContactAreaNavigation();
   };
 
   // Add safety check before rendering
@@ -128,7 +128,7 @@ export const AttorneysSection = () => {
                 </div>
                 <div className="flex gap-3">
                   <button
-                    onClick={(e) => handleContactClick(attorney.contact.email, attorney.contact.phone, e)}
+                    onClick={handleContactClick}
                     className="flex-1 flex items-center justify-center gap-2 border border-gray-300 rounded-lg py-3 hover:bg-[#FFD700] hover:text-gray-900 hover:border-[#FFD700] transition-all duration-200 text-sm font-medium"
                   >
                     <Mail className="w-4 h-4" /> 
@@ -138,7 +138,7 @@ export const AttorneysSection = () => {
 {language === 'tr' && (attorneysSectionTexts.contact || 'İletişim')}
                   </button>
                   <button
-                    onClick={() => handleAttorneyClick(attorney.id)}
+                    onClick={(e) => { e.stopPropagation(); handleAttorneyClick(attorney.id); }}
                     className="flex-1 flex items-center justify-center gap-2 bg-[#FFD700] rounded-lg py-3 text-gray-900 font-semibold hover:bg-yellow-500 transition-all duration-200 text-sm"
                   >
 {language === 'en' && (attorneysSectionTexts.viewProfile || 'View Profile')}

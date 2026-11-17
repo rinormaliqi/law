@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { translations, useLanguage } from '../../contexts/language';
 import './App.css';
-import hero from "../../assets/hero2.png";
 import logo from "../../assets/logo.png";
 
 // Flag icons
@@ -316,6 +315,8 @@ const Header = () => {
           <button 
             className={`burger-menu ${isMobileMenuOpen ? 'open' : ''}`}
             onClick={toggleMobileMenu}
+            aria-label="Menu"
+            aria-expanded={isMobileMenuOpen}
           >
             <span></span>
             <span></span>
@@ -382,7 +383,7 @@ const Header = () => {
                   <img src={logo} alt="Bytyqi & Partners" className="logo-image" />
                 </Link>
               </div>
-              <button className="close-menu" onClick={toggleMobileMenu}>×</button>
+              <button className="close-menu" onClick={toggleMobileMenu} aria-label="Close menu">×</button>
             </div>
             
             {/* Mobile Contact Info */}
@@ -393,7 +394,7 @@ const Header = () => {
                 {language === 'de' && 'Rechtliche Beratung benötigt?'}
                 {language === 'tr' && 'Hukuki danışmanlığa mı ihtiyacınız var?'}
               </div>
-              <a href="tel:+38344123123" className="contact-phone">+383 (44) 123-123</a>
+              <a href="tel:+38344728118" className="contact-phone">+383 (44) 728-118</a>
             </div>
             
             <nav className="mobile-navigation">

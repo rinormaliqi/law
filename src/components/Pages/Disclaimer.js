@@ -1,11 +1,10 @@
 // pages/Disclaimer.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { translations, useLanguage } from '../../contexts/language';
+import { useLanguage } from '../../contexts/language';
 
 const Disclaimer = () => {
   const { language } = useLanguage();
-  const t = translations[language];
 
   return (
     <div className="min-h-screen bg-white mt-20">
@@ -127,7 +126,7 @@ const Disclaimer = () => {
               </p>
               <div className="mt-4 p-4 bg-gray-100 rounded-lg">
                 <p className="font-semibold">Bytyqi & Partners</p>
-                <p>info@bytyqipartners.com</p>
+                <p><a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:underline">Asdren.bytyqi91@gmail.com</a></p>
                 <p>+383 (44) 728-118</p>
                 <p className="text-sm text-gray-600 mt-2">
                   {language === 'en' && 'Prishtinë, Kosovo'}

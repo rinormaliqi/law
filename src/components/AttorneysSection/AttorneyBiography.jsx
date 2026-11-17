@@ -1,7 +1,7 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useTranslation } from "../../contexts/language";
-import { ArrowLeft, Mail, Phone, Calendar, Globe, Award, GraduationCap, FileText } from "lucide-react";
+import { Mail, Phone, Calendar, Globe, Award, GraduationCap, FileText } from "lucide-react";
 
 import asdrenImage from "../../assets/profile.jpg";
 import fehmijeImage from "../../assets/femije.jpg";
@@ -9,10 +9,10 @@ import fehmijeImage from "../../assets/femije.jpg";
 export const AttorneyBiography = () => {
   const { attorneyId } = useParams();
   const { t, language } = useTranslation();
-  const navigate = useNavigate();
-
-  const attorneyKey = attorneyId === "asdren-bytyqi" ? "asdren" : "fehmije";
-  const attorneyData = t(`attorneys.${attorneyKey}`) || {};
+  const attorneyKey =
+    attorneyId === "asdren-bytyqi" ? "asdren" :
+    attorneyId === "fehmije-gashi-bytyqi" ? "fehmije" : null;
+  const attorneyData = (attorneyKey && t(`attorneys.${attorneyKey}`)) || {};
   const biographyTexts = t('biography') || {};
 
   // Safe attorney object with fallbacks
@@ -20,14 +20,18 @@ export const AttorneyBiography = () => {
     name: attorneyData.name || 'Attorney Name',
     title: attorneyData.title || 'Attorney Title',
     bio: attorneyData.bio || 'Biography loading...',
-    education: attorneyData.education || 'Education information',
-    experience: attorneyData.experience || 'Experience',
-    specialties: attorneyData.specialties || [],
+    education: attorneyData.education || '',
+    experience: attorneyData.experience || '',
+    specialties: attorneyData.specialties || attorneyData.expertise || [],
     languages: attorneyData.languages || [],
-    contact: attorneyData.contact || { email: '', phone: '' },
+    phone: attorneyData.phone || '',
     achievements: attorneyData.achievements || [],
     image: attorneyKey === "asdren" ? asdrenImage : fehmijeImage
   };
+
+  if (!attorneyKey) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 mt-20">
@@ -50,14 +54,18 @@ export const AttorneyBiography = () => {
               
               <p className="text-gray-700 text-lg mb-3">{attorney.title}</p>
               <div className="flex flex-wrap gap-6 justify-center md:justify-start text-gray-600">
-                <div className="flex items-center space-x-2">
-                  <Calendar className="w-5 h-5 text-[#FFD700]" />
-                  <span>{attorney.experience}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Globe className="w-5 h-5 text-[#FFD700]" />
-                  <span>{attorney.languages.join(', ')}</span>
-                </div>
+                {attorney.experience && (
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="w-5 h-5 text-[#FFD700]" />
+                    <span>{attorney.experience}</span>
+                  </div>
+                )}
+                {attorney.languages.length > 0 && (
+                  <div className="flex items-center space-x-2">
+                    <Globe className="w-5 h-5 text-[#FFD700]" />
+                    <span>{attorney.languages.join(', ')}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -102,16 +110,13 @@ export const AttorneyBiography = () => {
 </h3>
                 <div className="flex items-center space-x-2 text-gray-700">
                   <Mail className="w-5 h-5 text-[#FFD700]" />
-                  <span>info@bytyqipartners.com</span>
+                  <a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:text-[#FFD700] break-all">Asdren.bytyqi91@gmail.com</a>
                 </div>
           <div className="flex items-center space-x-2 text-gray-700">
   <Phone className="w-5 h-5 text-[#FFD700]" />
-  <span>
-    {attorneyId === "asdren-bytyqi" 
-      ? " +383 44 728 118 " // phone for Asdren
-      : " +383 44 345 777 " // phone for Fehmije
-    }
-  </span>
+  <a href={`tel:${attorney.phone.replace(/\s/g, '')}`} className="hover:text-[#FFD700]">
+    {attorney.phone}
+  </a>
 </div>
               </div>
 
@@ -139,10 +144,12 @@ export const AttorneyBiography = () => {
 {language === 'tr' && (biographyTexts.educationBar || 'Eğitim & Baro')}
 </h3>
                 <div className="flex flex-col gap-2 text-gray-700">
-                  <div className="flex items-center space-x-2">
-                    <GraduationCap className="w-5 h-5 text-[#FFD700]" />
-                    <span>{attorney.education}</span>
-                  </div>
+                  {attorney.education && (
+                    <div className="flex items-center space-x-2">
+                      <GraduationCap className="w-5 h-5 text-[#FFD700]" />
+                      <span>{attorney.education}</span>
+                    </div>
+                  )}
                   <div className="flex items-center space-x-2">
                     <FileText className="w-5 h-5 text-[#FFD700]" />
                     <span>{language === 'en' && (biographyTexts.kosovoBar || 'Kosovo Bar Association')}

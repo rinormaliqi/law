@@ -1,11 +1,10 @@
 // pages/TermsOfService.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { translations, useLanguage } from '../../contexts/language';
+import { useLanguage } from '../../contexts/language';
 
 const TermsOfService = () => {
   const { language } = useLanguage();
-  const t = translations[language];
 
   return (
     <div className="min-h-screen bg-white mt-20">

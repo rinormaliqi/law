@@ -17,3 +17,16 @@
 main {
   flex: 1;
 }
+/* Prevent entrance animations from causing horizontal scroll on mobile.
+   `clip` (unlike `hidden`) keeps position: sticky working. */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* Keep anchored sections clear of the fixed header */
+#contact,
+#services,
+#attorneys {
+  scroll-margin-top: 80px;
+}

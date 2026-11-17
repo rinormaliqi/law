@@ -1,2 +1,7 @@
 node_modules
 build
+
+# Local env files
+.env
+.env*.local
+.vercel
