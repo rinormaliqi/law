@@ -1,167 +1,158 @@
 import React from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { useTranslation } from "../../contexts/language";
-import { Mail, Phone, Calendar, Globe, Award, GraduationCap, FileText } from "lucide-react";
+import { Mail, Phone, Award, FileText, GraduationCap, ArrowLeft, ArrowRight } from "lucide-react";
+import { Reveal } from "../Reveal";
 
 import asdrenImage from "../../assets/profile.jpg";
 import fehmijeImage from "../../assets/femije.jpg";
 
+const EMAIL = "Asdren.bytyqi91@gmail.com";
+
+const TEXT = {
+  back: { en: 'All attorneys', al: 'Të gjithë avokatët', de: 'Alle Anwälte', tr: 'Tüm avukatlar' },
+  biography: { en: 'Biography', al: 'Biografia', de: 'Biografie', tr: 'Biyografi' },
+  achievements: { en: 'Professional Achievements', al: 'Arritje Profesionale', de: 'Berufliche Erfolge', tr: 'Profesyonel Başarılar' },
+  contact: { en: 'Contact', al: 'Kontakt', de: 'Kontakt', tr: 'İletişim' },
+  specialties: { en: 'Specialties', al: 'Specializime', de: 'Fachgebiete', tr: 'Uzmanlık Alanları' },
+  educationBar: { en: 'Education & Bar', al: 'Arsimi & Oda e Avokatëve', de: 'Ausbildung & Anwaltskammer', tr: 'Eğitim & Baro' },
+  kosovoBar: { en: 'Kosovo Bar Association', al: 'Oda e Avokatëve të Kosovës', de: 'Anwaltskammer des Kosovo', tr: 'Kosova Barosu' },
+  bookConsultation: { en: 'Book a consultation', al: 'Caktoni një konsultim', de: 'Beratung vereinbaren', tr: 'Danışma randevusu alın' },
+};
+
 export const AttorneyBiography = () => {
   const { attorneyId } = useParams();
   const { t, language } = useTranslation();
+  const navigate = useNavigate();
+  const label = (key) => TEXT[key][language] || TEXT[key].en;
+
   const attorneyKey =
     attorneyId === "asdren-bytyqi" ? "asdren" :
     attorneyId === "fehmije-gashi-bytyqi" ? "fehmije" : null;
-  const attorneyData = (attorneyKey && t(`attorneys.${attorneyKey}`)) || {};
-  const biographyTexts = t('biography') || {};
-
-  // Safe attorney object with fallbacks
-  const attorney = {
-    name: attorneyData.name || 'Attorney Name',
-    title: attorneyData.title || 'Attorney Title',
-    bio: attorneyData.bio || 'Biography loading...',
-    education: attorneyData.education || '',
-    experience: attorneyData.experience || '',
-    specialties: attorneyData.specialties || attorneyData.expertise || [],
-    languages: attorneyData.languages || [],
-    phone: attorneyData.phone || '',
-    achievements: attorneyData.achievements || [],
-    image: attorneyKey === "asdren" ? asdrenImage : fehmijeImage
-  };
 
   if (!attorneyKey) {
     return <Navigate to="/" replace />;
   }
 
-  return (
-    <div className="min-h-screen bg-gray-50 mt-20">
-      {/* Back button */}
+  const data = t(`attorneys.${attorneyKey}`) || {};
+  const attorney = {
+    name: data.name || '',
+    title: data.title || '',
+    bio: data.bio || '',
+    education: data.education || '',
+    specialties: data.specialties || data.expertise || [],
+    achievements: data.achievements || [],
+    phone: data.phone || '',
+    image: attorneyKey === "asdren" ? asdrenImage : fehmijeImage,
+  };
+  const phoneHref = `tel:${attorney.phone.replace(/\s/g, '')}`;
 
-      {/* Main Content */}
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
-          {/* Header */}
-          <div className="flex flex-col md:flex-row items-center md:items-start p-8 space-y-6 md:space-y-0 md:space-x-10">
-            <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-[#FFD700] overflow-hidden bg-gray-300">
-              <img
-                src={attorney.image}
-                alt={attorney.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="text-center md:text-left flex-1">
-              <h1 className="text-3xl md:text-4xl font-bold mb-2">{attorney.name}</h1>
-              
-              <p className="text-gray-700 text-lg mb-3">{attorney.title}</p>
-              <div className="flex flex-wrap gap-6 justify-center md:justify-start text-gray-600">
-                {attorney.experience && (
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="w-5 h-5 text-[#FFD700]" />
-                    <span>{attorney.experience}</span>
-                  </div>
-                )}
-                {attorney.languages.length > 0 && (
-                  <div className="flex items-center space-x-2">
-                    <Globe className="w-5 h-5 text-[#FFD700]" />
-                    <span>{attorney.languages.join(', ')}</span>
-                  </div>
-                )}
-              </div>
+  const sidebarCard = "rounded-2xl bg-surface p-6";
+  const sidebarTitle = "mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-gray-500";
+
+  return (
+    <div className="page-top section bg-white">
+      <div className="container-page">
+        <button
+          onClick={() => navigate('/#attorneys')}
+          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:text-ink"
+        >
+          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+          {label('back')}
+        </button>
+
+        {/* Header */}
+        <Reveal className="flex flex-col items-center gap-8 rounded-3xl bg-brand p-6 text-center sm:p-10 md:flex-row md:items-center md:text-left">
+          <div className="h-40 w-40 flex-shrink-0 overflow-hidden rounded-2xl bg-white shadow-lg ring-4 ring-white md:h-48 md:w-48">
+            <img src={attorney.image} alt={attorney.name} className="h-full w-full object-cover object-[50%_25%]" />
+          </div>
+          <div className="flex-1">
+            <h1 className="text-3xl font-extrabold leading-tight md:text-5xl">{attorney.name}</h1>
+            <p className="mt-2 text-lg font-medium text-ink/75">{attorney.title}</p>
+            <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row md:justify-start">
+              <button onClick={() => navigate('/#contact')} className="btn btn-dark">
+                {label('bookConsultation')}
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </button>
+              {attorney.phone && (
+                <a href={phoneHref} className="btn btn-outline-dark">
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  {attorney.phone}
+                </a>
+              )}
             </div>
           </div>
+        </Reveal>
 
-          {/* Content */}
-          <div className="p-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main */}
-            <div className="lg:col-span-2 space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">{language === 'en' && (biographyTexts.biography || 'Biography')}
-{language === 'al' && (biographyTexts.biography || 'Biografia')}
-{language === 'de' && (biographyTexts.biography || 'Biografie')}
-{language === 'tr' && (biographyTexts.biography || 'Biyografi')}
-</h2>
-                <p className="text-gray-700 leading-relaxed">{attorney.bio}</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{language === 'en' && (biographyTexts.professionalAchievements || 'Professional Achievements')}
-{language === 'al' && (biographyTexts.professionalAchievements || 'Arritje Profesionale')}
-{language === 'de' && (biographyTexts.professionalAchievements || 'Berufliche Erfolge')}
-{language === 'tr' && (biographyTexts.professionalAchievements || 'Profesyonel Başarılar')}
-</h3>
-                <ul className="space-y-2">
-                  {attorney.achievements.map((ach, idx) => (
-                    <li key={idx} className="flex items-start space-x-2">
-                      <Award className="w-5 h-5 text-[#FFD700] mt-1 flex-shrink-0" />
-                      <span className="text-gray-700">{ach}</span>
+        {/* Content */}
+        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
+          <Reveal className="space-y-12 lg:col-span-2">
+            <section>
+              <h2 className="mb-4 text-2xl font-bold">{label('biography')}</h2>
+              <p className="text-lg leading-relaxed text-gray-700">{attorney.bio}</p>
+            </section>
+
+            {attorney.achievements.length > 0 && (
+              <section>
+                <h2 className="mb-5 text-2xl font-bold">{label('achievements')}</h2>
+                <ul className="space-y-3">
+                  {attorney.achievements.map((achievement) => (
+                    <li key={achievement} className="flex items-start gap-3 rounded-xl border border-gray-100 p-4">
+                      <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-brand-soft">
+                        <Award className="h-4 w-4 text-ink" aria-hidden="true" />
+                      </span>
+                      <span className="pt-1 leading-relaxed text-gray-700">{achievement}</span>
                     </li>
                   ))}
                 </ul>
+              </section>
+            )}
+          </Reveal>
+
+          <Reveal delay={0.08} as="aside" className="space-y-5">
+            <div className={sidebarCard}>
+              <h3 className={sidebarTitle}>{label('contact')}</h3>
+              <div className="space-y-3 text-[0.95rem]">
+                <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 break-all text-gray-700 transition-colors hover:text-ink">
+                  <Mail className="h-4 w-4 flex-shrink-0 text-brand-dark" aria-hidden="true" />
+                  {EMAIL}
+                </a>
+                {attorney.phone && (
+                  <a href={phoneHref} className="flex items-center gap-3 text-gray-700 transition-colors hover:text-ink">
+                    <Phone className="h-4 w-4 flex-shrink-0 text-brand-dark" aria-hidden="true" />
+                    {attorney.phone}
+                  </a>
+                )}
               </div>
             </div>
 
-            {/* Sidebar */}
-            <div className="space-y-6">
-              {/* Contact */}
-              <div className="bg-gray-50 rounded-lg p-5 space-y-3">
-                <h3 className="font-semibold text-gray-900">{language === 'en' && (biographyTexts.contact || 'Contact')}
-{language === 'al' && (biographyTexts.contact || 'Kontakt')}
-{language === 'de' && (biographyTexts.contact || 'Kontakt')}
-{language === 'tr' && (biographyTexts.contact || 'İletişim')}
-</h3>
-                <div className="flex items-center space-x-2 text-gray-700">
-                  <Mail className="w-5 h-5 text-[#FFD700]" />
-                  <a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:text-[#FFD700] break-all">Asdren.bytyqi91@gmail.com</a>
-                </div>
-          <div className="flex items-center space-x-2 text-gray-700">
-  <Phone className="w-5 h-5 text-[#FFD700]" />
-  <a href={`tel:${attorney.phone.replace(/\s/g, '')}`} className="hover:text-[#FFD700]">
-    {attorney.phone}
-  </a>
-</div>
-              </div>
-
-              {/* Specialties */}
-              <div className="bg-gray-50 rounded-lg p-5">
-                <h3 className="font-semibold text-gray-900 mb-2">{language === 'en' && (biographyTexts.specialties || 'Specialties')}
-{language === 'al' && (biographyTexts.specialties || 'Specializime')}
-{language === 'de' && (biographyTexts.specialties || 'Fachgebiete')}
-{language === 'tr' && (biographyTexts.specialties || 'Uzmanlık Alanları')}
-</h3>
+            {attorney.specialties.length > 0 && (
+              <div className={sidebarCard}>
+                <h3 className={sidebarTitle}>{label('specialties')}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {attorney.specialties.map((spec, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-[#FFD700]/10 text-[#FFD700] rounded-full text-sm font-medium">
-                      {spec}
-                    </span>
+                  {attorney.specialties.map((spec) => (
+                    <span key={spec} className="pill bg-white">{spec}</span>
                   ))}
                 </div>
               </div>
+            )}
 
-              {/* Education */}
-              <div className="bg-gray-50 rounded-lg p-5">
-                <h3 className="font-semibold text-gray-900 mb-2">{language === 'en' && (biographyTexts.educationBar || 'Education & Bar')}
-{language === 'al' && (biographyTexts.educationBar || 'Arsimi & Jurispodenca')}
-{language === 'de' && (biographyTexts.educationBar || 'Ausbildung & Anwaltskammer')}
-{language === 'tr' && (biographyTexts.educationBar || 'Eğitim & Baro')}
-</h3>
-                <div className="flex flex-col gap-2 text-gray-700">
-                  {attorney.education && (
-                    <div className="flex items-center space-x-2">
-                      <GraduationCap className="w-5 h-5 text-[#FFD700]" />
-                      <span>{attorney.education}</span>
-                    </div>
-                  )}
-                  <div className="flex items-center space-x-2">
-                    <FileText className="w-5 h-5 text-[#FFD700]" />
-                    <span>{language === 'en' && (biographyTexts.kosovoBar || 'Kosovo Bar Association')}
-{language === 'al' && (biographyTexts.kosovoBar || 'Oda e Avokatëve të Kosovës')}
-{language === 'de' && (biographyTexts.kosovoBar || 'Anwaltskammer des Kosovo')}
-{language === 'tr' && (biographyTexts.kosovoBar || 'Kosova Barosu')}
-</span>
-                  </div>
-                </div>
+            <div className={sidebarCard}>
+              <h3 className={sidebarTitle}>{label('educationBar')}</h3>
+              <div className="space-y-3 text-[0.95rem] text-gray-700">
+                {attorney.education && (
+                  <p className="flex items-start gap-3">
+                    <GraduationCap className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-dark" aria-hidden="true" />
+                    {attorney.education}
+                  </p>
+                )}
+                <p className="flex items-start gap-3">
+                  <FileText className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-dark" aria-hidden="true" />
+                  {label('kosovoBar')}
+                </p>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </div>

@@ -115,26 +115,27 @@ export const Careers = () => {
   ];
 
   return (
-    <section className="careers">
-      <div className="careers-container">
+    <section className="careers page-top section">
+      <div className="container-page">
         {/* Hero Section */}
         <motion.div 
-          className="careers-hero"
-          initial={{ opacity: 0, y: 50 }}
+          className="section-header"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h1>{t.title}</h1>
-          <p>{t.subtitle}</p>
+          <h1 className="section-title">{t.title}</h1>
+          <div className="section-divider" />
+          <p className="section-subtitle">{t.subtitle}</p>
         </motion.div>
 
         <div className="careers-content">
           {/* Why Join Us Section */}
           <motion.div 
             className="why-join-us"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2>{t.whyJoin.title}</h2>
             <div className="benefits-grid">
@@ -151,9 +152,9 @@ export const Careers = () => {
           {/* Application Form */}
           <motion.div 
             className="application-form-container"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
             <form onSubmit={handleSubmit} className="application-form" style={{ position: 'relative' }}>
               <h2>{t.formTitle}</h2>

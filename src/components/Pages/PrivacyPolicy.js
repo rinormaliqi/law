@@ -7,24 +7,24 @@ const PrivacyPolicy = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-white mt-20">
+    <div className="page-top section bg-white">
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 md:px-6 py-12">
-        <div className="max-w-4xl mx-auto">
+      <div className="container-page">
+        <div className="mx-auto max-w-3xl">
           {/* Page Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+            <h1 className="section-title">
               {language === 'en' && 'Privacy Policy'}
               {language === 'al' && 'Politika e Privatësisë'}
               {language === 'de' && 'Datenschutzerklärung'}
               {language === 'tr' && 'Gizlilik Politikası'}
             </h1>
-            <div className="w-24 h-1 bg-[#FFD700] mx-auto"></div>
+            <div className="section-divider" />
           </div>
 
           {/* Last Updated */}
-          <div className="bg-yellow-50 border-l-4 border-[#FFD700] p-6 mb-8">
+          <div className="mb-10 rounded-xl border-l-4 border-brand bg-brand-soft p-5">
             <p className="text-gray-700">
               <strong>
                 {language === 'en' && 'Last Updated: October 2025'}
@@ -38,8 +38,8 @@ const PrivacyPolicy = () => {
           {/* Content Sections */}
           <div className="space-y-8 text-gray-700 leading-relaxed">
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'Introduction'}
                 {language === 'al' && 'Hyrje'}
                 {language === 'de' && 'Einführung'}
@@ -54,8 +54,8 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'Information We Collect'}
                 {language === 'al' && 'Informacioni që Mbledhim'}
                 {language === 'de' && 'Informationen, die wir sammeln'}
@@ -84,8 +84,8 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'How We Use Your Information'}
                 {language === 'al' && 'Si i Përdorim Informatat Tuaja'}
                 {language === 'de' && 'Wie wir Ihre Informationen verwenden'}
@@ -100,8 +100,8 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'Data Security'}
                 {language === 'al' && 'Siguria e të Dhënave'}
                 {language === 'de' && 'Datensicherheit'}
@@ -116,8 +116,8 @@ const PrivacyPolicy = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'Contact Us'}
                 {language === 'al' && 'Na Kontaktoni'}
                 {language === 'de' && 'Kontaktieren Sie uns'}
@@ -129,7 +129,7 @@ const PrivacyPolicy = () => {
                 {language === 'de' && 'Wenn Sie Fragen zu dieser Datenschutzerklärung oder zur Handhabung Ihrer persönlichen Daten haben, kontaktieren Sie uns bitte unter:'}
                 {language === 'tr' && 'Bu Gizlilik Politikası veya kişisel bilgilerinizi nasıl ele aldığımız hakkında herhangi bir sorunuz varsa, lütfen bizimle iletişime geçin:'}
               </p>
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 rounded-xl bg-surface p-5">
                 <p className="font-semibold">Bytyqi & Partners</p>
                 <p><a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:underline">Asdren.bytyqi91@gmail.com</a></p>
                 <p>+383 (44) 728-118</p>
@@ -137,13 +137,13 @@ const PrivacyPolicy = () => {
             </section>
           </div>
         </div>
-      </main>
+      </div>
 
       {/* Back to Top */}
-      <div className="text-center py-8">
+      <div className="pt-12 text-center">
         <Link 
           to="/" 
-          className="inline-flex items-center px-6 py-3 bg-[#FFD700] text-gray-900 font-semibold rounded-lg hover:bg-yellow-600 transition-colors"
+          className="btn btn-primary"
         >
           {language === 'en' && '← Back to Home'}
           {language === 'al' && '← Kthehu në Faqen Kryesore'}

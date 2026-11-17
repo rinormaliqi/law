@@ -1,4 +1,5 @@
 import React from "react";
+import { MotionConfig } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import LawFirmLanding from "./components/Pages/HomePage";
 import { AboutUsSection } from "./components/AboutUs";
@@ -19,6 +20,7 @@ import NotableCasesSection from "./components/LatestNewsSection/LatestNewsSectio
 function App() {
   return (
     <LanguageProvider>
+      <MotionConfig reducedMotion="user">
       <Router>
         <ProfessionalHeader/>
         <ScrollToTop />  {/* <-- Kjo */}
@@ -26,12 +28,12 @@ function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<LawFirmLanding />} />
-              <Route path="/about" element={<AboutUsSection />} />
-                            <Route path="/contact" element={<ContactForm />} />
-              <Route path="/practice-areas" element={<PracticeAreas />} />
+              <Route path="/about" element={<AboutUsSection standalone />} />
+                            <Route path="/contact" element={<ContactForm standalone />} />
+              <Route path="/practice-areas" element={<PracticeAreas standalone />} />
               <Route path="/practice-areas/:areaKey" element={<PracticeAreaDetail />} />
               <Route path="/attorneys/:attorneyId" element={<AttorneyBiography />} />
-                            <Route path="/news" element={< NotableCasesSection/>} />
+                            <Route path="/news" element={<NotableCasesSection standalone />} />
               <Route path="/news/:caseSlug" element={<CaseDetailPage />} />
 
   <Route path="/terms" element={< TermsOfService/>} />
@@ -45,6 +47,7 @@ function App() {
           <Footer />
         </div>
       </Router>
+      </MotionConfig>
     </LanguageProvider>
 
   );

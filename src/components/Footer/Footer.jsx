@@ -1,123 +1,97 @@
 // components/Footer.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Phone, Mail, MapPin, Clock, ArrowUpRight } from 'lucide-react';
 import { translations, useLanguage } from '../../contexts/language';
+import logo from '../../assets/logo.png';
+
+const LABELS = {
+  bar: {
+    en: 'Kosovo Bar Association Member',
+    al: 'Anëtar i Odës së Avokatëve të Kosovës',
+    de: 'Mitglied der Anwaltskammer des Kosovo',
+    tr: 'Kosova Barolar Birliği Üyesi',
+  },
+  district: {
+    en: 'Central Business District',
+    al: 'Zona Qendrore e Biznesit',
+    de: 'Zentrales Geschäftsviertel',
+    tr: 'Merkezi İş Bölgesi',
+  },
+  hoursTitle: { en: 'Business Hours', al: 'Orari i Punës', de: 'Geschäftszeiten', tr: 'Çalışma Saatleri' },
+  hours: {
+    en: 'Mon – Fri: 8:00 – 18:00',
+    al: 'E Hënë – E Premte: 8:00 – 18:00',
+    de: 'Mo – Fr: 8:00 – 18:00 Uhr',
+    tr: 'Pzt – Cuma: 8:00 – 18:00',
+  },
+  developedBy: { en: 'Developed by', al: 'Zhvilluar nga', de: 'Entwickelt von', tr: 'Geliştiren' },
+  privacy: { en: 'Privacy Policy', al: 'Politika e Privatësisë', de: 'Datenschutzerklärung', tr: 'Gizlilik Politikası' },
+  terms: { en: 'Terms of Service', al: 'Kushtet e Shërbimit', de: 'Nutzungsbedingungen', tr: 'Hizmet Şartları' },
+  disclaimer: { en: 'Disclaimer', al: 'Mohim i Përgjegjësisë', de: 'Haftungsausschluss', tr: 'Feragatname' },
+  careers: { en: 'Careers', al: 'Karriera', de: 'Karriere', tr: 'Kariyer' },
+};
+
+const linkClass =
+  'text-left text-sm text-gray-400 transition-colors duration-200 hover:text-white focus-visible:text-white';
 
 export const Footer = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const t = translations[language];
   const currentYear = new Date().getFullYear();
+  const l = (key) => LABELS[key][language] || LABELS[key].en;
 
-  // Get all practice areas from services
-  const practiceAreas = t.services.areas ? Object.values(t.services.areas).map(area => area.title) : [];
+  const practiceAreas = t.services.areas ? Object.values(t.services.areas).map((area) => area.title) : [];
 
-  // Navigation handlers
-  const handleAboutNavigation = () => {
-    navigate('/about');
-  };
-
-  const handleContactNavigation = () => {
-    navigate('/contact');
-  };
-
-  const handleAttorneysNavigation = () => {
-    navigate('/attorneys/asdren-bytyqi');
-  };
-
-  const handlePracticeAreaNavigation = () => {
+  const goToSection = (id) => {
     if (window.location.pathname === '/') {
-      const servicesSection = document.getElementById('services');
-      if (servicesSection) {
-        servicesSection.scrollIntoView({ behavior: 'smooth' });
-      }
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate('/#services');
+      navigate(`/#${id}`);
     }
   };
 
-  const handleNewsNavigation = () => {
-    // Assuming you have a news page
-    navigate('/news');
-  };
-
-  const handleBlogNavigation = () => {
-    // Assuming you have a blog page
-    navigate('/news');
-  };
-
-  const handlePrivacyNavigation = () => {
-    // Assuming you have a privacy policy page
-    navigate('/privacy');
-  };
-
-  const handleTermsNavigation = () => {
-    // Assuming you have a terms page
-    navigate('/terms');
-  };
-
-  const handleDisclaimerNavigation = () => {
-    // Assuming you have a disclaimer page
-    navigate('/disclaimer');
-  };
-
-  // Navigation links excluding home for footer
-  const navLinks = [
-    { 
-      key: 'about', 
-      label: t.nav.about,
-      action: handleAboutNavigation
-    },
-    { 
-      key: 'attorneys', 
-      label: t.nav.attorneys,
-      action: handleAttorneysNavigation
-    },
-    { 
-      key: 'practice', 
-      label: t.nav.practice,
-      action: handlePracticeAreaNavigation
-    },
-    { 
-      key: 'contact', 
-      label: t.nav.contact,
-      action: handleContactNavigation
-    }
+  const quickLinks = [
+    { label: t.nav.about, action: () => navigate('/about') },
+    { label: t.nav.attorneys, action: () => goToSection('attorneys') },
+    { label: t.nav.practice, action: () => goToSection('services') },
+    { label: t.dropdown.people.news, action: () => navigate('/news') },
+    { label: l('careers'), action: () => navigate('/careers') },
+    { label: t.nav.contact, action: () => navigate('/contact') },
   ];
 
+  const legalLinks = [
+    { label: l('privacy'), path: '/privacy' },
+    { label: l('terms'), path: '/terms' },
+    { label: l('disclaimer'), path: '/disclaimer' },
+  ];
+
+  const headingClass = 'mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-brand';
+
   return (
-    <footer className="bg-black text-white py-12">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Firm Description */}
-          <div className="lg:col-span-1">
-            <h3 className="text-xl font-serif font-bold mb-4 text-[#FFD700]">Bytyqi & Partners</h3>
-            <p className="text-gray-300 leading-relaxed">
-              {t.footer.description}
-            </p>
-            <div className="mt-4 flex items-center space-x-2">
-              <div className="w-2 h-2 bg-[#FFD700] rounded-full"></div>
-              <span className="text-sm text-gray-300">
-                {language === 'en' && 'Kosovo Bar Association Member'}
-                {language === 'al' && 'Anëtar i Odes së Avokatëve të Kosovës'}
-                {language === 'de' && 'Mitglied der Anwaltskammer des Kosovo'}
-                {language === 'tr' && 'Kosova Barolar Birliği Üyesi'}
-              </span>
+    <footer className="bg-ink text-white">
+      <div className="container-page pb-10 pt-16 md:pt-20">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+          {/* Brand */}
+          <div className="lg:col-span-4">
+            <button onClick={() => navigate('/')} className="mb-5 block" aria-label="Bytyqi & Partners">
+              <img src={logo} alt="Bytyqi & Partners" className="h-16 w-16 rounded-md" />
+            </button>
+            <p className="max-w-xs text-sm leading-relaxed text-gray-400">{t.footer.description}</p>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-gray-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand" aria-hidden="true" />
+              {l('bar')}
             </div>
           </div>
 
-          {/* Practice Areas */}
-          <div>
-            <h4 className="font-semibold mb-4 text-[#FFD700] border-b border-[#FFD700] pb-2">
-              {t.footer.practiceTitle}
-            </h4>
-            <ul className="space-y-2 text-gray-300">
-              {practiceAreas.slice(0, 6).map((area, index) => (
-                <li key={index}>
-                  <button 
-                    onClick={handlePracticeAreaNavigation}
-                    className="hover:text-[#FFD700] transition-colors duration-200 text-sm text-left w-full"
-                  >
+          {/* Practice areas */}
+          <div className="lg:col-span-3">
+            <h4 className={headingClass}>{t.footer.practiceTitle}</h4>
+            <ul className="space-y-3">
+              {practiceAreas.slice(0, 6).map((area) => (
+                <li key={area}>
+                  <button onClick={() => goToSection('services')} className={linkClass}>
                     {area}
                   </button>
                 </li>
@@ -125,149 +99,81 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4 text-[#FFD700] border-b border-[#FFD700] pb-2">
-              {t.footer.linksTitle}
-            </h4>
-            <ul className="space-y-2 text-gray-300">
-              {navLinks.map((item, index) => (
-                <li key={index}>
-                  <button 
-                    onClick={item.action}
-                    className="hover:text-[#FFD700] transition-colors duration-200 text-sm text-left w-full"
-                  >
+          {/* Quick links */}
+          <div className="lg:col-span-2">
+            <h4 className={headingClass}>{t.footer.linksTitle}</h4>
+            <ul className="space-y-3">
+              {quickLinks.map((item) => (
+                <li key={item.label}>
+                  <button onClick={item.action} className={linkClass}>
                     {item.label}
                   </button>
                 </li>
               ))}
-              {/* Additional footer-specific links */}
-              <li>
-                <button 
-                  onClick={handleNewsNavigation}
-                  className="hover:text-[#FFD700] transition-colors duration-200 text-sm text-left w-full"
-                >
-                  {t.dropdown.people.news}
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={handleBlogNavigation}
-                  className="hover:text-[#FFD700] transition-colors duration-200 text-sm text-left w-full"
-                >
-                  {t.dropdown.people.blogArticles}
-                </button>
-              </li>
             </ul>
           </div>
 
-          {/* Contact Information */}
-          <div>
-            <h4 className="font-semibold mb-4 text-[#FFD700] border-b border-[#FFD700] pb-2">
-              {t.footer.contactTitle}
-            </h4>
-            <address className="not-italic text-gray-300">
-              <div className="mb-3">
-                <p className="font-medium text-white">Prishtinë, Kosovo</p>
-                <p className="text-sm">
-                  {language === 'en' && 'Central Business District'}
-                  {language === 'al' && 'Zona Qendrore e Biznesit'}
-                  {language === 'de' && 'Zentrales Geschäftsviertel'}
-                  {language === 'tr' && 'Merkezi İş Bölgesi'}
-                </p>
-              </div>
-              
-              <div className="space-y-2 text-sm">
-                <p className="flex items-center">
-                  <span className="mr-2">📞</span>
-                  <a href="tel:+38344728118" className="hover:text-[#FFD700] transition-colors">
-                    +383 (44) 728-118
-                  </a>
-                </p>
-                <p className="flex items-center">
-                  <span className="mr-2">✉️</span>
-                  <a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:text-[#FFD700] transition-colors break-all">
-                    Asdren.bytyqi91@gmail.com
-                  </a>
-                </p>
-              </div>
-
-              {/* Business Hours */}
-              <div className="mt-4 pt-4 border-t border-gray-700">
-                <p className="text-sm font-medium text-white mb-2">
-                  {language === 'en' && 'Business Hours:'}
-                  {language === 'al' && 'Orari i Punës:'}
-                  {language === 'de' && 'Geschäftszeiten:'}
-                  {language === 'tr' && 'Çalışma Saatleri:'}
-                </p>
-                <p className="text-xs text-gray-400">
-                  {language === 'en' && 'Mon - Fri: 8:00 AM - 6:00 PM'}
-                  {language === 'al' && 'E Hënë - E Premte: 8:00 - 18:00'}
-                  {language === 'de' && 'Mo - Fr: 8:00 - 18:00 Uhr'}
-                  {language === 'tr' && 'Pzt - Cuma: 8:00 - 18:00'}
-                </p>
-              </div>
+          {/* Contact */}
+          <div className="lg:col-span-3">
+            <h4 className={headingClass}>{t.footer.contactTitle}</h4>
+            <address className="space-y-4 text-sm not-italic text-gray-400">
+              <p className="flex gap-3">
+                <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
+                <span>
+                  <span className="block text-white">Prishtinë, Kosovo</span>
+                  {l('district')}
+                </span>
+              </p>
+              <p className="flex gap-3">
+                <Phone className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
+                <a href="tel:+38344728118" className="transition-colors hover:text-white">
+                  +383 (44) 728-118
+                </a>
+              </p>
+              <p className="flex gap-3">
+                <Mail className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
+                <a href="mailto:Asdren.bytyqi91@gmail.com" className="break-all transition-colors hover:text-white">
+                  Asdren.bytyqi91@gmail.com
+                </a>
+              </p>
+              <p className="flex gap-3">
+                <Clock className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" aria-hidden="true" />
+                <span>
+                  <span className="block text-white">{l('hoursTitle')}</span>
+                  {l('hours')}
+                </span>
+              </p>
             </address>
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
-              {t.footer.copyright.replace('{year}', currentYear)} |  {language === 'en' && 'Developed By'}
-                {language === 'al' && 'Zhvilluar nga'}
-                {language === 'de' && 'entwickelt von'}
-                {language === 'tr' && 'tarafından geliştirildi'}   
-  <a 
-  href="https://www.linkedin.com/in/rinor-maliqi-646a2233a/" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="text-gray-400 hover:text-white underline hover:no-underline transition-colors duration-300 font-medium hover:bg-[#FFD700] hover:px-2 hover:py-1 hover:rounded"
->
-    <span className="mr-2"></span>
-    Rinor Maliqi
-    <span className="ml-2 text-sm">↗</span>
-</a>            </p>
-            
-            {/* Additional legal links */}
-            <div className="flex space-x-6 text-sm text-gray-400">
-              <button 
-                onClick={handlePrivacyNavigation}
-                className="hover:text-[#FFD700] transition-colors"
+        {/* Bottom bar */}
+        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-gray-500 md:flex-row md:items-center md:justify-between">
+          <p>
+            {t.footer.copyright.replace('{year}', currentYear)}
+            <span className="mx-2 text-gray-700">·</span>
+            {l('developedBy')}{' '}
+            <a
+              href="https://www.linkedin.com/in/rinor-maliqi-646a2233a/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-0.5 font-medium text-gray-400 transition-colors hover:text-white"
+            >
+              Rinor Maliqi
+              <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
+            </a>
+          </p>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2" aria-label="Legal">
+            {legalLinks.map((item) => (
+              <button
+                key={item.path}
+                onClick={() => navigate(item.path)}
+                className="transition-colors hover:text-white"
               >
-                {language === 'en' && 'Privacy Policy'}
-                {language === 'al' && 'Politika e Privatësisë'}
-                {language === 'de' && 'Datenschutzerklärung'}
-                {language === 'tr' && 'Gizlilik Politikası'}
+                {item.label}
               </button>
-              <button 
-                onClick={handleTermsNavigation}
-                className="hover:text-[#FFD700] transition-colors"
-              >
-                {language === 'en' && 'Terms of Service'}
-                {language === 'al' && 'Kushtet e Shërbimit'}
-                {language === 'de' && 'Nutzungsbedingungen'}
-                {language === 'tr' && 'Hizmet Şartları'}
-              </button>
-              <button 
-                onClick={handleDisclaimerNavigation}
-                className="hover:text-[#FFD700] transition-colors"
-              >
-                {language === 'en' && 'Disclaimer'}
-                {language === 'al' && 'Mohim i Përgjegjësisë'}
-                {language === 'de' && 'Haftungsausschluss'}
-                {language === 'tr' && 'Feragatname'}
-              </button>
-            </div>
-          </div>
-
-          {/* Bar Association Badge */}
-          <div className="mt-4 flex justify-center">
-            <div className="bg-[#FFD700] text-gray-900 px-4 py-2 rounded-lg text-xs font-semibold">
-              {t.badges.bar}
-            </div>
-          </div>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

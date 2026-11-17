@@ -7,20 +7,20 @@ const Disclaimer = () => {
   const { language } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-white mt-20">
+    <div className="page-top section bg-white">
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 md:px-6 py-12">
-        <div className="max-w-4xl mx-auto">
+      <div className="container-page">
+        <div className="mx-auto max-w-3xl">
           {/* Page Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+            <h1 className="section-title">
               {language === 'en' && 'Legal Disclaimer'}
               {language === 'al' && 'Mohim i Përgjegjësisë Ligjore'}
               {language === 'de' && 'Rechtlicher Haftungsausschluss'}
               {language === 'tr' && 'Yasal Feragatname'}
             </h1>
-            <div className="w-24 h-1 bg-[#FFD700] mx-auto"></div>
+            <div className="section-divider" />
           </div>
 
           {/* Important Notice */}
@@ -47,8 +47,8 @@ const Disclaimer = () => {
           {/* Content Sections */}
           <div className="space-y-8 text-gray-700 leading-relaxed">
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'No Legal Advice'}
                 {language === 'al' && 'Asnjë Këshillë Ligjore'}
                 {language === 'de' && 'Keine Rechtsberatung'}
@@ -63,8 +63,8 @@ const Disclaimer = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'No Attorney-Client Relationship'}
                 {language === 'al' && 'Asnjë Marrëdhënie Avokat-Klient'}
                 {language === 'de' && 'Keine Anwalts-Klienten-Beziehung'}
@@ -79,8 +79,8 @@ const Disclaimer = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'Case Results Not Guaranteed'}
                 {language === 'al' && 'Rezultatet e Çështjeve Nuk Garantohen'}
                 {language === 'de' && 'Fallresultate nicht garantiert'}
@@ -95,8 +95,8 @@ const Disclaimer = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'Third-Party Links'}
                 {language === 'al' && 'Lidhjet e Palëve të Treta'}
                 {language === 'de' && 'Links zu Drittanbietern'}
@@ -111,8 +111,8 @@ const Disclaimer = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-3 h-3 bg-[#FFD700] rounded-full mr-3"></span>
+              <h2 className="mb-4 flex items-center text-xl font-bold md:text-2xl">
+                <span className="mr-3 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-brand"></span>
                 {language === 'en' && 'Contact for Legal Advice'}
                 {language === 'al' && 'Kontakt për Këshillë Ligjore'}
                 {language === 'de' && 'Kontakt für Rechtsberatung'}
@@ -124,7 +124,7 @@ const Disclaimer = () => {
                 {language === 'de' && 'Wenn Sie für Ihre spezifische Situation Rechtsberatung benötigen, kontaktieren Sie bitte unser Büro, um eine Beratung zu vereinbaren. Wir würden uns freuen, zu besprechen, wie wir Sie bei Ihren rechtlichen Anliegen unterstützen können.'}
                 {language === 'tr' && 'Özel durumunuz için hukuki tavsiyeye ihtiyacınız varsa, lütfen bir danışma ayarlamak için ofisimizle iletişime geçin. Hukuki ihtiyaçlarınızda size nasıl yardımcı olabileceğimizi görüşmekten memnuniyet duyarız.'}
               </p>
-              <div className="mt-4 p-4 bg-gray-100 rounded-lg">
+              <div className="mt-4 rounded-xl bg-surface p-5">
                 <p className="font-semibold">Bytyqi & Partners</p>
                 <p><a href="mailto:Asdren.bytyqi91@gmail.com" className="hover:underline">Asdren.bytyqi91@gmail.com</a></p>
                 <p>+383 (44) 728-118</p>
@@ -138,13 +138,13 @@ const Disclaimer = () => {
             </section>
           </div>
         </div>
-      </main>
+      </div>
 
       {/* Back to Top */}
-      <div className="text-center py-8">
+      <div className="pt-12 text-center">
         <Link 
           to="/" 
-          className="inline-flex items-center px-6 py-3 bg-[#FFD700] text-gray-900 font-semibold rounded-lg hover:bg-yellow-600 transition-colors"
+          className="btn btn-primary"
         >
           {language === 'en' && '← Back to Home'}
           {language === 'al' && '← Kthehu në Faqen Kryesore'}

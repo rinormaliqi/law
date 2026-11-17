@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
+import { ChevronDown } from 'lucide-react';
 import { translations, useLanguage } from '../../contexts/language';
 import './App.css';
 import logo from "../../assets/logo.png";
@@ -16,6 +17,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownTimeout = useRef(null);
   const languageDropdownRef = useRef(null);
   const { language, setLanguage } = useLanguage();
@@ -103,6 +105,16 @@ const Header = () => {
     setActiveDropdown(null);
   };
 
+  const handleAttorneysSectionNavigation = () => {
+    if (window.location.pathname === '/') {
+      document.getElementById('attorneys')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/#attorneys');
+    }
+    setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
+  };
+
   const handlePracticeAreaNavigation = () => {
     // If we're on the home page, scroll to services
     if (window.location.pathname === '/') {
@@ -139,6 +151,31 @@ const Header = () => {
     };
   }, [isMobileMenuOpen, isLanguageDropdownOpen]);
 
+  // Header shadow once the page is scrolled
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  // Lock page scroll while the mobile menu is open; close menus with Escape
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+        setIsLanguageDropdownOpen(false);
+        setActiveDropdown(null);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [isMobileMenuOpen]);
+
   // Updated Navigation items to match your actual content
   const navItems = [
     { 
@@ -150,7 +187,8 @@ const Header = () => {
     { 
       key: 'attorneys', 
       label: translations[language].nav.attorneys,
-      dropdown: 'attorneys'
+      dropdown: 'attorneys',
+      action: handleAttorneysSectionNavigation
     },
     { 
       key: 'about', 
@@ -222,8 +260,8 @@ const Header = () => {
         name: translations[language].attorneys.fehmije.name,
         title: translations[language].attorneys.fehmije.title,
         expertise: translations[language].attorneys.fehmije.expertise.slice(0, 3),
-        slug: 'asdren-gashi-bytyqi',
-        action: () => handleAttorneyNavigation('asdren-gashi-bytyqi')
+        slug: 'fehmije-gashi-bytyqi',
+        action: () => handleAttorneyNavigation('fehmije-gashi-bytyqi')
       }
     ],
     about: [
@@ -250,7 +288,7 @@ const Header = () => {
     <div className="app">
       {/* Top Contact Bar */}
       {/* Sticky Header */}
-      <header className="header">
+      <header className={`header ${isScrolled ? 'is-scrolled' : ''}`}>
         <div className="header-container">
           {/* Logo */}
           <div className="logo">
@@ -271,6 +309,8 @@ const Header = () => {
                 <button 
                   className={`nav-link ${activeDropdown === item.key ? 'active' : ''} ${!item.dropdown ? 'no-dropdown' : ''}`}
                   onClick={item.action || (() => {})}
+                  aria-haspopup={item.dropdown ? 'true' : undefined}
+                  aria-expanded={item.dropdown ? activeDropdown === item.key : undefined}
                 >
                   {item.label}
                 </button>
@@ -283,9 +323,13 @@ const Header = () => {
             <button 
               className="language-dropdown-toggle"
               onClick={toggleLanguageDropdown}
+              aria-haspopup="listbox"
+              aria-expanded={isLanguageDropdownOpen}
+              aria-label="Language"
             >
               {currentLanguage?.icon}
-              <span className="language-arrow">▼</span>
+              <span className="language-code">{currentLanguage?.code === 'al' ? 'sq' : currentLanguage?.code}</span>
+              <ChevronDown className="language-arrow" aria-hidden="true" />
             </button>
             
             <AnimatePresence>
@@ -370,12 +414,26 @@ const Header = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
+          <motion.div
+            key="mobile-backdrop"
+            className="mobile-menu-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            aria-hidden="true"
+          />
+        )}
+        {isMobileMenuOpen && (
           <motion.div 
+            key="mobile-menu"
             className="mobile-menu-container"
-            initial={{ opacity: 0, x: 300 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 300 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            initial={{ x: '100%' }}
+            animate={{ x: 0 }}
+            exit={{ x: '100%' }}
+            transition={{ type: "tween", ease: [0.32, 0.72, 0, 1], duration: 0.35 }}
+            role="dialog"
+            aria-modal="true"
           >
             <div className="mobile-menu-header">
               <div className="logo">
@@ -412,9 +470,7 @@ const Header = () => {
                   >
                     {item.label}
                     {item.dropdown && (
-                      <span className="dropdown-arrow">
-                        {mobileDropdown === item.key ? '▲' : '▼'}
-                      </span>
+                      <ChevronDown className="dropdown-arrow" aria-hidden="true" />
                     )}
                   </button>
                   
